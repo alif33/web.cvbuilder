@@ -1,0 +1,70 @@
+{
+    "heading": {
+      "firstName": "John",
+      "surName": "Doe",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "email": "johndoe@example.com",
+      "phone": "+1 (123) 456-7890",
+      "address": "123 Main Street, City, Country"
+    },
+    "education": [
+      {
+        "degree": "Bachelor of Science in Computer Science",
+        "institution": "University Name",
+        "location": "City, Country",
+        "graduation_year": "2020"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Software Engineer",
+        "company": "Tech Company Inc.",
+        "location": "City, Country",
+        "start_date": "January 2021",
+        "end_date": "Present",
+        "description": "Responsible for developing web applications using modern technologies. Collaborated with cross-functional teams to deliver high-quality software products."
+      },
+      {
+        "title": "Intern",
+        "company": "Software Development Company",
+        "location": "City, Country",
+        "start_date": "June 2020",
+        "end_date": "December 2020",
+        "description": "Worked on various projects under the supervision of senior developers. Gained hands-on experience in software development lifecycle."
+      }
+    ],
+    "skills": [
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "HTML5",
+      "CSS3",
+      "SQL",
+      "Git",
+      "Agile Methodologies"
+    ],
+    "languages": [
+      {
+        "language": "English",
+        "fluency": "Native"
+      },
+      {
+        "language": "Spanish",
+        "fluency": "Intermediate"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "AWS Certified Solutions Architect - Associate",
+        "authority": "Amazon Web Services",
+        "date": "2021"
+      }
+    ],
+    "interests": [
+      "Reading",
+      "Hiking",
+      "Traveling",
+      "Open Source Contributions"
+    ]
+  }
