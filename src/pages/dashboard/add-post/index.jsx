@@ -1,5 +1,4 @@
 import { useState } from "react"
-import toast from "react-hot-toast"
 import ReactQuill from "../../../ui/react-quill"
 import Layout from "../../../components/dashboard/layout"
 // import { 
@@ -23,11 +22,7 @@ export default function Posts(){
         setDescription(e)
     }
 
-    const handleImageUpload = payload =>{
-        if (payload.event==="success") {
-             setImage(payload.info.url)
-        }    
-     }
+
  
      const handleSubmit = async e =>{
          e.preventDefault()

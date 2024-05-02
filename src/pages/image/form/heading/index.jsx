@@ -69,4 +69,4 @@ const Heading = ({formData, setData}) =>{
         </form>
     )
 }
-export default Heading;
+export default Heading
