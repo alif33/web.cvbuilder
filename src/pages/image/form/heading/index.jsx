@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { changeHeading } from "../../../../store/sample/action";
+import { onValueChange } from "../../../../store/sample/action";
 
 const Heading = ({formData, setData}) =>{
     const { heading } = useSelector(state=>state.sample)
     const dispatch = useDispatch()
     const onChange = (name, value)=>{
-        dispatch(changeHeading(name, value))
+        dispatch(onValueChange("heading", name, value))
     }
 
     return(

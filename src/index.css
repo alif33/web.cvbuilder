@@ -1,6 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* ::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #000;
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #efefef;
+    border-radius: 10px;
+} */
+
+
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+.heading {
+    @apply text-lg font-bold; 
+}
+
+.input {
+    @apply border h-9 pl-2 w-full rounded;
+}
+.textarea {
+    @apply border px-2 pt-2 w-full rounded;
+}
+
+.label {
+    @apply text-xs font-medium;
+}
+
+.btn-tab {
+    @apply border border-black text-sm px-2 py-1 rounded-full; 
+}
+
+.btn-panel {
+    @apply flex justify-center items-center h-7 w-7 rounded-full border border-black cursor-pointer; 
+}
+
 
 .ql-container.ql-snow {
     height: 250px;

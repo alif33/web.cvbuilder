@@ -48,7 +48,6 @@ export default function Editor(){
 
     const contents = NodeParser(__text) || false
 
-    console.log(contents);
     return(
         <div className="flex mx-auto mt-10">
             <div className="basis-1/2">
@@ -72,7 +71,6 @@ export default function Editor(){
                 }
                 <p></p>
                 {/* {contents.map((con, __con)=>{
-                    // console.log(con, "CON");
                     if (con==="ul") {
                         <span key={__con}></span>
                     }
@@ -81,13 +79,11 @@ export default function Editor(){
                             <span key={__con}>
                                 <h1>Ismail</h1>
                                 {con?.data.map((para, __para)=>{
-                                    // console.log(para, "PARA");
                                     if (para) {
                                         return(
                                         <span key={__para}>
                                                 {para.data.map((child, __child)=>{
                                                     // let hasArray = Array.isArray(child)
-                                                    // console.log(child.data, "CHILD")
                                                     // if(!hasArray){
                                                     //     return(
                                                     //         <span key={__child}>

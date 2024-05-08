@@ -7,6 +7,7 @@ import Gama from "../templates/bita"
 import Delta from "../templates/delta"
 import Orange from "../templates/orange"
 
+Font.registerHyphenationCallback(word => [word])
 Font.register(
     /* 
     Montserrat 
@@ -93,18 +94,11 @@ const temps = {
     orange: Orange,
 }
 
-export default function Templates({ templateName, heading, experience, education, skills, summary }){
-    // const { templateName, heading, experience, education, skills, summary } = useSelector(state=>state.information)
-    const Template = temps[`${templateName}`] || Orange
+export default function Templates({ data }){
+    const Template = temps[`${data?.templateName}`] || Orange
 
     return(
-        <Template
-            heading={heading}
-            experience={experience}
-            education={education}
-            skills={skills}
-            summary={summary}
-        />
+        <Template data={data}/>
     )
 }
  

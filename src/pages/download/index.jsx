@@ -22,7 +22,6 @@ const Download = () => {
     const resumeDocRef = doc(db, "resumes", _id)
     const unsubscribe = onSnapshot(resumeDocRef, (snap) => {
         if (snap.exists()) {
-            console.log(snap.data());
             dispatch(setInfo(snap.data()))
             setIsLoading(false)
         }

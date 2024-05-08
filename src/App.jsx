@@ -25,7 +25,7 @@ function App() {
         <Route path="/image" element={<Image />} />
         <Route path="/editor" element={<Editor />} />
         <Route path="/getcv/:_id" element={<Download />} />
-        <Route path="/preview/:name" element={<Preview />} />
+        <Route path="/pdf" element={<Preview />} />
         <Route path="/add-resume" element={<AddResume />} />
         <Route path="/dashboard/posts" element={<Posts />} />
         <Route path="/dashboard/add-post" element={<AddPost />} />

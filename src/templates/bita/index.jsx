@@ -12,9 +12,9 @@ import Styles from "./styles"
 import jsxNodes from "../lib/jsxNodes"
 const styles = Styles(StyleSheet)
 
-export default function Bita({ heading, experience, education, summary, skills }){
+export default function Bita({ data }){
 
-    const __summary = NodeParser(summary) || false
+    const __summary = NodeParser(data.summary) || false
     
     return(
         <Document>
@@ -24,8 +24,8 @@ export default function Bita({ heading, experience, education, summary, skills }
                     <Svg height="15" width="100%"><Line x1="0" y1="0" x2="1000" y2="0" strokeWidth={30} stroke="#2a9294"/></Svg>
                 </View>
                 <View style={styles.header}>
-                    <Text style={styles.headerTitle}>{heading?.firstName} {heading?.surName}</Text>
-                    <Text style={styles.headerSubTitle}>{heading?.city}, 2200, {heading?.country} | {heading?.phone} | {heading?.email}</Text>
+                    <Text style={styles.headerTitle}>{data.heading?.firstName} {data.heading?.surName}</Text>
+                    <Text style={styles.headerSubTitle}>{data.heading?.city}, 2200, {data.heading?.country} | {data.heading?.phone} | {data.heading?.email}</Text>
                 </View>
 
                 {/* Summary */}
@@ -43,7 +43,7 @@ export default function Bita({ heading, experience, education, summary, skills }
                     <Svg height="3" width="100%"><Line x1="0" y1="0" x2="1000" y2="0" strokeWidth={2} stroke="#2a9294"/></Svg>
                     <View style={styles.sectionBody}>
                         {
-                            experience && experience.map((exp, index)=>(
+                            data.experience && data.experience.map((exp, index)=>(
                                 <View key={index}>
                                     <Text style={styles.sectionHigh}>{exp?.jobTitle}</Text>
                                     <Text style={{paddingBottom: 10, fontSize: 12}}>{exp?.employer}, {exp?.jobCity}</Text>
@@ -68,7 +68,7 @@ export default function Bita({ heading, experience, education, summary, skills }
                     <Svg height="3" width="100%"><Line x1="0" y1="0" x2="1000" y2="0" strokeWidth={2} stroke="#2a9294"/></Svg>
                     <View style={styles.sectionBody}>
                         {
-                            education && education?.map((edu, index)=>(
+                            data.education && data.education?.map((edu, index)=>(
                                 <View key={index}>
                                     <Text style={styles.sectionHigh}>{edu?.institutionName} - {edu?.institutionLocation}</Text>
                                     <Text style={{paddingBottom: 15, fontSize: 14}}>{edu?.employer}, {edu?.jobCity}</Text>

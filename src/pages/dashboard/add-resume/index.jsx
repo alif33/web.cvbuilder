@@ -1,32 +1,38 @@
-import Education from "../../../components/add-resume/Education"
-import Heading from "../../../components/add-resume/Heading"
-import Summary from "../../../components/add-resume/Summary"
-import Experience from "../../image/form/experience"
+import { useState } from "react"
+import { PDFViewer } from "@react-pdf/renderer"
+import Template from "../../../templates"
+import { useSelector } from "react-redux"
+import Editor from "../../../components/add-resume/Editor/inex"
+import SideMenu from "../../../components/add-resume/SideMenu"
+import Panel from "../../../components/add-resume/Panel"
+import Layout from "../../../components/add-resume/Layout"
+import Templates from "../../../components/add-resume/Templates"
+import ImportFile from "../../../components/add-resume/ImportFile"
+
+const containerStyle = { width: '100%', height: '100vh' }
 
 export default function AddResume(){
+    const [mode, setMode] = useState("editor")
+    const resume = useSelector(state=>state.sample)
 
     return(
-        <div className="flex max-h-screen mx-5 overflow-y-hidden">
-            <div className=" basis-2/12">
-                <ul>
-                    <li><a href="/add-resume/#heading">Heading</a></li>
-                    <li><a href="/add-resume/#summary">Summary</a></li>
-                    <li><a href="/add-resume/#education">Education</a></li>
-                    <li><a href="/add-resume/#experience">Experience</a></li>
-                    <li><a href="/add-resume/#skills">Skills</a></li>
-                    <li><a href="/add-resume/#passport">Passport</a></li>
-                </ul>
+        <div className="flex max-h-screen ml-2 overflow-y-hidden">
+            <div className="basis-1/12 min-h-screen">
+                <div className="flex flex-col justify-between min-h-screen">
+                    <SideMenu/>
+                    <Panel mode={mode} setMode={setMode}/>
+                </div>
             </div>
-            <div className="min-h-screen basis-6/12 overflow-y-scroll">
-                <form action="">
-                    <Heading/>
-                    <Summary/>
-                    <Education/>
-                    <Experience/>
-                </form>
+            <div className="min-h-screen basis-6/12 overflow-y-scroll px-2 pt-3 pb-20">
+                {mode==="editor" &&  <Editor/>}
+                {mode==="import" &&  <ImportFile/>}
+                {mode==="layout" &&  <Layout/>}
+                {mode==="templates" &&  <Templates/>}
             </div>
-            <div className=" basis-4/12">
-                <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste animi, hic sed optio mollitia nostrum ullam nemo! Veniam, quia rem!</h1>
+            <div className="basis-5/12">
+                <PDFViewer style={containerStyle}>
+                <Template data={resume}/>
+            </PDFViewer>
             </div>
         </div>
     )

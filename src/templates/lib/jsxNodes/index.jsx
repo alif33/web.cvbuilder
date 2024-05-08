@@ -12,9 +12,15 @@ export default function jsxNodes(nodes){
         )
       } else if (node.type === 'li') {
         return (
-          <Text key={index} style={{ marginLeft: 10 }}>
-            {jsxNodes(node.data)}
-          </Text>
+          <View key={index} style={{flexDirection: 'row'}}>
+            <View>
+              <Text style={{fontSize: 15, justifyContent: 'center', alignItems: 'center'}}>{'\u2022'}</Text>
+            </View>
+            <View>
+              <Text style={{ marginLeft: 5 }}>{jsxNodes(node.data)}</Text>
+            </View>
+            <Text>{'\n'}</Text>
+          </View>
         )
       } else if (node.type === 'p') {
         return (

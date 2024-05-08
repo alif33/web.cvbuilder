@@ -1,107 +1,110 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { changeHeading } from "../../../store/sample/action"
+import { onValueChange } from "../../../store/sample/action"
 
 export default function Heading(){
     const { heading } = useSelector(state=>state.sample)
     const dispatch = useDispatch()
-    const onChange = (name, value)=>{
-        dispatch(changeHeading(name, value))
+    const onChange = e =>{
+        dispatch(onValueChange("heading", e.target.name, e.target.value))
     }
 
     return(
         <div id="heading">
-            <h1 className="text-2xl font-medium py-3">Heading</h1>
+            <h1 className="heading">Heading</h1>
             {/* Name */}
             <div className="flex gap-3">
                 <div className="basis-1/2">
-                    <label htmlFor="firstName">First Name</label>
+                    <label className="label" htmlFor="firstName">First Name</label>
                     <input 
                         id="firstName"
-                        type="text" 
-                        className="border border-black h-10 pl-1 w-full rounded-sm"
+                        type="text"
+                        name="firstName" 
+                        className="input"
                         value={heading.firstName}
-                        onChange={e=>onChange("firstName", e.target.value)}
+                        onChange={onChange}
                     />
                 </div>
                 <div className="basis-1/2">
-                    <label htmlFor="">Surname</label>
+                    <label className="label" htmlFor="">Surname</label>
                     <input 
                         type="text" 
-                        className="border border-black h-10 pl-1 w-full rounded-sm"
+                        className="input"
+                        name="surName"
                         value={heading.surName}
-                        onChange={e=>onChange("surName", e.target.value)}
+                        onChange={onChange}
                     />
                 </div>
             </div>
+
             {/* Address */}
+            <div className="">
+                <label className="label" htmlFor="">Address</label>
+                <input 
+                    type="text"
+                    className="input"
+                    name="address"
+                    value={heading.address} 
+                    onChange={onChange}
+                />
+            </div>
+
+            {/* Partials */}
             <div className="flex gap-3">
                 <div className="basis-3/12">
-                    <label htmlFor="">City</label>
+                    <label className="label" htmlFor="">City</label>
                     <input 
                         type="text"
-                        className="border border-black h-10 pl-1 w-full"
+                        className="input"
+                        name="city"
                         value={heading.city} 
-                        onChange={e=>onChange("city", e.target.value)}
+                        onChange={onChange}
                     />
                 </div>
                 <div className="basis-3/12">
-                    <label htmlFor="">Country</label>
+                    <label className="label" htmlFor="">Country</label>
                     <input 
                         type="text" 
-                        className="border border-black h-10 pl-1 w-full"
+                        className="input"
+                        name="country"
                         value={heading.country}
-                        onChange={e=>onChange("country", e.target.value)}
+                        onChange={onChange}
                     />
                 </div>
             </div>
             {/* Contact */}
             <div className="flex gap-3">
                 <div className="basis-4/12">
-                    <label htmlFor="">Email</label>
+                    <label className="label" htmlFor="">Email</label>
                     <input 
                         type="text" 
-                        className="border border-black h-10 pl-1 w-full"
+                        className="input"
+                        name="email"
                         value={heading.email}
-                        onChange={e=>onChange("email", e.target.value)}
+                        onChange={onChange}
                     />
                 </div>
                 <div className="basis-4/12">
-                    <label htmlFor="">Phone</label>
+                    <label className="label" htmlFor="">Phone</label>
                     <input 
                         type="text" 
-                        className="border border-black h-10 pl-1 w-full"
+                        className="input"
+                        name="phone"
                         value={heading.phone}
-                        onChange={e=>onChange("phone", e.target.value)}
+                        onChange={onChange}
                     />
                 </div>
                 <div className="basis-4/12">
-                    <label htmlFor="">Linkedin</label>
+                    <label className="label" htmlFor="">Linkedin</label>
                     <input 
                         type="text" 
-                        className="border border-black h-10 pl-1 w-full"
-                        value={heading.phone}
-                        onChange={e=>onChange("linkedin", e.target.value)}
+                        className="input"
+                        name="linkedin"
+                        value={heading.linkedin}
+                        onChange={onChange}
                     />
                 </div>
             </div>
         </div>
     )
 }
-
-
-
-// const Heading = ({formData, setData}) =>{
-//     const { heading } = useSelector(state=>state.sample)
-//     const dispatch = useDispatch()
-//     const onChange = (name, value)=>{
-//         dispatch(changeHeading(name, value))
-//     }
-
-//     return(
-//         <form className="mt-9 grid grid-cols-2 font-medium px-2 gap-5" action="">
-            
-//         </form>
-//     )
-// }
-// export default Heading
