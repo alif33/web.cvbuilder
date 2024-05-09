@@ -20,6 +20,18 @@ export const setList = (field, list) => (dispatch) => {
     dispatch(slice.setList({field, list}))
 }
 
+export const updateItem = (field, index, property, value) => (dispatch) => {
+    dispatch(slice.updateItem({field, index, property, value}))
+}
+// Remove item from array
+export const removeItem = (field, index) => (dispatch) => {
+    dispatch(slice.removeItem({field, index}))
+}
+
+export const onChange = (field, value) => (dispatch) => {
+    dispatch(slice.onChange({field, value}))
+}
+
 // Summary
 export const changeSummary = summary => (dispatch) => {
     dispatch(slice.changeSummary(summary))

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { onListChange, setList } from "../../../store/sample/action"
+import { onListChange, setList, removeItem } from "../../../store/sample/action"
+import { IoReload, IoClose } from "../../../icons"
 
 export default function Skills(){
     const [skill, setSkill] = useState({name: "", percentage: ""}) 
@@ -29,7 +30,12 @@ export default function Skills(){
 
     return(
         <div id="skills">
-            <h1 className="heading pt-3">Skills</h1>
+            <div className="flex justify-between items-center">
+                <h1 className="heading pt-3">Skills</h1>
+                <div className="flex gap-3">
+                    <button onClick={()=>dispatch(setList("skills", []))} className="h-8 w-8 flex justify-center items-center"><IoReload size={20}/></button>
+                </div>
+            </div>
             <div className="border-2 border-black px-2 py-5">
                 <ul className="mb-3">
                     {skills.map((skill, index)=>(
@@ -38,12 +44,15 @@ export default function Skills(){
                             draggable
                             onDragStart={() => (dragSkill.current = index)}
                             onDragEnter={() => (draggedOverSkill.current = index)}
-                            className="flex justify-between text-sm font-medium cursor-pointer w-52 border border-black px-2 py-1 mb-1 rounded-sm"
+                            className="flex items-center text-sm font-medium mb-1 gap-1"
                             onDragEnd={handleSort}
                             onDragOver={(e) => e.preventDefault()}
                         >
-                            <h2>{skill.name}</h2>
-                            <h3>{skill.percentage}</h3>
+                            <span className="flex justify-between w-52 border border-black px-2 py-1 cursor-move rounded-sm">
+                                <h2>{skill.name}</h2>
+                                <h3>{skill.percentage}</h3>
+                            </span>
+                            <span onClick={()=>dispatch(removeItem("skills", index))} className="cursor-pointer"><IoClose/></span>
                         </li>
                     ))}
                 </ul>

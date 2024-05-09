@@ -3,18 +3,23 @@ import { useSelector, useDispatch } from "react-redux"
 import { 
     onListChange,
     setList,
-    removeExperience 
+    removeItem 
 } from "../../../store/sample/action"
 import { 
     FaPlus,
     IoReload, 
     RxCross2, 
-    RiDeleteBin6Line 
+    RiDeleteBin6Line,
+    CiEdit 
 } from "../../../icons"
 import ReactQuill from "../../../ui/react-quill"
+import UpdateItem from "./UpdateItem"
 
 export default function Experience(){
-    const { heading, experiences } = useSelector(state=>state.sample)
+    const { experiences } = useSelector(state=>state.sample)
+    const [updateItem, setUpdateItem] = useState(null)
+    const [isOpen, setIsOpen] = useState(false)
+    
     const [experience, setExperience] = useState({
         title: "",
         employer: "",
@@ -40,6 +45,15 @@ export default function Experience(){
 
     const onExperience = ()=>{
         dispatch(onListChange("experiences", experience))
+        setExperience({
+            title: "",
+            employer: "",
+            city: "",
+            country: "",
+            startingDate: "",
+            endDate: "",
+            description: ""
+        })
     }
 
     const changeDescription = e=>{
@@ -47,6 +61,11 @@ export default function Experience(){
             ...experience, 
             description: e
         })
+    }
+
+    const handleUpdate = index =>{
+        setUpdateItem(index)
+        setIsOpen(true)
     }
 
     return(
@@ -59,35 +78,48 @@ export default function Experience(){
                 </div>
             </div>
             <div className="border-2 border-black py-5 px-2">
-                {
-                    experience.length>0 && (
-                        <div className="pt-4">
-                            {
-                                experiences.map((item, index)=>(
-                                    <div 
-                                        key={index}
-                                        draggable
-                                        onDragStart={() => (dragExperience.current = index)}
-                                        onDragEnter={() => (draggedOverExperience.current = index)}
-                                        className="flex justify-between border cursor-pointer p-3 mb-3"
-                                        onDragEnd={handleSort}
-                                        onDragOver={(e) => e.preventDefault()}
-                                    >
-                                        <div>
-                                            <h1 className="text-base font-medium">{item.title}</h1>
-                                            <h2 className="text-sm">{item.employer}, {item.city}</h2>
-                                        </div>
-                                        <span onClick={()=>dispatch(removeExperience(index))} className="cursor-pointer">
-                                            <RiDeleteBin6Line size={20}/>
-                                        </span>
-                                    </div>
-                                ))
-                            }
-                        </div>
-                    )
-                }
-               
+                <div>
+                    {
+                        experiences.map((item, index)=>(
+                            <div 
+                                key={index}
+                                draggable
+                                onDragStart={() => (dragExperience.current = index)}
+                                onDragEnter={() => (draggedOverExperience.current = index)}
+                                className="flex justify-between border cursor-move p-3 mb-3"
+                                onDragEnd={handleSort}
+                                onDragOver={(e) => e.preventDefault()}
+                            >
+                                <div>
+                                    <h1 className="text-base font-medium">{item.title}</h1>
+                                    <h2 className="text-sm">{item.employer}, {item.city}</h2>
+                                </div>
+                                <div className="flex gap-2">
+                                    <span onClick={()=>handleUpdate(index)} className="cursor-pointer">
+                                        <CiEdit size={20}/>
+                                    </span>
+                                    <span onClick={()=>dispatch(removeItem("experiences", index))} className="cursor-pointer">
+                                        <RiDeleteBin6Line size={20}/>
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        ))
+                    }
+                </div>
+                {/* Update experience */}
+                {/* Update Education */}
+                
+                {isOpen && (
+                    <UpdateItem 
+                        isOpen={isOpen}
+                        setIsOpen={setIsOpen}
+                        index={updateItem} 
+                    />
+                )}
+
                 {experiences.length>0 && (<hr />)}
+
                 <div className="grid grid-cols-2 font-medium gap-5 mb-3">
                     <div>
                         <label className="label" htmlFor="jobTitle">Job Title</label>
@@ -95,7 +127,7 @@ export default function Experience(){
                             id="jobTitle"
                             type="text" 
                             className="input"
-                            value={heading.title}
+                            value={experience.title}
                             onChange={e=>setExperience({
                                 ...experience, 
                                 title: e.target.value

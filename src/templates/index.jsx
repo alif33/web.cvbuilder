@@ -1,11 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Font } from "@react-pdf/renderer"
-import Alpha from "./bita"
-import Bita from "../templates/bita"
-import Catalyst from "../templates/catalyst"
-import Gama from "../templates/bita"
-import Delta from "../templates/delta"
-import Orange from "../templates/orange"
+import Aob from "../templates/aob"
+import Aoc from "../templates/aoc"
+import Aod from "../templates/aod"
 
 Font.registerHyphenationCallback(word => [word])
 Font.register(
@@ -19,19 +16,17 @@ Font.register(
                 src: `/fonts/Montserrat/Regular.ttf`
             },
             {
-                src: `/fonts/Montserrat/Montserrat-Bold.ttf`,
+                src: `/fonts/Montserrat/Medium.ttf`,
+                fontWeight: 'medium'
+            },
+            {
+                src: `/fonts/Montserrat/SemiBold.ttf`,
+                fontWeight: 'semibold'
+            },
+            {
+                src: `/fonts/Montserrat/Bold.ttf`,
                 fontWeight: 'bold'
             },
-            {
-                src: `/fonts/Montserrat/Regular.ttf`,
-                fontWeight: 'normal',
-                fontStyle: 'italic'
-            },
-            {
-                src: `/fonts/Montserrat/Montserrat-BoldItalic.ttf`,
-                fontWeight: 'bold',
-                fontStyle: 'italic'
-            }
         ]
     },
 
@@ -86,16 +81,13 @@ Font.register(
 );
 
 const temps = {
-    // alpha: Alpha,
-    // bita: Bita,
-    // catalyst: Catalyst,
-    // gama: Gama,
-    // delta: Delta,
-    orange: Orange,
+    aob: Aob,
+    aoc: Aoc,
+    aod: Aod,
 }
 
 export default function Templates({ data }){
-    const Template = temps[`${data?.templateName}`] || Orange
+    const Template = temps[`${data?.templateName}`] || Aod
 
     return(
         <Template data={data}/>

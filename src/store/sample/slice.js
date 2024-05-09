@@ -39,7 +39,8 @@ export const sampleSlice = createSlice({
             tertiaryRight: []
         },
         image: {},
-        signature: {}
+        signature: {},
+        templateName: "aoc"
     },
 
     reducers: {
@@ -47,6 +48,7 @@ export const sampleSlice = createSlice({
             state.stage = action.payload
         },
 
+        // for nested obj
         onValueChange: (state, action)=>{
             const field = action.payload.field
             const property = action.payload.property
@@ -66,12 +68,31 @@ export const sampleSlice = createSlice({
             state[field] = list
         },
 
+        updateItem: (state, action)=>{
+            const field = action.payload.field
+            const index = action.payload.index
+            const property = action.payload.property
+            const value = action.payload.value
+            state[field][index][property] = value
+        },
+
+        removeItem: (state, action)=>{
+            const field = action.payload.field
+            const index = action.payload.index
+            state[field].splice(index, 1)
+        },
+        
+        // for single value that is directly next state 
+        onChange: (state, action)=>{
+            state[action.payload.field] = action.payload.value
+        },
+
         removeExperience: (state, action) => {
-            state.experiences.splice(action.payload, 1);
+            state.experiences.splice(action.payload, 1)
         },
 
         removeEducation: (state, action) => {
-            state.educations.splice(action.payload, 1);
+            state.educations.splice(action.payload, 1)
         },
 
         // References

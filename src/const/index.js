@@ -1,0 +1,2 @@
+// sections of panel and pdf
+export const sections = ["contacts", "summary", "objective", "declaration", "education", "experience", "skills", "reference", "training", "personal", "signature", "passport"]

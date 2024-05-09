@@ -1,17 +1,17 @@
 [
     {
-        "name": "alpha",
-        "image": "/templates/alpha.png",
-        "code": "101"
-    },
-    {
-        "name": "bita",
-        "image": "/templates/bita.png",
+        "name": "aob",
+        "image": "/templates/aob.png",
         "code": "102"
     },
     {
-        "name": "orange",
-        "image": "/templates/orange.png",
+        "name": "aoc",
+        "image": "/templates/aoc.png",
         "code": "103"
+    },
+    {
+        "name": "aod",
+        "image": "/templates/aob.png",
+        "code": "104"
     }
 ]

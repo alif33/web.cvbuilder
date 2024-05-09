@@ -21,7 +21,8 @@ import { LuPlusCircle, LuLayoutPanelLeft } from "react-icons/lu"
 import { MdDynamicForm } from "react-icons/md"
 import { 
     CiImageOn,
-    CiImport
+    CiImport,
+    CiEdit
 } from "react-icons/ci"
 import { IoIosAlbums } from "react-icons/io"
 
@@ -45,5 +46,6 @@ export {
     MdDynamicForm,
     CiImageOn,
     CiImport,
+    CiEdit,
     IoIosAlbums
 }
