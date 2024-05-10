@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
-import Layout from "../../../components/dashboard/layout"
-import { RiDeleteBin6Line, FaRegEdit } from "../../../icons"
-import { useGetPostsQuery, useDeletePostMutation } from "../../../store/api"
+import Layout from "../../components/dashboard/layout"
+import { RiDeleteBin6Line, FaRegEdit } from "../../icons"
+import { useGetResumesQuery, useDeletePostMutation } from "../../store/api"
 
 export default function Posts(){
-    const { data, isLoading } = useGetPostsQuery()
+    const { data, isLoading } = useGetResumesQuery()
     const [deletePost] = useDeletePostMutation()
 
     const handleDelete = async id =>{
@@ -15,7 +15,7 @@ export default function Posts(){
         <Layout>
             <div className="p-3">
                 <div className="flex justify-between">
-                    <h1 className="text-3xl fort-semibold">Posts</h1>
+                    <h1 className="text-3xl fort-semibold">Resumes</h1>
                     <Link to="/dashboard/add-post" className="bg-primary-deep text-white py-2 px-3">Add New</Link>
                 </div>
                 {!isLoading && <div className="mt-5">
@@ -29,12 +29,13 @@ export default function Posts(){
                         </thead>
                         <tbody>
                             {
-                                data?.posts.map((post, index)=><tr key={index} className="py-2">
+                                data?.map((resume, index)=><tr key={index} className="py-2">
                                     <td>{index+1}</td>
-                                    <td>{post.title}</td>
+                                    <td>{resume.email}</td>
+                                    <td>{resume.firstName+" "+ resume.surName}</td>
                                     <td className="flex gap-2">
-                                        <Link to={`/admin/edit-post/${post._id}`} className="cursor-pointer"><FaRegEdit size={20}/></Link> 
-                                        <span onClick={()=>handleDelete(post._id)} className="cursor-pointer"><RiDeleteBin6Line size={20}/></span> 
+                                        <Link to={`/admin/edit-post/${resume._id}`} className="cursor-pointer"><FaRegEdit size={20}/></Link> 
+                                        <span onClick={()=>handleDelete(resume._id)} className="cursor-pointer"><RiDeleteBin6Line size={20}/></span> 
                                     </td>
                                 </tr>)
                             }

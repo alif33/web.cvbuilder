@@ -9,3 +9,13 @@ Currently, two official plugins are available:
 
 
 ## Fields
+
+resume(redux slice){ 
+    heading: {firstName, surName, address, phone, email, linkedin}
+    summary, objectives, declaration, expertise: {body}
+    educations: [{institutionName, location, qualification, studyField, graduationYear, result,description}]
+    experiences: [{title, employer, location, country, duration, description}]
+    skills: [{name, percentage}]
+    personal: {fatherName, motherName, permanentAddress, nationality, nid, religion, dob, sex, maritalStatus, bloodGroup}
+    references:{ name, designation, institute, phone, email} 
+}

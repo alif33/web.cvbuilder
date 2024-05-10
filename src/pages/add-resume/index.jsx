@@ -1,13 +1,13 @@
 import { useState } from "react"
 import { PDFViewer } from "@react-pdf/renderer"
-import Template from "../../../templates"
+import Template from "../../templates"
 import { useSelector } from "react-redux"
-import Editor from "../../../components/add-resume/Editor/inex"
-import SideMenu from "../../../components/add-resume/SideMenu"
-import Panel from "../../../components/add-resume/Panel"
-import Layout from "../../../components/add-resume/Layout"
-import Templates from "../../../components/add-resume/Templates"
-import ImportFile from "../../../components/add-resume/ImportFile"
+import Editor from "../../components/add-resume/Editor/inex"
+import SideMenu from "../../components/add-resume/SideMenu"
+import Panel from "../../components/add-resume/Panel"
+import Layout from "../../components/add-resume/Layout"
+import Templates from "../../components/add-resume/Templates"
+import ImportFile from "../../components/add-resume/ImportFile"
 
 const containerStyle = { width: '100%', height: '100vh' }
 
