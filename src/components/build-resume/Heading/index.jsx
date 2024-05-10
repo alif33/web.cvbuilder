@@ -13,8 +13,8 @@ export default function Heading(){
         <div id="heading">
             <h1 className="heading">Heading</h1>
             {/* Name */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                <div>
+            <div className="grid grid-cols-2 gap-2">
+                <div className="col-span-2 md:col-span-1">
                     <label className="label" htmlFor="firstName">First Name</label>
                     <input 
                         id="firstName"
