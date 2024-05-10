@@ -14,7 +14,7 @@ export default function Heading(){
             <h1 className="heading">Heading</h1>
             {/* Name */}
             <div className="grid grid-cols-2 gap-2">
-                <div className="col-span-2 md:col-span-1">
+                <div>
                     <label className="label" htmlFor="firstName">First Name</label>
                     <input 
                         id="firstName"
@@ -50,7 +50,7 @@ export default function Heading(){
                     />
                 </div>
                 {/* Contacts */}
-                <div>
+                <div className="col-span-2 md:col-span-1">
                     <label className="label" htmlFor="">Email</label>
                     <input 
                         type="text" 
@@ -61,7 +61,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div>
+                <div className="col-span-2 md:col-span-1">
                     <label className="label" htmlFor="">Phone</label>
                     <input 
                         type="text" 
@@ -72,7 +72,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div>
+                <div className="col-span-2 md:col-span-1">
                     <label className="label" htmlFor="">Linkedin</label>
                     <input 
                         type="text" 
