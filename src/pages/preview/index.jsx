@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { PDFViewer, Page, View, Text } from '@react-pdf/renderer'
 import { useParams } from "react-router-dom"
-import Template from "../../templates"
+// import Template from "../../templates"
 import { IoClose } from "../../icons"
 import { useSelector } from "react-redux"
 
