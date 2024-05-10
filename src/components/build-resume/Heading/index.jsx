@@ -11,7 +11,7 @@ export default function Heading(){
 
     return(
         <div id="heading">
-            <h1 className="heading">Heading</h1>
+            <h1 className="heading text-center">আপনার তথ্যগুলো পূরণ করুন</h1>
             {/* Name */}
             <div className="grid grid-cols-2 gap-2">
                 <div>

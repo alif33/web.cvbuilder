@@ -12,7 +12,7 @@ export default function BuildResume(){
     }
 
     return(
-        <div className="max-w-[650px] mx-auto px-2">
+        <div className="max-w-[650px] mx-auto px-2 pt-7">
             <Heading/>
             <Education/>
             <div className="flex justify-center">
