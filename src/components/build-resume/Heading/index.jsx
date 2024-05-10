@@ -13,8 +13,8 @@ export default function Heading(){
         <div id="heading">
             <h1 className="heading">Heading</h1>
             {/* Name */}
-            <div className="flex gap-3">
-                <div className="basis-full md:basis-1/2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div>
                     <label className="label" htmlFor="firstName">First Name</label>
                     <input 
                         id="firstName"
@@ -26,7 +26,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-full md:basis-1/2">
+                <div>
                     <label className="label" htmlFor="">Surname</label>
                     <input 
                         type="text" 
@@ -37,23 +37,20 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-            </div>
-
-            {/* Address */}
-            <div>
-                <label className="label" htmlFor="">Address</label>
-                <input 
-                    type="text"
-                    name="address"
-                    className="input"
-                    placeholder="ঠিকানা"
-                    value={heading.address} 
-                    onChange={onChange}
-                />
-            </div>
-            {/* Contact */}
-            <div className="flex gap-3">
-                <div className="basis-full md:basis-4/12">
+                {/* Address */}
+                <div className="col-span-2">
+                    <label className="label" htmlFor="">Address</label>
+                    <input 
+                        type="text"
+                        name="address"
+                        className="input"
+                        placeholder="ঠিকানা"
+                        value={heading.address} 
+                        onChange={onChange}
+                    />
+                </div>
+                {/* Contacts */}
+                <div>
                     <label className="label" htmlFor="">Email</label>
                     <input 
                         type="text" 
@@ -64,7 +61,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-full md:basis-4/12">
+                <div>
                     <label className="label" htmlFor="">Phone</label>
                     <input 
                         type="text" 
@@ -75,7 +72,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-full md:basis-4/12">
+                <div>
                     <label className="label" htmlFor="">Linkedin</label>
                     <input 
                         type="text" 
