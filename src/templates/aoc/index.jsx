@@ -51,11 +51,11 @@ const styles = StyleSheet.create({
         fontSize: 10
     },
     left: {
-        width: 250,
+        width: 220,
         paddingRight: 20
     },
     right: {
-        width: 400,
+        width: 420,
     },
     section: {
         paddingLeft: 35,

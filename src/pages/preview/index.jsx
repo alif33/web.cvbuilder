@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { PDFViewer } from '@react-pdf/renderer'
+import { PDFViewer, Page, View, Text } from '@react-pdf/renderer'
 import { useParams } from "react-router-dom"
 import Template from "../../templates"
 import { IoClose } from "../../icons"
@@ -19,7 +19,12 @@ const Preview = () => {
         </span>
       </div>
       <PDFViewer style={containerStyle}>
-        <Template data={resume}/>
+        <Page size="A4">
+          <View>
+            <Text>Section #1</Text>
+          </View>
+        </Page>
+        {/* <Template data={resume}/> */}
       </PDFViewer>
     </div>
   )

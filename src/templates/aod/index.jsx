@@ -20,7 +20,6 @@ import Signature from "./signature"
 import Passport from "./passport"
 import { getPosition } from "../lib/formatter"
 
-
 const sections = {
     summary: Summary,
     objective: Objective,
