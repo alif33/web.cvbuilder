@@ -20,7 +20,7 @@ export default function Heading(){
                         id="firstName"
                         type="text"
                         name="firstName" 
-                        className="input"
+                        className="input border-black"
                         placeholder="নামের প্রথম অংশ"
                         value={heading.firstName}
                         onChange={onChange}
@@ -31,7 +31,7 @@ export default function Heading(){
                     <input 
                         type="text" 
                         name="surName"
-                        className="input"
+                        className="input border-black"
                         placeholder="নামের দ্বিতীয় অংশ"
                         value={heading.surName}
                         onChange={onChange}
@@ -43,7 +43,7 @@ export default function Heading(){
                     <input 
                         type="text"
                         name="address"
-                        className="input"
+                        className="input border-black"
                         placeholder="ঠিকানা"
                         value={heading.address} 
                         onChange={onChange}
@@ -55,7 +55,7 @@ export default function Heading(){
                     <input 
                         type="text" 
                         name="email"
-                        className="input"
+                        className="input border-black"
                         placeholder="ইমেইল"
                         value={heading.email}
                         onChange={onChange}
@@ -66,7 +66,7 @@ export default function Heading(){
                     <input 
                         type="text" 
                         name="phone"
-                        className="input"
+                        className="input border-black"
                         placeholder="ফোন নাম্বার"
                         value={heading.phone}
                         onChange={onChange}
@@ -77,7 +77,7 @@ export default function Heading(){
                     <input 
                         type="text" 
                         name="linkedin"
-                        className="input"
+                        className="input border-black"
                         placeholder="লিংডিন অ্যাড্রেস"
                         value={heading.linkedin}
                         onChange={onChange}
