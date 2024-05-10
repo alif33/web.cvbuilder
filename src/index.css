@@ -29,7 +29,7 @@ body{
 }
 
 .input {
-    @apply border h-9 pl-2 w-full rounded;
+    @apply border h-11 md:h-9 pl-2 w-full rounded;
 }
 .textarea {
     @apply border px-2 pt-2 w-full rounded;

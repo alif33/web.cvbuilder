@@ -14,7 +14,7 @@ export default function Heading(){
             <h1 className="heading">Heading</h1>
             {/* Name */}
             <div className="flex gap-3">
-                <div className="basis-1/2">
+                <div className="basis-full md:basis-1/2">
                     <label className="label" htmlFor="firstName">First Name</label>
                     <input 
                         id="firstName"
@@ -26,7 +26,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-1/2">
+                <div className="basis-full md:basis-1/2">
                     <label className="label" htmlFor="">Surname</label>
                     <input 
                         type="text" 
@@ -40,7 +40,7 @@ export default function Heading(){
             </div>
 
             {/* Address */}
-            <div className="">
+            <div>
                 <label className="label" htmlFor="">Address</label>
                 <input 
                     type="text"
@@ -53,7 +53,7 @@ export default function Heading(){
             </div>
             {/* Contact */}
             <div className="flex gap-3">
-                <div className="basis-4/12">
+                <div className="basis-full md:basis-4/12">
                     <label className="label" htmlFor="">Email</label>
                     <input 
                         type="text" 
@@ -64,7 +64,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-4/12">
+                <div className="basis-full md:basis-4/12">
                     <label className="label" htmlFor="">Phone</label>
                     <input 
                         type="text" 
@@ -75,7 +75,7 @@ export default function Heading(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-4/12">
+                <div className="basis-full md:basis-4/12">
                     <label className="label" htmlFor="">Linkedin</label>
                     <input 
                         type="text" 
