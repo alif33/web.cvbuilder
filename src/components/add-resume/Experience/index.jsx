@@ -8,7 +8,6 @@ import {
 import { 
     FaPlus,
     IoReload, 
-    RxCross2, 
     RiDeleteBin6Line,
     CiEdit 
 } from "../../../icons"
@@ -23,10 +22,9 @@ export default function Experience(){
     const [experience, setExperience] = useState({
         title: "",
         employer: "",
-        city: "",
+        location: "",
         country: "",
-        startingDate: "",
-        endDate: "",
+        duration: "",
         description: ""
     })
     const dispatch = useDispatch()
@@ -48,10 +46,9 @@ export default function Experience(){
         setExperience({
             title: "",
             employer: "",
-            city: "",
+            location: "",
             country: "",
-            startingDate: "",
-            endDate: "",
+            duration: "",
             description: ""
         })
     }
@@ -107,8 +104,7 @@ export default function Experience(){
                         ))
                     }
                 </div>
-                {/* Update experience */}
-                {/* Update Education */}
+                {/* Update Experience */}
                 
                 {isOpen && (
                     <UpdateItem 
@@ -127,6 +123,7 @@ export default function Experience(){
                             id="jobTitle"
                             type="text" 
                             className="input"
+                            placeholder="Junior fornt end developer"
                             value={experience.title}
                             onChange={e=>setExperience({
                                 ...experience, 
@@ -140,10 +137,25 @@ export default function Experience(){
                             id="employer"
                             type="text" 
                             className="input"
+                            placeholder="Stack Buzz"
                             value={experience.employer}
                             onChange={e=>setExperience({
                                 ...experience, 
                                 employer: e.target.value
+                            })}
+                        />
+                    </div>
+                    <div>
+                        <label className="label" htmlFor="JobLocation">Location</label>
+                        <input 
+                            id="JobLocation"
+                            type="text"
+                            className="input"
+                            placeholder="Amirabad, Maskanda, Mymensingh"
+                            value={experience.location} 
+                            onChange={e=>setExperience({
+                                ...experience, 
+                                location: e.target.value
                             })}
                         />
                     </div>
@@ -153,6 +165,7 @@ export default function Experience(){
                             id="country"
                             type="text" 
                             className="input"
+                            placeholder="Bangladesh"
                             value={experience.country}
                             onChange={e=>setExperience({
                                 ...experience, 
@@ -160,42 +173,18 @@ export default function Experience(){
                             })}
                         />
                     </div>
+                    
                     <div>
-                        <label className="label" htmlFor="city">City</label>
+                        <label className="label" htmlFor="duration">Job Duration</label>
                         <input 
-                            id="city"
-                            type="text"
+                            id="duration"
+                            type="input" 
                             className="input"
-                            value={experience.city} 
+                            placeholder="JAN 2020 - MAR 2023"
+                            value={experience.duration}
                             onChange={e=>setExperience({
                                 ...experience, 
-                                city: e.target.value
-                            })}
-                        />
-                    </div>
-                    <div>
-                        <label className="label" htmlFor="startingDate">Starting date</label>
-                        <input 
-                            id="startingDate"
-                            type="date" 
-                            className="input"
-                            value={experience.startingDate}
-                            onChange={e=>setExperience({
-                                ...experience, 
-                                startingDate: e.target.value
-                            })}
-                        />
-                    </div>
-                    <div>
-                        <label className="label" htmlFor="endDate">End date</label>
-                        <input 
-                            id="endDate"
-                            type="date" 
-                            className="input"
-                            value={experience.endDate}
-                            onChange={e=>setExperience({
-                                ...experience, 
-                                endDate: e.target.value
+                                duration: e.target.value
                             })}
                         />
                     </div>

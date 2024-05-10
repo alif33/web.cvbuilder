@@ -1,6 +1,7 @@
 import Modal from "../../../../ui/modal"
 import { useDispatch, useSelector } from "react-redux"
 import { updateItem } from "../../../../store/sample/action"
+import ReactQuill from "../../../../ui/react-quill"
 
 export default function UpdateItem({isOpen, setIsOpen, index}){
     const { experiences } = useSelector(state=>state.sample)
@@ -9,6 +10,10 @@ export default function UpdateItem({isOpen, setIsOpen, index}){
     const handleChange = e =>{
         dispatch(updateItem("experiences", index, e.target.name, e.target.value))
     } 
+
+    const changeDescription = e=>{
+        dispatch(updateItem("experiences", index, "description", e))
+    }
 
     return(
         <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -36,9 +41,20 @@ export default function UpdateItem({isOpen, setIsOpen, index}){
                         />
                     </div>
                     <div>
-                        <label className="label" htmlFor="country">Country</label>
+                        <label className="label" htmlFor="Country">Location</label>
                         <input 
-                            id="country"
+                            id="Location"
+                            type="text"
+                            name="location"
+                            className="input"
+                            value={experiences[index].location} 
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <label className="label" htmlFor="Country">Country</label>
+                        <input 
+                            id="Country"
                             type="text" 
                             name="country"
                             className="input"
@@ -47,117 +63,24 @@ export default function UpdateItem({isOpen, setIsOpen, index}){
                         />
                     </div>
                     <div>
-                        <label className="label" htmlFor="city">City</label>
+                        <label className="label" htmlFor="JobDuration">Job Duration</label>
                         <input 
-                            id="city"
-                            type="text"
-                            name="city"
+                            id="JobDuration"
+                            type="text" 
+                            name="duration"
                             className="input"
-                            value={experiences[index].city} 
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label className="label" htmlFor="startingDate">Starting date</label>
-                        <input 
-                            id="startingDate"
-                            type="date" 
-                            name="startingDate"
-                            className="input"
-                            value={experiences[index].startingDate}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label className="label" htmlFor="endDate">End date</label>
-                        <input 
-                            id="endDate"
-                            type="date" 
-                            name="endDate"
-                            className="input"
-                            value={experiences[index].endDate}
+                            value={experiences[index].duration}
                             onChange={handleChange}
                         />
                     </div>
                 </div>
-
-
-
-
-            {/* <div className="grid grid-cols-2 font-medium gap-5 mb-3">
                 <div>
-                    <label className="label" htmlFor="qualification">Qualification</label>
-                    <input 
-                        id="qualification"
-                        type="text" 
-                        name="qualification"
-                        className="input"
-                        value={educations[index].qualification}
-                        placeholder="Hsc"
-                        onChange={handleChange}
+                    <label className="label" htmlFor="experienceDescription">Description</label>
+                    <ReactQuill
+                       value={experiences[index].description}
+                        handleChange={changeDescription}
                     />
-                </div>
-                <div>
-                    <label className="label" htmlFor="institutionName">Institution Name</label>
-                    <input 
-                        id="institutionName"
-                        type="text" 
-                        name="institutionName"
-                        className="input"
-                        value={educations[index].institutionName}
-                        placeholder="Cantonment public school and college"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="location">Location</label>
-                    <input 
-                        id="location"
-                        type="text" 
-                        name="location"
-                        className="input"
-                        value={educations[index].location}
-                        placeholder="Mymensingh"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="studyField">Field Of Study</label>
-                    <input 
-                        id="studyField"
-                        type="text"
-                        name="studyField"
-                        className="input"
-                        value={educations[index].studyField} 
-                        placeholder="Science, Marketing"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="qualification">Year Of Graduation</label>
-                    <input 
-                        id="qualification"
-                        type="text"
-                        name="graduationYear"
-                        className="input"
-                        value={educations[index].graduationYear} 
-                        placeholder="2024"
-                        onChange={handleChange}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="qualification">GPA/CGPA</label>
-                    <input 
-                        id="qualification"
-                        type="text"
-                        name="result"
-                        className="input"
-                        value={educations[index].result} 
-                        placeholder="5.00 ( out of 5)"
-                        onChange={handleChange}
-                    />
-                </div>
-            </div> */}
+                </div> 
         </Modal>
     )
 }

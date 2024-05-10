@@ -27,7 +27,7 @@ export default function Reference({ data }){
                         <Text>{reference.institute}</Text>
                         {
                             reference.phone && reference.phone?.length>0 && (
-                                <View style={{ flexDirection: 'row', paddingTop: 2 }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 2 }}>
                                     <Image style={{ width: 13, height: 10 }} src="/icons/aoc/phone.png"/>
                                     <Text> {reference.phone}</Text>
                                 </View>
@@ -36,7 +36,7 @@ export default function Reference({ data }){
                        
                         {
                             reference.email && reference.email?.length>0 && (
-                                <View style={{ flexDirection: 'row', paddingTop: 2 }}>
+                                <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 2 }}>
                                     <Image style={{ width: 12, height: 9 }} src="/icons/aoc/email.png"/>
                                     <Text> {reference.email}</Text>
                                 </View>

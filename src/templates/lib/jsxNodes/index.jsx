@@ -1,4 +1,4 @@
-import { View, Text } from "@react-pdf/renderer"
+import { View, Text, Image, Svg, Circle } from "@react-pdf/renderer"
 
 export default function jsxNodes(nodes){
     return nodes.map((node, index) => {
@@ -12,14 +12,15 @@ export default function jsxNodes(nodes){
         )
       } else if (node.type === 'li') {
         return (
-          <View key={index} style={{flexDirection: 'row'}}>
-            <View>
-              <Text style={{fontSize: 15, justifyContent: 'center', alignItems: 'center'}}>{'\u2022'}</Text>
+          <View key={index}>
+            <View style={{ marginRight: 3 }}>
+              <Image style={{ width: 4, height: 4 }} src="/icons/aoc/dots.png"/>
             </View>
-            <View>
+            <View><Text style={{ fontSize: 4, color: '#FFFFFF'}}>g</Text></View>
+            <View style={{ marginTop: 20, paddingTop: 20}}>
               <Text style={{ marginLeft: 5 }}>{jsxNodes(node.data)}</Text>
+              <Text>{'\n'}</Text>
             </View>
-            <Text>{'\n'}</Text>
           </View>
         )
       } else if (node.type === 'p') {
@@ -46,3 +47,4 @@ export default function jsxNodes(nodes){
       return null
     })
 }
+

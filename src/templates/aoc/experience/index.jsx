@@ -10,9 +10,7 @@ const styles = StyleSheet.create({
         fontSize: 10,
         fontWeight: 'bold'
     },
-    employer: {
-        fontSize: 10
-    },
+
     description: {
         fontSize: 10
     }
@@ -24,13 +22,16 @@ export default function Experience({data}){
     return(
         <View style={{marginTop: 10}}>
             <Heading title="Experience" height={10} width={10} img="/icons/aoc/experience.png"/>
-            <View style={{paddingTop: 10, paddingLeft: 10 }}>
+            <View style={{ paddingTop: 10, paddingLeft: 10, marginBottom: 20 }}>
             {
-                experiences && experiences.map((e, index)=>(
-                    <View style={styles.item} key={index}>
-                        <Text style={styles.title}>{e?.title}</Text>
-                        <Text style={styles.employer}>{e?.employer}, {e?.city}</Text>
-                        <Description heading="Duties" description={e.description}/>
+                experiences && experiences.map((ex, index)=>(
+                    <View style={{paddingBottom: 4}} key={index}>
+                        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <Text style={{ color: '#FF7D00', fontWeight: 'bold' }}>{ex?.title}</Text>
+                            <Text style={{ color: '#FF7D00', fontWeight: 'semibold'}}>{ex.duration}</Text>
+                        </View>
+                        <Text style={{fontSize: 10, marginBottom: 5, fontWeight: 'semibold'}}>{ex?.employer}, {ex?.location}</Text>
+                        <Description heading="" description={ex.description}/>
                     </View>
                 ))
             }
