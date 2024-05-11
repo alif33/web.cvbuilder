@@ -1,9 +1,9 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { onValueChange } from "../../../store/sample/action"
+import { onValueChange } from "../../../store/resume/action"
 
 export default function Heading(){
-    const { heading } = useSelector(state=>state.sample)
+    const { heading } = useSelector(state=>state.resume)
     const dispatch = useDispatch()
     const onChange = e =>{
         dispatch(onValueChange("heading", e.target.name, e.target.value))

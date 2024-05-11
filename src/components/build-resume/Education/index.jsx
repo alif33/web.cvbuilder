@@ -17,7 +17,7 @@ import ReactQuill from "../../../ui/react-quill"
 // import UpdateItem from "./UpdateItem"
 
 export default function Education(){
-    const { educations } = useSelector(state=>state.sample)
+    const { educations } = useSelector(state=>state.resume)
     const [updateItem, setUpdateItem] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
 
@@ -68,96 +68,106 @@ export default function Education(){
         setIsOpen(true)
     }
 
+
+
     return(
         <div id="education" className="mt-3">
             <h1 className="heading py-3">Education / শিক্ষাগত যোগ্যতা</h1>
+            <hr />
             {/* Add Education */}
-            <div className="grid grid-cols-2 font-medium gap-5 mb-3">
-                <div>
-                    <label className="label" htmlFor="qualification">Qualification</label>
-                    <input 
-                        id="qualification"
-                        type="text" 
-                        className="input"
-                        value={education.qualification}
-                        placeholder="Hsc"
-                        onChange={e=>setEducation({
-                            ...education, 
-                            qualification: e.target.value
-                        })}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="institutionName">Institution Name</label>
-                    <input 
-                        id="institutionName"
-                        type="text" 
-                        className="input"
-                        value={education.institutionName}
-                        placeholder="Cantonment public school and college"
-                        onChange={e=>setEducation({
-                            ...education, 
-                            institutionName: e.target.value
-                        })}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="location">Location</label>
-                    <input 
-                        id="location"
-                        type="text" 
-                        className="input"
-                        value={education.location}
-                        placeholder="Mymensingh"
-                        onChange={e=>setEducation({
-                            ...education, 
-                            location: e.target.value
-                        })}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="studyField">Field Of Study</label>
-                    <input 
-                        id="studyField"
-                        type="text"
-                        className="input"
-                        value={education.studyField} 
-                        placeholder="Science, Marketing"
-                        onChange={e=>setEducation({
-                            ...education, 
-                            studyField: e.target.value
-                        })}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="qualification">Year Of Graduation</label>
-                    <input 
-                        id="qualification"
-                        type="text"
-                        className="input"
-                        value={education.graduationYear} 
-                        placeholder="2024"
-                        onChange={e=>setEducation({
-                            ...education, 
-                            graduationYear: e.target.value
-                        })}
-                    />
-                </div>
-                <div>
-                    <label className="label" htmlFor="qualification">GPA/CGPA</label>
-                    <input 
-                        id="qualification"
-                        type="text"
-                        className="input"
-                        value={education.result} 
-                        placeholder="5.00 ( out of 5)"
-                        onChange={e=>setEducation({
-                            ...education, 
-                            result: e.target.value
-                        })}
-                    />
-                </div>
-            </div>                        
+            {educations.map((education, index)=>{
+                return(
+                    <div key={index}>
+                        <h1 className="text-xl pb-1">{education.courseName}</h1>
+                        <div className="grid grid-cols-1 md:grid-cols-2 font-medium gap-5 mb-3">
+                            <div>
+                                <label className="label" htmlFor="qualification">Qualification</label>
+                                <input 
+                                    id="qualification"
+                                    type="text" 
+                                    className="input border-black"
+                                    value={education.qualification}
+                                    placeholder="Hsc"
+                                    onChange={e=>{}}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="institutionName">Institution Name</label>
+                                <input 
+                                    id="institutionName"
+                                    type="text" 
+                                    className="input border-black"
+                                    value={education.institutionName}
+                                    placeholder="Cantonment public school and college"
+                                    onChange={e=>setEducation({
+                                        ...education, 
+                                        institutionName: e.target.value
+                                    })}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="location">Location</label>
+                                <input 
+                                    id="location"
+                                    type="text" 
+                                    className="input border-black"
+                                    value={education.location}
+                                    placeholder="Mymensingh"
+                                    onChange={e=>setEducation({
+                                        ...education, 
+                                        location: e.target.value
+                                    })}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="studyField">Field Of Study</label>
+                                <input 
+                                    id="studyField"
+                                    type="text"
+                                    className="input border-black"
+                                    value={education.studyField} 
+                                    placeholder="Science, Marketing"
+                                    onChange={e=>setEducation({
+                                        ...education, 
+                                        studyField: e.target.value
+                                    })}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="qualification">Year Of Graduation</label>
+                                <input 
+                                    id="qualification"
+                                    type="text"
+                                    className="input border-black"
+                                    value={education.graduationYear} 
+                                    placeholder="2024"
+                                    onChange={e=>setEducation({
+                                        ...education, 
+                                        graduationYear: e.target.value
+                                    })}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="qualification">GPA/CGPA</label>
+                                <input 
+                                    id="qualification"
+                                    type="text"
+                                    className="input border-black"
+                                    value={education.result} 
+                                    placeholder="5.00 ( out of 5)"
+                                    onChange={e=>setEducation({
+                                        ...education, 
+                                        result: e.target.value
+                                    })}
+                                />
+                            </div>
+                        </div>  
+                    </div>
+                
+                    
+                )
+            })}
+                                
         </div>
     )
 }

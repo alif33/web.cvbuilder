@@ -2,6 +2,7 @@ import { combineReducers } from "@reduxjs/toolkit"
 import { Blog, Example, Information, Resume } from "./api"
 import { informationSlice } from "./information/slice"
 import { sampleSlice } from "./sample/slice"
+import { resumeSlice } from "./resume/slice"
 
 export const rootReducer = combineReducers({
   [Blog.reducerPath]: Blog.reducer,
@@ -10,4 +11,5 @@ export const rootReducer = combineReducers({
   [Resume.reducerPath]: Resume.reducer,
   information: informationSlice.reducer,
   sample: sampleSlice.reducer,
+  resume: resumeSlice.reducer,
 })
