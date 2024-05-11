@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Font } from "@react-pdf/renderer"
 import Aob from "../templates/aob"
-// import Aoc from "../templates/aoc"
-// import Aod from "../templates/aod"
+import Aoc from "../templates/aoc"
+import Aod from "../templates/aod"
 
 Font.registerHyphenationCallback(word => [word])
 Font.register(
@@ -80,15 +80,14 @@ Font.register(
     // },
 );
 
-// const temps = {
-//     aob: Aob,
-//     aoc: Aoc,
-//     aod: Aod,
-// }
+const temps = {
+    aob: Aob,
+    aoc: Aoc,
+    aod: Aod,
+}
 
 export default function Templates({ data }){
-    // const Template = temps[`${data?.templateName}`] || Aod
-    const Template =  Aob
+    const Template = temps[`${data?.templateName}`] || Aod
 
     return(
         <Template data={data}/>

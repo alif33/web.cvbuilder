@@ -20,10 +20,12 @@ export default function Avatar({ data }){
 
     return(
         <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 40}}>
-            <Image 
-                src={handleResize(data.image.secure_url)}
-                style={styles.image}
-            />
+            {data?.image && data?.image?.secure_url && (
+                <Image 
+                    src={handleResize(data.image.secure_url)}
+                    style={styles.image}
+                />
+            )}
         </View>
     )
 }

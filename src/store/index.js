@@ -8,7 +8,7 @@ import { Blog, Example, Information, Resume } from "./api"
 const persistConfig = {
     key: 'root',
     whitelist: [
-        'sample',
+        // 'sample',
         'resume'
     ],
     storage,
