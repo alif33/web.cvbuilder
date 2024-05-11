@@ -1,25 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React, { useRef, useState } from "react"
+import React, { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { 
-    onListChange,
-    setList,
-    removeItem 
-} from "../../../store/sample/action"
-import { 
-    FaPlus, 
-    RxCross2,
-    IoReload, 
-    RiDeleteBin6Line,
-    CiEdit 
-} from "../../../icons"
-import ReactQuill from "../../../ui/react-quill"
-// import UpdateItem from "./UpdateItem"
+    updateItem
+} from "../../../store/resume/action"
 
 export default function Education(){
     const { educations } = useSelector(state=>state.resume)
-    const [updateItem, setUpdateItem] = useState(null)
-    const [isOpen, setIsOpen] = useState(false)
 
     const [education, setEducation] = useState({
         institutionName: "",
@@ -30,45 +17,12 @@ export default function Education(){
         result: "",
         description: ""
     })
+
     const dispatch = useDispatch()
 
-    const dragEducation = useRef(0)
-    const draggedOverEducation = useRef(0)
-
-    function handleSort() {
-        const edus = [...educations]
-        const temp = edus[dragEducation.current]
-        edus[dragEducation.current] = edus[draggedOverEducation.current]
-        edus[draggedOverEducation.current] = temp
-        dispatch(setList("educations", edus))
+    const onEducation = (index, e)=>{
+        dispatch(updateItem("educations", index, e.target.name, e.target.value))
     }
-
-    const onEducation = ()=>{
-        dispatch(onListChange("educations", education))
-        setEducation({
-            institutionName: "",
-            location: "",
-            qualification: "",
-            studyField: "",
-            graduationYear: "",
-            result: "",
-            description: ""
-        })
-    }
-
-    const changeDescription = e=>{
-        setEducation({
-            ...education, 
-            description: e
-        })
-    }
-
-    const handleUpdate = index =>{
-        setUpdateItem(index)
-        setIsOpen(true)
-    }
-
-
 
     return(
         <div id="education" className="mt-3">
@@ -78,17 +32,18 @@ export default function Education(){
             {educations.map((education, index)=>{
                 return(
                     <div key={index}>
-                        <h1 className="text-xl pb-1">{education.courseName}</h1>
+                        <h1 className="text-lg font-semibold pb-1">{education.courseName}</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 font-medium gap-5 mb-3">
                             <div>
                                 <label className="label" htmlFor="qualification">Qualification</label>
                                 <input 
                                     id="qualification"
                                     type="text" 
+                                    name="qualification"
                                     className="input border-black"
                                     value={education.qualification}
                                     placeholder="Hsc"
-                                    onChange={e=>{}}
+                                    onChange={e=>onEducation(index, e)}
                                 />
                             </div>
                             <div>
@@ -96,13 +51,11 @@ export default function Education(){
                                 <input 
                                     id="institutionName"
                                     type="text" 
+                                    name="institutionName"
                                     className="input border-black"
                                     value={education.institutionName}
                                     placeholder="Cantonment public school and college"
-                                    onChange={e=>setEducation({
-                                        ...education, 
-                                        institutionName: e.target.value
-                                    })}
+                                    onChange={e=>onEducation(index, e)}
                                 />
                             </div>
                             <div>
@@ -110,13 +63,11 @@ export default function Education(){
                                 <input 
                                     id="location"
                                     type="text" 
+                                    name="location"
                                     className="input border-black"
                                     value={education.location}
                                     placeholder="Mymensingh"
-                                    onChange={e=>setEducation({
-                                        ...education, 
-                                        location: e.target.value
-                                    })}
+                                    onChange={e=>onEducation(index, e)}
                                 />
                             </div>
                             <div>
@@ -124,13 +75,11 @@ export default function Education(){
                                 <input 
                                     id="studyField"
                                     type="text"
+                                    name="studyField"
                                     className="input border-black"
                                     value={education.studyField} 
                                     placeholder="Science, Marketing"
-                                    onChange={e=>setEducation({
-                                        ...education, 
-                                        studyField: e.target.value
-                                    })}
+                                    onChange={e=>onEducation(index, e)}
                                 />
                             </div>
                             <div>
@@ -138,13 +87,11 @@ export default function Education(){
                                 <input 
                                     id="qualification"
                                     type="text"
+                                    name="graduationYear"
                                     className="input border-black"
                                     value={education.graduationYear} 
                                     placeholder="2024"
-                                    onChange={e=>setEducation({
-                                        ...education, 
-                                        graduationYear: e.target.value
-                                    })}
+                                    onChange={e=>onEducation(index, e)}
                                 />
                             </div>
                             <div>
@@ -152,19 +99,15 @@ export default function Education(){
                                 <input 
                                     id="qualification"
                                     type="text"
+                                    name="result"
                                     className="input border-black"
                                     value={education.result} 
                                     placeholder="5.00 ( out of 5)"
-                                    onChange={e=>setEducation({
-                                        ...education, 
-                                        result: e.target.value
-                                    })}
+                                    onChange={e=>onEducation(index, e)}
                                 />
                             </div>
                         </div>  
-                    </div>
-                
-                    
+                    </div> 
                 )
             })}
                                 
