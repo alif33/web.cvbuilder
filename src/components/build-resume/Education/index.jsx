@@ -31,7 +31,7 @@ export default function Education(){
             {/* Add Education */}
             {educations.map((education, index)=>{
                 return(
-                    <div key={index}>
+                    <div className="border-2 border-black p-3 mb-3" key={index}>
                         <h1 className="text-lg font-semibold pb-1">{education.courseName}</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 font-medium gap-5 mb-3">
                             <div>
