@@ -26,7 +26,7 @@ export default function Education(){
 
     return(
         <div id="education" className="mt-3">
-            <h1 className="heading py-3">Education / শিক্ষাগত যোগ্যতা</h1>
+            <h1 className="heading py-3 text-center">Education / শিক্ষাগত যোগ্যতা</h1>
             <hr />
             {/* Add Education */}
             {educations.map((education, index)=>{
