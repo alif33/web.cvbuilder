@@ -1,10 +1,6 @@
 import { sampleSlice } from "./slice"
 const { actions: slice } = sampleSlice
 
-export const onStage = (stage) => (dispatch) => {
-    dispatch(slice.onStage(stage))
-}
-
 // Value
 export const onValueChange = (field, property, value) => (dispatch) => {
     dispatch(slice.onValueChange({field, property, value}))
@@ -114,6 +110,10 @@ export const dropSection = (position, section)=>(dispatch) => {
 
 export const addSection = (position, section)=>(dispatch) => {
     dispatch(slice.addSection({position, section}))
+}
+
+export const fetchResume = (resume)=>(dispatch) => {
+    dispatch(slice.fetchResume(resume))
 }
 
 export const updateResume = (resume)=>(dispatch) => {

@@ -2,7 +2,8 @@
 import { 
     Document,
     Page, 
-    View,  
+    View, 
+    Text, 
     StyleSheet 
 } from "@react-pdf/renderer"
 import Summary from "./summary"

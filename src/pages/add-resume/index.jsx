@@ -18,9 +18,9 @@ export default function AddResume(){
     return(
         <div className="flex max-h-screen ml-2 overflow-y-hidden">
             <div className="basis-1/12 min-h-screen">
-                <div className="flex flex-col justify-between min-h-screen">
-                    <SideMenu/>
+                <div className="flex flex-col min-h-screen">
                     <Panel mode={mode} setMode={setMode}/>
+                    <SideMenu/>
                 </div>
             </div>
             <div className="min-h-screen basis-6/12 overflow-y-scroll px-2 pt-3 pb-20">
@@ -31,8 +31,8 @@ export default function AddResume(){
             </div>
             <div className="basis-5/12">
                 <PDFViewer style={containerStyle}>
-                <Template data={resume}/>
-            </PDFViewer>
+                    <Template data={resume}/>
+                </PDFViewer>
             </div>
         </div>
     )

@@ -7,17 +7,6 @@ import {
 
 export default function Education(){
     const { educations } = useSelector(state=>state.resume)
-
-    const [education, setEducation] = useState({
-        institutionName: "",
-        location: "",
-        qualification: "",
-        studyField: "",
-        graduationYear: "",
-        result: "",
-        description: ""
-    })
-
     const dispatch = useDispatch()
 
     const onEducation = (index, e)=>{

@@ -25,7 +25,7 @@ import {
     CiEdit
 } from "react-icons/ci"
 import { IoIosAlbums } from "react-icons/io"
-
+import { VscSaveAll } from "react-icons/vsc"
 
 export { 
     GoDownload,
@@ -47,5 +47,6 @@ export {
     CiImageOn,
     CiImport,
     CiEdit,
-    IoIosAlbums
+    IoIosAlbums,
+    VscSaveAll
 }

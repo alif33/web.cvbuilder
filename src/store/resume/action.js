@@ -1,10 +1,6 @@
 import { resumeSlice } from "./slice"
 const { actions: slice } = resumeSlice
 
-export const onStage = (stage) => (dispatch) => {
-    dispatch(slice.onStage(stage))
-}
-
 // Value
 export const onValueChange = (field, property, value) => (dispatch) => {
     dispatch(slice.onValueChange({field, property, value}))

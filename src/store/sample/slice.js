@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit"
 export const sampleSlice = createSlice({
     name: "sample",
     initialState: {
-        stage: "heading",
         heading: {
             firstName: "",
             surName: "",
@@ -17,7 +16,7 @@ export const sampleSlice = createSlice({
         },
         // Text area
         summary: {heading: "Summary", body: ""},
-        objectives: {heading: "Objectives", body: ""},
+        objective: {heading: "Objectives", body: ""},
         declaration: {heading: "Declaration", body: ""},
         expertise: {heading: "Expertise", body: ""},
         educations: [],
@@ -44,9 +43,6 @@ export const sampleSlice = createSlice({
     },
 
     reducers: {
-        onStage: (state, action) => {
-            state.stage = action.payload
-        },
 
         // for nested obj
         onValueChange: (state, action)=>{
@@ -155,6 +151,15 @@ export const sampleSlice = createSlice({
             if (!state.layout[position].includes(section)) {
                 state.layout[position].push(section)
             }
+        },
+
+        fetchResume: (state, action)=>{
+            const sections = ["heading", "summary", "objectives", "declaration", "expertise", "educations", "experiences", "skills", "references", "personal", "passport", "layout", "image", "signature", "templateName"]
+            sections.forEach(section => {
+                if (action.payload[section]) {
+                    state[section] = action.payload[section]
+                }
+            })
         },
 
         updateResume: (state, action)=>{

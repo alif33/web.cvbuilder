@@ -7,7 +7,7 @@ export default function SideMenu(){
     const navItems = ["Heading", "Education", "Experience", "Skills", "Reference", "Training", "Personal", "Textarea", "Image", "Signature", "Passport"]
 
     return(
-        <ul className="flex flex-col font-medium pt-5 gap-3">
+        <ul className="flex flex-col font-medium pt-2 gap-3">
             {
                 navItems.map((nav, index)=>(
                     <li key={index}><a className={`btn-tab ${currentLocation===nav.toLowerCase() ? "bg-black text-white": ""}`} href={`/add-resume/#${nav.toLowerCase()}`}>{nav}</a></li>

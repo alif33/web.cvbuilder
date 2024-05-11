@@ -4,13 +4,9 @@ import { educationsSchema } from "../../const"
 export const resumeSlice = createSlice({
     name: "resume",
     initialState: {
-        stage: "heading",
         heading: {
             firstName: "",
             surName: "",
-            city: "",
-            country: "",
-            postalCode: "",
             address: "",
             phone: "",
             email: "",
@@ -45,9 +41,6 @@ export const resumeSlice = createSlice({
     },
 
     reducers: {
-        onStage: (state, action) => {
-            state.stage = action.payload
-        },
 
         // for nested obj
         onValueChange: (state, action)=>{
@@ -183,3 +176,7 @@ export const resumeSlice = createSlice({
 
     }
 })
+
+
+
+
