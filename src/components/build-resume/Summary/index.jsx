@@ -7,7 +7,7 @@ export default function Summary(){
     const dispatch = useDispatch()
 
     return(
-        <div className="my-7" id="textarea">
+        <div className="my-7" id="summary">
             <h1 className="heading text-center">Summary</h1>
             <div className="mt-3">
                 <textarea 

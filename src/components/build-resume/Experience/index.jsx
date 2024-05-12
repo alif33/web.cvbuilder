@@ -72,6 +72,14 @@ export default function Experience(){
         setIsOpen(true)
     }
 
+    const handleNone = ()=>{
+        setHave(false)
+        const elementSummary = document.getElementById("summary")
+        elementSummary.scrollIntoView({
+            behavior: 'smooth'
+        })
+    }
+
     return(
         <div ref={experienceRef} id="experience" className="mt-3">
             <h1 className="heading text-center py-3">কর্মক্ষেত্রে অভিজ্ঞতা</h1>
@@ -85,7 +93,7 @@ export default function Experience(){
                 experiences.length === 0 && (
                     <div className="flex justify-center items-center gap-7">
                         <button onClick={()=>setHave(true)} className="w-40 bg-black text-white py-2 rounded-sm">যুক্ত করতে চাই</button>
-                        <button className="w-40 bg-gray-400 text-white py-2 rounded-sm">না নেই</button>
+                        <button onClick={handleNone} className="w-40 bg-gray-400 text-white py-2 rounded-sm">না নেই</button>
                     </div>
                 )
             }
@@ -212,12 +220,19 @@ export default function Experience(){
                                 handleChange={changeDescription}
                             />
                         </div> 
-                        <div>
-                            <button onClick={onExperience}>Add</button> 
+                        <div className="flex justify-center pt-5 pb-3">
+                            <button className="bg-black text-white px-3 py-2 rounded-sm" onClick={onExperience}>যুক্ত করুন</button> 
                         </div>               
                     </div>
                )
             } 
+            {
+                experiences.length>0 && !have && (
+                    <div className="flex justify-center">
+                        <button onClick={()=>setHave(true)} className="bg-black text-white px-3 py-2 rounded-sm">আরো অভিজ্ঞতা যুক্ত করুন</button>
+                    </div>
+                )
+            }
         </div>
         
     )
