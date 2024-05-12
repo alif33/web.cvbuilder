@@ -58,7 +58,7 @@ export default function BuildResume(){
             <Declaration/>
             <Personal/>
             <Passport/>
-            <div className="flex justify-center mb-20">
+            <div className="flex justify-center mb-20 mt-12">
                 <button onClick={handleSubmit} className="h-10 w-40 rounded-lg bg-black text-white">Submit</button>
             </div>
         </div>   

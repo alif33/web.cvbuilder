@@ -14,8 +14,8 @@ export default function Personal(){
         <div id="personal" className="mt-3 mb-7">
             <h1 className="heading text-center">Personal Information</h1>
             {/* Name */}
-            <div className="flex gap-3">
-                <div className="basis-1/2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
                     <label className="label" htmlFor="fatherName">Father’s Name</label>
                     <input 
                         id="fatherName"
@@ -26,7 +26,7 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-1/2">
+                <div>
                     <label className="label" htmlFor="motherName">Mother’s Name</label>
                     <input 
                         id="motherName"
@@ -37,24 +37,21 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-            </div>
+                {/* Address */}
+                <div>
+                    <label className="label" htmlFor="permanentAddress">Permanent Address</label>
+                    <input 
+                        id="permanentAddress"
+                        type="text"
+                        name="permanentAddress"
+                        className="input border-black"
+                        value={personal.permanentAddress}
+                        onChange={onChange}
+                    />
+                </div>
 
-            {/* Address */}
-            <div className="">
-                <label className="label" htmlFor="permanentAddress">Permanent Address</label>
-                <input 
-                    id="permanentAddress"
-                    type="text"
-                    name="permanentAddress"
-                    className="input border-black"
-                    value={personal.permanentAddress}
-                    onChange={onChange}
-                />
-            </div>
-
-            {/* Secrect */}
-            <div className="flex gap-3">
-                <div className="basis-4/12">
+                {/* Secrect */}
+                <div>
                     <label className="label" htmlFor="Nationality">Nationality</label>
                     <input 
                         id="Nationality"
@@ -65,7 +62,7 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-4/12">
+                <div>
                     <label className="label" htmlFor="NID">National ID No</label>
                     <input 
                         id="NID"
@@ -76,7 +73,7 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-4/12">
+                <div>
                     <label className="label" htmlFor="Religion">Religion</label>
                     <input 
                         id="Religion"
@@ -87,9 +84,7 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-            </div>
-            <div className="flex gap-3">
-                <div className="basis-3/12">
+                <div>
                     <label className="label" htmlFor="DOB">Date of Birth</label>
                     <input 
                         id="DOB"
@@ -100,7 +95,7 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-3/12">
+                <div>
                     <label className="label" htmlFor="Sex">Sex</label>
                     <input 
                         id="Sex"
@@ -111,7 +106,7 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-3/12">
+                <div>
                     <label className="label" htmlFor="maritalStatus">Marital Status</label>
                     <input 
                         id="maritalStatus"
@@ -122,7 +117,7 @@ export default function Personal(){
                         onChange={onChange}
                     />
                 </div>
-                <div className="basis-3/12">
+                <div>
                     <label className="label" htmlFor="bloodGroup">Blood Group</label>
                     <input 
                         id="bloodGroup"
