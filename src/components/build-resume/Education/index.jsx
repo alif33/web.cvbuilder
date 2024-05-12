@@ -3,7 +3,8 @@ import React, { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { 
     updateItem,
-    insertItem
+    insertItem,
+    removeItem
 } from "../../../store/resume/action"
 import Swal from "sweetalert2"
 import { educationsSchema } from "../../../const"
@@ -44,6 +45,7 @@ export default function Education(){
                 if (result.isConfirmed) {
                     const filteredCertificates = certificates.filter(cert => cert !== name)
                     setCertificates(filteredCertificates)
+                    dispatch(removeItem("educations", index))
                 } 
               })
         }

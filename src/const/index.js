@@ -31,4 +31,14 @@ export const educationsSchema = [
         result: "",
         description: ""
     },
+    {   
+        courseName: "Hpon's/Bsc/MBBS/Fazil (সমমান)",
+        institutionName: "",
+        location: "",
+        qualification: "",
+        studyField: "",
+        graduationYear: "",
+        result: "",
+        description: ""
+    },
 ]
