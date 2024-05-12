@@ -22,11 +22,11 @@ export default function Education(){
 
     return(
         <div id="education" className="mt-3">
-            <h1 className="heading py-3 text-center">Educations / শিক্ষাগত যোগ্যতা</h1>
+            <h1 className="heading py-3 text-center">শিক্ষাগত যোগ্যতা</h1>
             <hr />
             <div className="my-9">
                 <h2 className="text-center text-lg pb-5">আপনি যেই শিক্ষাগত যোগ্যতাগুলো এড করতে চান সেগুলো সিলেক্ট করুন</h2>
-                <div className="flex flex-grow">
+                <div className="flex flex-wrap">
                     {certificates.map((certificate, index)=>(
                         <span className="border border-black py-2 px-3 rounded-full mr-3 cursor-pointer" key={index}>{certificate.label}</span>
                     ))}
