@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from "react-redux"
 import { 
     updateItem
 } from "../../../store/resume/action"
+import Swal from 'sweetalert2'
 
 export default function Education(){
+    const [certificates, setCertificates] = useState([])
     const { educations } = useSelector(state=>state.resume)
     const dispatch = useDispatch()
 
@@ -13,12 +15,34 @@ export default function Education(){
         dispatch(updateItem("educations", index, e.target.name, e.target.value))
     }
 
-    const certificates = [
+    const certifications = [
         {name: "jsc", label: "JSC/JDC"},
         {name: "ssc", label: "JSC/Dhakil"},
         {name: "hsc", label: "JSC/Alim"},
         {name: "hons", label: "'Hon's'/Bsc/Mbbs/Fazil"},
     ]
+
+    const toggleCertificate = (name, label) =>{
+        if(!certificates.includes(name)){
+            setCertificates([...certificates, name])
+        }else{
+            Swal.fire({
+                icon: "question",
+                title: `আপনি কি ${label} বাদ দিতে চান?`,
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Ha",
+                denyButtonText: `Don't save`
+              }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                  Swal.fire("Saved!", "", "success");
+                } else if (result.isDenied) {
+                  Swal.fire("Changes are not saved", "", "info");
+                }
+              });
+        }
+    }
 
     return(
         <div id="education" className="mt-3">
@@ -27,8 +51,14 @@ export default function Education(){
             <div className="my-3">
                 <h2 className="text-center text-lg py-5">আপনি যেই শিক্ষাগত যোগ্যতাগুলো এড করতে চান সেগুলো সিলেক্ট করুন</h2>
                 <div className="flex flex-wrap">
-                    {certificates.map((certificate, index)=>(
-                        <span className="border border-black py-2 px-3 rounded-full mr-3 cursor-pointer mb-3" key={index}>{certificate.label}</span>
+                    {certifications.map((certificate, index)=>(
+                        <span 
+                            key={index}
+                            onClick={()=>toggleCertificate(certificate.name, certificate.label)} 
+                            className={` ${certificates.includes(certificate.name)? "bg-black text-white": "border-black"} border py-2 px-3 rounded-full mr-3 cursor-pointer mb-3`} 
+                        >
+                            {certificate.label}
+                        </span>
                     ))}
                 </div>
             </div>
