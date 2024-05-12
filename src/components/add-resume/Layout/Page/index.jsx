@@ -50,7 +50,7 @@ export default function Page({ title, left, right }){
                                 if (!isExist) {
                                     return(
                                         <li key={index}>
-                                            <span onClick={()=>handleAdd(section)} className="py-1 bg-black text-white px-2 rounded-full cursor-pointer">{section}</span> 
+                                            <span onClick={()=>handleAdd(section)} className="py-1 bg-black text-white px-2 rounded-full cursor-pointer capitalize">{section}</span> 
                                         </li>
                                     )
                                 }

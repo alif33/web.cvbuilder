@@ -4,10 +4,14 @@ import { jsonrepair } from "jsonrepair"
 import { updateResume, fetchResume } from "../../../store/sample/action"
 import { IoReload } from "../../../icons"
 import { findByEmail } from "../../../db/queries"
+import { GoSearch } from "react-icons/go";
+import Spinner from "./Spinner"
+
 // import { fetchResume } from "../../../store/sampl"
 
 export default function ImportFile(){
     const [data, setData] = useState()
+    const [loading, setLoading] = useState(false)
     const [text, setText] = useState("")
     const [email, setEmail] = useState("")
     const dispatch = useDispatch()
@@ -23,10 +27,12 @@ export default function ImportFile(){
     const resume = data?.resume || false
 
     const handleFind = async()=>{
+        setLoading(true)
         const resume = await findByEmail(email)
         if (resume) {
             dispatch(fetchResume(resume))
         }
+        setLoading(false)
     }
 
     return(
@@ -51,7 +57,9 @@ export default function ImportFile(){
                                     onChange={e=>setEmail(e.target.value)}
                                 />
                                 <span onClick={handleFind} className="flex items-center justify-center bg-black text-white py-[5px] px-2 rounded-tr-sm rounded-br-sm cursor-pointer">
-                                    <h3 className="font-medium">Find</h3>
+                                    <h3 className="font-medium">
+                                        {loading? <Spinner/>: <GoSearch size={24}/>}                                        
+                                    </h3>
                                 </span>
                             </div>
                         </div>

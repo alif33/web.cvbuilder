@@ -33,7 +33,7 @@ export default function Section({ sections, position }){
                     onDragEnd={handleSort}
                     onDragOver={(e) => e.preventDefault()}
                 >
-                    <span className="bg-black text-white py-1 px-2 rounded-full">{section}</span>
+                    <span className="bg-black text-white py-1 px-2 rounded-full capitalize">{section}</span>
                     <span className=" cursor-pointer" onClick={()=>handleDrop(section)}><IoClose size={20}/></span>
                 </li>
             ))}
