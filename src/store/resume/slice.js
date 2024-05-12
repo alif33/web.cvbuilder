@@ -14,7 +14,7 @@ export const resumeSlice = createSlice({
         },
         // Text area
         summary: {heading: "Summary", body: ""},
-        objectives: {heading: "Objectives", body: ""},
+        objective: {heading: "Objectives", body: ""},
         declaration: {heading: "Declaration", body: ""},
         expertise: {heading: "Expertise", body: ""},
         educations: educationsSchema,

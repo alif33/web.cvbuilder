@@ -21,16 +21,19 @@ export default function Heading(){
                         type="text"
                         name="firstName" 
                         className="input"
+                        placeholder="Ismail h."
                         value={heading.firstName}
                         onChange={onChange}
                     />
                 </div>
                 <div className="basis-1/2">
-                    <label className="label" htmlFor="">Surname</label>
+                    <label className="label" htmlFor="surName">Surname</label>
                     <input 
+                        id="surName"
                         type="text" 
                         className="input"
                         name="surName"
+                        placeholder="Alif"
                         value={heading.surName}
                         onChange={onChange}
                     />
@@ -39,67 +42,52 @@ export default function Heading(){
 
             {/* Address */}
             <div className="">
-                <label className="label" htmlFor="">Address</label>
+                <label className="label" htmlFor="Address">Address</label>
                 <input 
+                    id="Address"
                     type="text"
                     className="input"
                     name="address"
+                    placeholder="Ponghagra churkhai mymensingh"
                     value={heading.address} 
                     onChange={onChange}
                 />
             </div>
 
-            {/* Partials */}
-            <div className="flex gap-3">
-                <div className="basis-3/12">
-                    <label className="label" htmlFor="">City</label>
-                    <input 
-                        type="text"
-                        className="input"
-                        name="city"
-                        value={heading.city} 
-                        onChange={onChange}
-                    />
-                </div>
-                <div className="basis-3/12">
-                    <label className="label" htmlFor="">Country</label>
-                    <input 
-                        type="text" 
-                        className="input"
-                        name="country"
-                        value={heading.country}
-                        onChange={onChange}
-                    />
-                </div>
-            </div>
             {/* Contact */}
             <div className="flex gap-3">
                 <div className="basis-4/12">
-                    <label className="label" htmlFor="">Email</label>
+                    <label className="label" htmlFor="Email">Email</label>
                     <input 
+                        id="Email"
                         type="text" 
                         className="input"
                         name="email"
+                        placeholder="alif@gmail.com"
                         value={heading.email}
                         onChange={onChange}
                     />
                 </div>
                 <div className="basis-4/12">
-                    <label className="label" htmlFor="">Phone</label>
+                    <label className="label" htmlFor="phoneNumber">Phone</label>
                     <input 
+                        id="phoneNumber"
                         type="text" 
                         className="input"
                         name="phone"
+                        placeholder="+8801625794888"
                         value={heading.phone}
                         onChange={onChange}
                     />
                 </div>
                 <div className="basis-4/12">
-                    <label className="label" htmlFor="">Linkedin</label>
+                    <label className="label" htmlFor="linkedIn">Linkedin</label>
                     <input 
+                        id="linkedIn"
                         type="text" 
                         className="input"
                         name="linkedin"
+                        placeholder="linkedin.co/alif"
                         value={heading.linkedin}
                         onChange={onChange}
                     />
