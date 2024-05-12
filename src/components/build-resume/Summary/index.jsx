@@ -8,8 +8,9 @@ export default function Summary(){
 
     return(
         <div className="my-7" id="summary">
-            <h1 className="heading text-center">Summary</h1>
-            <div className="mt-3">
+            <h1 className="heading text-center mb-3">Summary(optional)</h1>
+            <hr />
+            <div className="mt-5">
                 <textarea 
                     rows={8}
                     cols={3}

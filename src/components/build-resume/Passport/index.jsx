@@ -11,9 +11,10 @@ export default function Passport(){
 
     return(
         <div id="passport">
-            <h1 className="heading text-center pt-3">Passport</h1>
+            <h1 className="heading text-center pb-3">Passport(optional)</h1>
+            <hr />
             {/* Passport details */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5">
                 <div>
                     <label className="label" htmlFor="passportNo">Passport No</label>
                     <input 

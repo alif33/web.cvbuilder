@@ -12,9 +12,10 @@ export default function Personal(){
 
     return(
         <div id="personal" className="mt-3 mb-7">
-            <h1 className="heading text-center">Personal Information</h1>
+            <h1 className="heading text-center mb-3">Personal Information(optional)</h1>
+            <hr />
             {/* Name */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5">
                 <div>
                     <label className="label" htmlFor="fatherName">Father’s Name</label>
                     <input 

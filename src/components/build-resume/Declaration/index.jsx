@@ -8,8 +8,9 @@ export default function Declaration(){
 
     return(
         <div className="my-7" id="textarea">
-            <h1 className="heading text-center">Declaration</h1>
-            <div className="mt-3">
+            <h1 className="heading text-center mb-3">Declaration(optional)</h1>
+            <hr />
+            <div className="mt-5">
                 <textarea 
                     rows={8}
                     cols={3}
