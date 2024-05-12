@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import Heading from "../../components/build-resume/Heading"
 import Education from "../../components/build-resume/Education"
+import Experience from "../../components/build-resume/Experience"
 import Summary from "../../components/build-resume/Summary"
 import Objective from "../../components/build-resume/Objective"
 import Declaration from "../../components/build-resume/Declaration"
@@ -51,6 +52,7 @@ export default function BuildResume(){
         <div className="max-w-[750px] mx-auto px-2 pt-7">
             <Heading/>
             <Education/>
+            <Experience/>
             <Summary/>
             <Objective/>
             <Declaration/>
