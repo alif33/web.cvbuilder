@@ -30,17 +30,20 @@ export default function Education(){
                 icon: "question",
                 title: `আপনি কি ${label} বাদ দিতে চান?`,
                 showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: "Ha",
-                denyButtonText: `Don't save`
-              }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                  Swal.fire("Saved!", "", "success");
-                } else if (result.isDenied) {
-                  Swal.fire("Changes are not saved", "", "info");
+                confirmButtonText: "হ্যাঁ",
+                denyButtonText: 'না',
+                // buttonsStyling: false,
+                customClass: {
+                    confirmButton: 'btn-confirm',
+                    denyButton: 'btn-deny'
                 }
-              });
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire("Saved!", "", "success")
+                } else if (result.isDenied) {
+                  Swal.fire("Changes are not saved", "", "info")
+                }
+              })
         }
     }
 

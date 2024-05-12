@@ -52,3 +52,13 @@ body{
     height: 250px;
     overflow-y: scroll;
 }
+
+.btn-confirm {
+    background-color: red;
+    color: white;
+}
+
+.btn-deny {
+    background-color: black;
+    color: white;
+}
