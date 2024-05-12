@@ -14,7 +14,7 @@ export default function Declaration(){
                     rows={8}
                     cols={3}
                     className="textarea border-black"
-                    placeholder="আপনার ডিক্লিয়ারেশন লিখুন"
+                    placeholder="ডিক্লিয়ারেশন লিখুন"
                     value={resume.declaration.body}
                     onChange={e=>dispatch(onTextarea("declaration", "body", e.target.value))}
                 >

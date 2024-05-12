@@ -14,7 +14,7 @@ export default function Objective(){
                     rows={8}
                     cols={3}
                     className="textarea border-black"
-                    placeholder="আপনার ক্যারিয়ার অব্জেক্টিভ লিখুন"
+                    placeholder="ক্যারিয়ার অব্জেক্টিভ লিখুন"
                     value={resume.objective.body}
                     onChange={e=>dispatch(onTextarea("objective", "body", e.target.value))}
                 >

@@ -67,7 +67,7 @@ export default function Experience(){
     return(
         <div id="experience" className="mt-3">
             <div className="flex justify-between items-center">
-                <h1 className="heading py-3">Experience</h1>
+                <h1 className="heading text-center py-3">Experiences / অভিজ্ঞতা</h1>
                 <div className="flex gap-3">
                     <button onClick={onExperience} className="h-8 w-8 flex justify-center items-center bg-black text-white rounded-sm shadow-lg"><FaPlus size={20}/></button>
                     <button onClick={()=>dispatch(setList("experiences", []))} className="h-8 w-8 flex justify-center items-center"><IoReload size={20}/></button>
@@ -113,7 +113,7 @@ export default function Experience(){
                         <input 
                             id="jobTitle"
                             type="text" 
-                            className="input"
+                            className="input border-black"
                             placeholder="Junior fornt end developer"
                             value={experience.title}
                             onChange={e=>setExperience({
@@ -127,7 +127,7 @@ export default function Experience(){
                         <input 
                             id="employer"
                             type="text" 
-                            className="input"
+                            className="input border-black"
                             placeholder="Stack Buzz"
                             value={experience.employer}
                             onChange={e=>setExperience({
@@ -141,7 +141,7 @@ export default function Experience(){
                         <input 
                             id="JobLocation"
                             type="text"
-                            className="input"
+                            className="input border-black"
                             placeholder="Amirabad, Maskanda, Mymensingh"
                             value={experience.location} 
                             onChange={e=>setExperience({
@@ -155,7 +155,7 @@ export default function Experience(){
                         <input 
                             id="country"
                             type="text" 
-                            className="input"
+                            className="input border-black"
                             placeholder="Bangladesh"
                             value={experience.country}
                             onChange={e=>setExperience({
@@ -170,7 +170,7 @@ export default function Experience(){
                         <input 
                             id="duration"
                             type="input" 
-                            className="input"
+                            className="input border-black"
                             placeholder="JAN 2020 - MAR 2023"
                             value={experience.duration}
                             onChange={e=>setExperience({

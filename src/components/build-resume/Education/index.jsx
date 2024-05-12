@@ -13,10 +13,26 @@ export default function Education(){
         dispatch(updateItem("educations", index, e.target.name, e.target.value))
     }
 
+    const certificates = [
+        {name: "jsc", label: "JSC/JDC"},
+        {name: "ssc", label: "JSC/Dhakil"},
+        {name: "hsc", label: "JSC/Alim"},
+        {name: "hons", label: "'Hon's'/Bsc/Mbbs/Fazil"},
+    ]
+
     return(
         <div id="education" className="mt-3">
-            <h1 className="heading py-3 text-center">Education / শিক্ষাগত যোগ্যতা</h1>
+            <h1 className="heading py-3 text-center">Educations / শিক্ষাগত যোগ্যতা</h1>
             <hr />
+            <div className="my-9">
+                <h2 className="text-center text-lg pb-5">আপনি যেই শিক্ষাগত যোগ্যতাগুলো এড করতে চান সেগুলো সিলেক্ট করুন</h2>
+                <div>
+                    {certificates.map((certificate, index)=>(
+                        <span className="border border-black py-2 px-3 rounded-full mr-3 cursor-pointer" key={index}>{certificate.label}</span>
+                    ))}
+                </div>
+            </div>
+            
             {/* Add Education */}
             {educations.map((education, index)=>{
                 return(
@@ -24,7 +40,7 @@ export default function Education(){
                         <h1 className="text-lg font-semibold pb-1">{education.courseName}</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 font-medium gap-5 mb-3">
                             <div>
-                                <label className="label" htmlFor="qualification">Qualification</label>
+                                <label className="label" htmlFor="qualification">কোর্সের নাম</label>
                                 <input 
                                     id="qualification"
                                     type="text" 
@@ -36,7 +52,7 @@ export default function Education(){
                                 />
                             </div>
                             <div>
-                                <label className="label" htmlFor="institutionName">Institution Name</label>
+                                <label className="label" htmlFor="institutionName">প্রতিষ্ঠানের নাম</label>
                                 <input 
                                     id="institutionName"
                                     type="text" 
@@ -60,7 +76,7 @@ export default function Education(){
                                 />
                             </div>
                             <div>
-                                <label className="label" htmlFor="studyField">Field Of Study</label>
+                                <label className="label" htmlFor="studyField">গ্রুপ/বিভাগ</label>
                                 <input 
                                     id="studyField"
                                     type="text"
@@ -72,7 +88,7 @@ export default function Education(){
                                 />
                             </div>
                             <div>
-                                <label className="label" htmlFor="qualification">Year Of Graduation</label>
+                                <label className="label" htmlFor="qualification">পাসের সন</label>
                                 <input 
                                     id="qualification"
                                     type="text"
