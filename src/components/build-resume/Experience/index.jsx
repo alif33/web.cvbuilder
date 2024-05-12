@@ -12,13 +12,15 @@ import {
     CiEdit 
 } from "../../../icons"
 import ReactQuill from "../../../ui/react-quill"
+import { useNavigate } from "react-router-dom"
 
 export default function Experience(){
     const { experiences } = useSelector(state=>state.resume)
     const [have, setHave] = useState(false)
     const [updateItem, setUpdateItem] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
-    
+    const navigate = useNavigate()
+
     const [experience, setExperience] = useState({
         title: "",
         employer: "",
@@ -52,6 +54,7 @@ export default function Experience(){
             description: ""
         })
         setHave(false)
+        navigate("/build-resume/#experience")
     }
 
     const changeDescription = e=>{
@@ -70,7 +73,11 @@ export default function Experience(){
         <div id="experience" className="mt-3">
             <h1 className="heading text-center py-3">কর্মক্ষেত্রে অভিজ্ঞতা</h1>
             <hr />
-            <h3 className="py-3 text-center">পূর্বের কোন অভিজ্ঞতা থাকলে যুক্ত করুন</h3>
+            <h3 className="py-3 text-center">
+                {
+                    experiences.length>0 ? "পূর্বের অভিজ্ঞতা সমূহ": "পূর্বের কোন অভিজ্ঞতা থাকলে যুক্ত করুন"
+                }
+            </h3>
             {
                 experiences.length === 0 && (
                     <div className="flex justify-center items-center gap-7">
