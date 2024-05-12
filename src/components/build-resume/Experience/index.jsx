@@ -51,6 +51,7 @@ export default function Experience(){
             duration: "",
             description: ""
         })
+        setHave(false)
     }
 
     const changeDescription = e=>{
@@ -79,139 +80,134 @@ export default function Experience(){
                 )
             }
             
+            {/* Experience list */}
+
+            {
+                experiences.map((item, index)=>(
+                    <div 
+                        key={index}
+                        draggable
+                        onDragStart={() => (dragExperience.current = index)}
+                        onDragEnter={() => (draggedOverExperience.current = index)}
+                        className="flex justify-between border cursor-move p-3 mb-3"
+                        onDragEnd={handleSort}
+                        onDragOver={(e) => e.preventDefault()}
+                    >
+                        <div>
+                            <h1 className="text-base font-medium">{item.title}</h1>
+                            <h2 className="text-sm">{item.employer}, {item.city}</h2>
+                        </div>
+                        <div className="flex gap-2">
+                            <span onClick={()=>handleUpdate(index)} className="cursor-pointer">
+                                <CiEdit size={20}/>
+                            </span>
+                            <span onClick={()=>dispatch(removeItem("experiences", index))} className="cursor-pointer">
+                                <RiDeleteBin6Line size={20}/>
+                            </span>
+                        </div>
+                        
+                    </div>
+                ))
+            }
+                
 
             {/* <div className="flex gap-3">
                 <button onClick={onExperience} className="h-8 w-8 flex justify-center items-center bg-black text-white rounded-sm shadow-lg"><FaPlus size={20}/></button>
                 <button onClick={()=>dispatch(setList("experiences", []))} className="h-8 w-8 flex justify-center items-center"><IoReload size={20}/></button>
             </div> */}
 
-            <div className="border-2 border-black py-5 px-2 mt-3">
-                <div>
-                    {
-                        experiences.map((item, index)=>(
-                            <div 
-                                key={index}
-                                draggable
-                                onDragStart={() => (dragExperience.current = index)}
-                                onDragEnter={() => (draggedOverExperience.current = index)}
-                                className="flex justify-between border cursor-move p-3 mb-3"
-                                onDragEnd={handleSort}
-                                onDragOver={(e) => e.preventDefault()}
-                            >
-                                <div>
-                                    <h1 className="text-base font-medium">{item.title}</h1>
-                                    <h2 className="text-sm">{item.employer}, {item.city}</h2>
-                                </div>
-                                <div className="flex gap-2">
-                                    <span onClick={()=>handleUpdate(index)} className="cursor-pointer">
-                                        <CiEdit size={20}/>
-                                    </span>
-                                    <span onClick={()=>dispatch(removeItem("experiences", index))} className="cursor-pointer">
-                                        <RiDeleteBin6Line size={20}/>
-                                    </span>
-                                </div>
-                                
-                            </div>
-                        ))
-                    }
-                </div>
-                {/* Update Experience */}
-                
-                {experiences.length>0 && (<hr />)}
-                {
+            {experiences.length>0 && (<hr />)}
+
+            {
                     have && (
-                        <>
-                            <div>
-                                <div className="grid grid-cols-2 font-medium gap-5 mb-3">
-                                    <div>
-                                        <label className="label" htmlFor="jobTitle">Job Title</label>
-                                        <input 
-                                            id="jobTitle"
-                                            type="text" 
-                                            className="input border-black"
-                                            placeholder="Junior fornt end developer"
-                                            value={experience.title}
-                                            onChange={e=>setExperience({
-                                                ...experience, 
-                                                title: e.target.value
-                                            })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="label" htmlFor="employer">Employer</label>
-                                        <input 
-                                            id="employer"
-                                            type="text" 
-                                            className="input border-black"
-                                            placeholder="Stack Buzz"
-                                            value={experience.employer}
-                                            onChange={e=>setExperience({
-                                                ...experience, 
-                                                employer: e.target.value
-                                            })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="label" htmlFor="JobLocation">Location</label>
-                                        <input 
-                                            id="JobLocation"
-                                            type="text"
-                                            className="input border-black"
-                                            placeholder="Amirabad, Maskanda, Mymensingh"
-                                            value={experience.location} 
-                                            onChange={e=>setExperience({
-                                                ...experience, 
-                                                location: e.target.value
-                                            })}
-                                        />
-                                    </div>
-                                    <div>
-                                        <label className="label" htmlFor="country">Country</label>
-                                        <input 
-                                            id="country"
-                                            type="text" 
-                                            className="input border-black"
-                                            placeholder="Bangladesh"
-                                            value={experience.country}
-                                            onChange={e=>setExperience({
-                                                ...experience, 
-                                                country: e.target.value
-                                            })}
-                                        />
-                                    </div>
-                                    
-                                    <div>
-                                        <label className="label" htmlFor="duration">Job Duration</label>
-                                        <input 
-                                            id="duration"
-                                            type="input" 
-                                            className="input border-black"
-                                            placeholder="JAN 2020 - MAR 2023"
-                                            value={experience.duration}
-                                            onChange={e=>setExperience({
-                                                ...experience, 
-                                                duration: e.target.value
-                                            })}
-                                        />
-                                    </div>
-                                </div>
-                                {/* Description */}
-                                <div>
-                                    <label className="label" htmlFor="experienceDescription">Description</label>
-                                    <ReactQuill
-                                        value={experience.description}
-                                        handleChange={changeDescription}
-                                    />
-                                </div> 
-                            </div>
-                            <div>
-                               <button>Add</button> 
-                            </div>
-                        </>
-                    )
-                } 
-                                
+            <div className="border-2 border-black py-5 px-2 mt-3">
+                <div className="grid grid-cols-2 font-medium gap-5 mb-3">
+                    <div>
+                        <label className="label" htmlFor="jobTitle">Job Title</label>
+                        <input 
+                            id="jobTitle"
+                            type="text" 
+                            className="input border-black"
+                            placeholder="Junior fornt end developer"
+                            value={experience.title}
+                            onChange={e=>setExperience({
+                                ...experience, 
+                                title: e.target.value
+                            })}
+                        />
+                    </div>
+                    <div>
+                        <label className="label" htmlFor="employer">Employer</label>
+                        <input 
+                            id="employer"
+                            type="text" 
+                            className="input border-black"
+                            placeholder="Stack Buzz"
+                            value={experience.employer}
+                            onChange={e=>setExperience({
+                                ...experience, 
+                                employer: e.target.value
+                            })}
+                        />
+                    </div>
+                    <div>
+                        <label className="label" htmlFor="JobLocation">Location</label>
+                        <input 
+                            id="JobLocation"
+                            type="text"
+                            className="input border-black"
+                            placeholder="Amirabad, Maskanda, Mymensingh"
+                            value={experience.location} 
+                            onChange={e=>setExperience({
+                                ...experience, 
+                                location: e.target.value
+                            })}
+                        />
+                    </div>
+                    <div>
+                        <label className="label" htmlFor="country">Country</label>
+                        <input 
+                            id="country"
+                            type="text" 
+                            className="input border-black"
+                            placeholder="Bangladesh"
+                            value={experience.country}
+                            onChange={e=>setExperience({
+                                ...experience, 
+                                country: e.target.value
+                            })}
+                        />
+                    </div>
+                    
+                    <div>
+                        <label className="label" htmlFor="duration">Job Duration</label>
+                        <input 
+                            id="duration"
+                            type="input" 
+                            className="input border-black"
+                            placeholder="JAN 2020 - MAR 2023"
+                            value={experience.duration}
+                            onChange={e=>setExperience({
+                                ...experience, 
+                                duration: e.target.value
+                            })}
+                        />
+                    </div>
+                </div>
+                {/* Description */}
+                <div>
+                    <label className="label" htmlFor="experienceDescription">Description</label>
+                    <ReactQuill
+                        value={experience.description}
+                        handleChange={changeDescription}
+                    />
+                </div> 
+                <div>
+                    <button onClick={onExperience}>Add</button> 
+                </div>               
             </div>
+               )
+            } 
         </div>
         
     )
