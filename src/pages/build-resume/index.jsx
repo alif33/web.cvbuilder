@@ -9,6 +9,7 @@ import Declaration from "../../components/build-resume/Declaration"
 import Personal from "../../components/build-resume/Personal"
 import Passport from "../../components/build-resume/Passport"
 import { isEmailExist, addResume, updateResume } from "../../db/queries"
+import toast from "react-hot-toast"
 
 export default function BuildResume(){
     const {
@@ -43,8 +44,10 @@ export default function BuildResume(){
         const existEmail = await isEmailExist(heading.email)
         if(!existEmail){
             addResume(resume)
+            toast.success("সফলভাবে সংরক্ষিত হয়েছে")
         }else{
             updateResume(existEmail, resume)
+            toast.success("সফলভাবে সংরক্ষিত হয়েছে")
         }
     }
 
