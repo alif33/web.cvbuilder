@@ -17,7 +17,7 @@ export const resumeSlice = createSlice({
         objective: {heading: "Objectives", body: ""},
         declaration: {heading: "Declaration", body: ""},
         expertise: {heading: "Expertise", body: ""},
-        educations: educationsSchema,
+        educations: [],
         experiences: [],
         skills: [],
         references: [],
@@ -62,6 +62,13 @@ export const resumeSlice = createSlice({
             state[field] = list
         },
 
+        insertItem : (state, action)=>{
+            const field = action.payload.field
+            const index = action.payload.index
+            const item = action.payload.item
+            state[field][index] = item
+        },
+        
         updateItem: (state, action)=>{
             const field = action.payload.field
             const index = action.payload.index

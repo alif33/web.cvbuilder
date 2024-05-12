@@ -9,7 +9,7 @@ const persistConfig = {
     key: 'root',
     whitelist: [
         // 'sample',
-        'resume'
+        // 'resume'
     ],
     storage,
     stateReconciler: autoMergeLevel2

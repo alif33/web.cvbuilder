@@ -16,6 +16,9 @@ export const setList = (field, list) => (dispatch) => {
     dispatch(slice.setList({field, list}))
 }
 
+export const insertItem = (field, index, item) => (dispatch) => {
+    dispatch(slice.insertItem({field, index, item}))
+}
 export const updateItem = (field, index, property, value) => (dispatch) => {
     dispatch(slice.updateItem({field, index, property, value}))
 }
