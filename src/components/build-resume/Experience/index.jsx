@@ -20,6 +20,7 @@ export default function Experience(){
     const [updateItem, setUpdateItem] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
     const navigate = useNavigate()
+    const experienceRef = useRef()
 
     const [experience, setExperience] = useState({
         title: "",
@@ -39,7 +40,7 @@ export default function Experience(){
         const temp = exps[dragExperience.current]
         exps[dragExperience.current] = exps[draggedOverExperience.current]
         exps[draggedOverExperience.current] = temp
-        dispatch(setList("experiences",exps))
+        dispatch(setList("experiences", exps))
     }
 
 
@@ -54,7 +55,9 @@ export default function Experience(){
             description: ""
         })
         setHave(false)
-        navigate("/build-resume/#experience")
+        experienceRef.current.scrollIntoView({
+            behavior: 'smooth'
+        })
     }
 
     const changeDescription = e=>{
@@ -70,7 +73,7 @@ export default function Experience(){
     }
 
     return(
-        <div id="experience" className="mt-3">
+        <div ref={experienceRef} id="experience" className="mt-3">
             <h1 className="heading text-center py-3">কর্মক্ষেত্রে অভিজ্ঞতা</h1>
             <hr />
             <h3 className="py-3 text-center">
@@ -123,96 +126,96 @@ export default function Experience(){
                 <button onClick={()=>dispatch(setList("experiences", []))} className="h-8 w-8 flex justify-center items-center"><IoReload size={20}/></button>
             </div> */}
 
-            {experiences.length>0 && (<hr />)}
+            {experiences.length>0 && have && (<hr />)}
 
             {
-                    have && (
-            <div className="border-2 border-black py-5 px-2 mt-3">
-                <div className="grid grid-cols-2 font-medium gap-5 mb-3">
-                    <div>
-                        <label className="label" htmlFor="jobTitle">Job Title</label>
-                        <input 
-                            id="jobTitle"
-                            type="text" 
-                            className="input border-black"
-                            placeholder="Junior fornt end developer"
-                            value={experience.title}
-                            onChange={e=>setExperience({
-                                ...experience, 
-                                title: e.target.value
-                            })}
-                        />
+                have && (
+                    <div className="border-2 border-black py-5 px-2 mt-3">
+                        <div className="grid grid-cols-2 font-medium gap-5 mb-3">
+                            <div>
+                                <label className="label" htmlFor="jobTitle">Job Title</label>
+                                <input 
+                                    id="jobTitle"
+                                    type="text" 
+                                    className="input border-black"
+                                    placeholder="Junior fornt end developer"
+                                    value={experience.title}
+                                    onChange={e=>setExperience({
+                                        ...experience, 
+                                        title: e.target.value
+                                    })}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="employer">Employer</label>
+                                <input 
+                                    id="employer"
+                                    type="text" 
+                                    className="input border-black"
+                                    placeholder="Stack Buzz"
+                                    value={experience.employer}
+                                    onChange={e=>setExperience({
+                                        ...experience, 
+                                        employer: e.target.value
+                                    })}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="JobLocation">Location</label>
+                                <input 
+                                    id="JobLocation"
+                                    type="text"
+                                    className="input border-black"
+                                    placeholder="Amirabad, Maskanda, Mymensingh"
+                                    value={experience.location} 
+                                    onChange={e=>setExperience({
+                                        ...experience, 
+                                        location: e.target.value
+                                    })}
+                                />
+                            </div>
+                            <div>
+                                <label className="label" htmlFor="country">Country</label>
+                                <input 
+                                    id="country"
+                                    type="text" 
+                                    className="input border-black"
+                                    placeholder="Bangladesh"
+                                    value={experience.country}
+                                    onChange={e=>setExperience({
+                                        ...experience, 
+                                        country: e.target.value
+                                    })}
+                                />
+                            </div>
+                            
+                            <div>
+                                <label className="label" htmlFor="duration">Job Duration</label>
+                                <input 
+                                    id="duration"
+                                    type="input" 
+                                    className="input border-black"
+                                    placeholder="JAN 2020 - MAR 2023"
+                                    value={experience.duration}
+                                    onChange={e=>setExperience({
+                                        ...experience, 
+                                        duration: e.target.value
+                                    })}
+                                />
+                            </div>
+                        </div>
+                        {/* Description */}
+                        <div>
+                            <label className="label" htmlFor="experienceDescription">Description</label>
+                            <ReactQuill
+                                value={experience.description}
+                                handleChange={changeDescription}
+                            />
+                        </div> 
+                        <div>
+                            <button onClick={onExperience}>Add</button> 
+                        </div>               
                     </div>
-                    <div>
-                        <label className="label" htmlFor="employer">Employer</label>
-                        <input 
-                            id="employer"
-                            type="text" 
-                            className="input border-black"
-                            placeholder="Stack Buzz"
-                            value={experience.employer}
-                            onChange={e=>setExperience({
-                                ...experience, 
-                                employer: e.target.value
-                            })}
-                        />
-                    </div>
-                    <div>
-                        <label className="label" htmlFor="JobLocation">Location</label>
-                        <input 
-                            id="JobLocation"
-                            type="text"
-                            className="input border-black"
-                            placeholder="Amirabad, Maskanda, Mymensingh"
-                            value={experience.location} 
-                            onChange={e=>setExperience({
-                                ...experience, 
-                                location: e.target.value
-                            })}
-                        />
-                    </div>
-                    <div>
-                        <label className="label" htmlFor="country">Country</label>
-                        <input 
-                            id="country"
-                            type="text" 
-                            className="input border-black"
-                            placeholder="Bangladesh"
-                            value={experience.country}
-                            onChange={e=>setExperience({
-                                ...experience, 
-                                country: e.target.value
-                            })}
-                        />
-                    </div>
-                    
-                    <div>
-                        <label className="label" htmlFor="duration">Job Duration</label>
-                        <input 
-                            id="duration"
-                            type="input" 
-                            className="input border-black"
-                            placeholder="JAN 2020 - MAR 2023"
-                            value={experience.duration}
-                            onChange={e=>setExperience({
-                                ...experience, 
-                                duration: e.target.value
-                            })}
-                        />
-                    </div>
-                </div>
-                {/* Description */}
-                <div>
-                    <label className="label" htmlFor="experienceDescription">Description</label>
-                    <ReactQuill
-                        value={experience.description}
-                        handleChange={changeDescription}
-                    />
-                </div> 
-                <div>
-                    <button onClick={onExperience}>Add</button> 
-                </div>               
-            </div>
                )
             } 
         </div>
