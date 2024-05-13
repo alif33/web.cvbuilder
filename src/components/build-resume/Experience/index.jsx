@@ -78,9 +78,8 @@ export default function Experience(){
 
     const handleAdd = ()=>{
         setHave(true)
-        const isMobile = /Mobi|Android/i.test(navigator.userAgent)
         window.scrollBy({
-            top: isMobile? 400: 220
+            top: 270
         })
     }
 
