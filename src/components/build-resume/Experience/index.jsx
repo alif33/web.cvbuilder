@@ -111,11 +111,11 @@ export default function Experience(){
                             <h1 className="text-base font-medium">{item.title}</h1>
                             <h2 className="text-sm">{item.employer}, {item.city}</h2>
                         </div>
-                        <div className="flex gap-5">
-                            <span onClick={()=>handleUpdate(index)} className="cursor-pointer">
+                        <div className="flex gap-3">
+                            <span onClick={()=>handleUpdate(index)} className="flex justify-center items-center bg-black h-10 w-10 text-white cursor-pointer">
                                 <CiEdit size={25}/>
                             </span>
-                            <span onClick={()=>dispatch(removeItem("experiences", index))} className="cursor-pointer">
+                            <span onClick={()=>dispatch(removeItem("experiences", index))} className="flex justify-center items-center bg-black h-10 w-10 text-white cursor-pointer">
                                 <RiDeleteBin6Line size={25}/>
                             </span>
                         </div>
