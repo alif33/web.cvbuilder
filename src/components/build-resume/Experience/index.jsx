@@ -76,6 +76,13 @@ export default function Experience(){
         elementSummary.scrollIntoView()
     }
 
+    const handleAdd = ()=>{
+        setHave(true)
+        window.scrollBy({
+            top: 100
+        })
+    }
+
     return(
         <div ref={experienceRef} id="experience" className="mt-3">
             <h1 className="heading text-center py-3">কর্মক্ষেত্রে অভিজ্ঞতা</h1>
@@ -88,7 +95,7 @@ export default function Experience(){
             {
                 experiences.length === 0 && (
                     <div className="flex justify-center items-center gap-7">
-                        <button onClick={()=>setHave(true)} className="w-40 bg-black text-white py-2 rounded-sm">যুক্ত করতে চাই</button>
+                        <button onClick={handleAdd} className="w-40 bg-black text-white py-2 rounded-sm">যুক্ত করতে চাই</button>
                         <button onClick={handleNone} className="w-40 bg-gray-400 text-white py-2 rounded-sm">না নেই</button>
                     </div>
                 )
@@ -119,7 +126,6 @@ export default function Experience(){
                                 <RiDeleteBin6Line size={25}/>
                             </span>
                         </div>
-                        
                     </div>
                 ))
             }
@@ -136,7 +142,7 @@ export default function Experience(){
                 have && (
                     <div className="border-2 border-black py-5 px-2 mt-3">
                         <div className="grid grid-cols-1 md:grid-cols-2 font-medium gap-5 mb-3">
-                            <div>
+                            <div id="startExperience">
                                 <label className="label" htmlFor="jobTitle">পদের / নাম পদবী</label>
                                 <input 
                                     id="jobTitle"
