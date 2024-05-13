@@ -80,7 +80,7 @@ export default function Experience(){
         setHave(true)
         const isMobile = /Mobi|Android/i.test(navigator.userAgent)
         window.scrollBy({
-            top: isMobile? 400: 180
+            top: isMobile? 400: 220
         })
     }
 
@@ -120,9 +120,9 @@ export default function Experience(){
                             <h2 className="text-sm">{item.employer}, {item.city}</h2>
                         </div>
                         <div className="flex gap-3">
-                            <span onClick={()=>handleUpdate(index)} className="flex justify-center items-center bg-black h-10 w-10 text-white cursor-pointer">
+                            {/* <span onClick={()=>handleUpdate(index)} className="flex justify-center items-center bg-black h-10 w-10 text-white cursor-pointer">
                                 <CiEdit size={25}/>
-                            </span>
+                            </span> */}
                             <span onClick={()=>dispatch(removeItem("experiences", index))} className="flex justify-center items-center bg-black h-10 w-10 text-white cursor-pointer">
                                 <RiDeleteBin6Line size={25}/>
                             </span>
