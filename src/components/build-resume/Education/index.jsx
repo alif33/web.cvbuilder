@@ -8,6 +8,7 @@ import {
 } from "../../../store/resume/action"
 import Swal from "sweetalert2"
 import { educationsSchema } from "../../../const"
+import { FaPlus, IoClose } from "../../../icons"
 
 export default function Education(){
     const [certificates, setCertificates] = useState([])
@@ -64,7 +65,15 @@ export default function Education(){
                             onClick={()=>toggleCertificate(certificate.name, certificate.label, index)} 
                             className={` ${certificates.includes(certificate.name)? "bg-black text-white": "border-black"} border py-2 px-3 rounded-full mr-3 cursor-pointer mb-3`} 
                         >
-                            {certificate.label}
+                            <span className="flex items-center gap-3">
+                                {!certificates.includes(certificate.name) && (
+                                    <span><FaPlus size={16}/></span>
+                                )}
+                                <h3>{certificate.label}</h3>
+                                {certificates.includes(certificate.name) && (
+                                    <span><IoClose size={20}/></span>
+                                )}
+                            </span>
                         </span>
                     ))}
                 </div>
