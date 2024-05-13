@@ -21,8 +21,8 @@ export default function Education(){
 
     const certifications = [
         {name: "jsc", label: "JSC/JDC"},
-        {name: "ssc", label: "JSC/Dhakil"},
-        {name: "hsc", label: "JSC/Alim"},
+        {name: "ssc", label: "SSC/Dhakil"},
+        {name: "hsc", label: "HSC/Alim"},
         {name: "hons", label: "Hon's/Bsc/Mbbs/Fazil"},
     ]
 
@@ -51,6 +51,9 @@ export default function Education(){
               })
         }
     }
+
+    console.log(educations);
+
 
     return(
         <div id="education" className="mt-3 overflow-x-hidden">

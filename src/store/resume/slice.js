@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { educationsSchema } from "../../const"
+import { isNumber } from "lodash"
 
 export const resumeSlice = createSlice({
     name: "resume",
@@ -66,7 +67,10 @@ export const resumeSlice = createSlice({
             const field = action.payload.field
             const index = action.payload.index
             const item = action.payload.item
-            state[field][index] = item
+            if (item) {
+                state[field][index] = item  
+            }
+           
         },
         
         updateItem: (state, action)=>{
@@ -74,13 +78,18 @@ export const resumeSlice = createSlice({
             const index = action.payload.index
             const property = action.payload.property
             const value = action.payload.value
-            state[field][index][property] = value
+            if (value) {
+                state[field][index][property] = value
+            }
         },
 
         removeItem: (state, action)=>{
             const field = action.payload.field
             const index = action.payload.index
-            state[field].splice(index, 1)
+            if (isNumber(index)) {
+                state[field].splice(index, 1)
+            }
+         
         },
         
         // for single value that is directly next state 
