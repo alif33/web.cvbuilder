@@ -111,12 +111,12 @@ export default function Experience(){
                             <h1 className="text-base font-medium">{item.title}</h1>
                             <h2 className="text-sm">{item.employer}, {item.city}</h2>
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-5">
                             <span onClick={()=>handleUpdate(index)} className="cursor-pointer">
-                                <CiEdit size={20}/>
+                                <CiEdit size={25}/>
                             </span>
                             <span onClick={()=>dispatch(removeItem("experiences", index))} className="cursor-pointer">
-                                <RiDeleteBin6Line size={20}/>
+                                <RiDeleteBin6Line size={25}/>
                             </span>
                         </div>
                         
