@@ -13,8 +13,6 @@ import {
 } from "../../../icons"
 import ReactQuill from "../../../ui/react-quill"
 import { useNavigate } from "react-router-dom"
-import { animateScroll as scroll } from "react-scroll"
-
 
 export default function Experience(){
     const { experiences } = useSelector(state=>state.resume)
