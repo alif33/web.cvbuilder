@@ -7,7 +7,7 @@ export default function Summary(){
     const dispatch = useDispatch()
 
     return(
-        <div className="my-7" id="summary">
+        <div className="my-7" id="inputSummary">
             <h1 className="heading text-center mb-3">Summary(optional)</h1>
             <hr />
             <div className="mt-5">

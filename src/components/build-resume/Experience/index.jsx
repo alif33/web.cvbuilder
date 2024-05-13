@@ -13,6 +13,8 @@ import {
 } from "../../../icons"
 import ReactQuill from "../../../ui/react-quill"
 import { useNavigate } from "react-router-dom"
+import { animateScroll as scroll } from "react-scroll"
+
 
 export default function Experience(){
     const { experiences } = useSelector(state=>state.resume)
@@ -74,10 +76,8 @@ export default function Experience(){
 
     const handleNone = ()=>{
         setHave(false)
-        const elementSummary = document.getElementById("summary")
-        elementSummary.scrollIntoView({
-            behavior: 'smooth'
-        })
+        const elementSummary = document.getElementById("inputSummary")
+        elementSummary.scrollIntoView()
     }
 
     return(
@@ -141,7 +141,7 @@ export default function Experience(){
                     <div className="border-2 border-black py-5 px-2 mt-3">
                         <div className="grid grid-cols-2 font-medium gap-5 mb-3">
                             <div>
-                                <label className="label" htmlFor="jobTitle">Job Title</label>
+                                <label className="label" htmlFor="jobTitle">পদের / নাম পদবী</label>
                                 <input 
                                     id="jobTitle"
                                     type="text" 
@@ -155,7 +155,7 @@ export default function Experience(){
                                 />
                             </div>
                             <div>
-                                <label className="label" htmlFor="employer">Employer</label>
+                                <label className="label" htmlFor="employer">প্রতিষ্ঠান / কোম্পানির নাম</label>
                                 <input 
                                     id="employer"
                                     type="text" 
@@ -169,7 +169,7 @@ export default function Experience(){
                                 />
                             </div>
                             <div>
-                                <label className="label" htmlFor="JobLocation">Location</label>
+                                <label className="label" htmlFor="JobLocation">অবস্থান</label>
                                 <input 
                                     id="JobLocation"
                                     type="text"
@@ -182,7 +182,7 @@ export default function Experience(){
                                     })}
                                 />
                             </div>
-                            <div>
+                            {/* <div>
                                 <label className="label" htmlFor="country">Country</label>
                                 <input 
                                     id="country"
@@ -195,10 +195,10 @@ export default function Experience(){
                                         country: e.target.value
                                     })}
                                 />
-                            </div>
+                            </div> */}
                             
                             <div>
-                                <label className="label" htmlFor="duration">Job Duration</label>
+                                <label className="label" htmlFor="duration">সময়কাল</label>
                                 <input 
                                     id="duration"
                                     type="input" 
@@ -214,7 +214,7 @@ export default function Experience(){
                         </div>
                         {/* Description */}
                         <div>
-                            <label className="label" htmlFor="experienceDescription">Description</label>
+                            <label className="label" htmlFor="experienceDescription">কাজের ধরন / দায়িত্ব সম্পর্কে বিস্তারিত লিখুন</label>
                             <ReactQuill
                                 value={experience.description}
                                 handleChange={changeDescription}
