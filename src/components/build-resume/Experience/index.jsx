@@ -55,9 +55,7 @@ export default function Experience(){
             description: ""
         })
         setHave(false)
-        experienceRef.current.scrollIntoView({
-            behavior: 'smooth'
-        })
+        experienceRef.current.scrollIntoView()
     }
 
     const changeDescription = e=>{
