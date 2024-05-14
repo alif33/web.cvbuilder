@@ -11,6 +11,7 @@ export const educationsSchema = [
         result: "",
         description: ""
     },
+
     {
         courseName: "SSC/DHAKIL (সমমান)",
         institutionName: "",
@@ -32,7 +33,7 @@ export const educationsSchema = [
         description: ""
     },
     {   
-        courseName: "Hpon's/Bsc/MBBS/Fazil (সমমান)",
+        courseName: "Hon's/Bsc/MBBS/Fazil (সমমান)",
         institutionName: "",
         location: "",
         qualification: "",

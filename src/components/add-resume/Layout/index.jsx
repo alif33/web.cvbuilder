@@ -5,7 +5,7 @@ export default function image(){
     const { layout } = useSelector(state=>state.sample)
 
     return(
-        <div>
+        <div id="layout" className="pt-5">
             <h1 className="heading">Layout</h1>
             <div className="flex gap-5 pt-7">
                 <Page title="Primary" left="primaryLeft" right="primaryRight"/>

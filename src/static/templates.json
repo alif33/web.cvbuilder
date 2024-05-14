@@ -1,5 +1,10 @@
 [
     {
+        "name": "aoa",
+        "image": "/templates/aoa.png",
+        "code": "101"
+    },
+    {
         "name": "aob",
         "image": "/templates/aob.png",
         "code": "102"
@@ -11,7 +16,12 @@
     },
     {
         "name": "aod",
-        "image": "/templates/aob.png",
+        "image": "/templates/aod.png",
         "code": "104"
+    },
+    {
+        "name": "aoe",
+        "image": "/templates/aoe.png",
+        "code": "105"
     }
 ]

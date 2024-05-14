@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Font } from "@react-pdf/renderer"
+import Aoa from "../templates/aoa"
 import Aob from "../templates/aob"
 import Aoc from "../templates/aoc"
 import Aod from "../templates/aod"
@@ -81,6 +82,7 @@ Font.register(
 );
 
 const temps = {
+    aoa: Aoa,
     aob: Aob,
     aoc: Aoc,
     aod: Aod,

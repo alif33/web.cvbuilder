@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { filterList } from "../../helpers/formatter"
 
 export const sampleSlice = createSlice({
     name: "sample",
@@ -116,7 +117,8 @@ export const sampleSlice = createSlice({
             // state.summary = {heading: "Summary", body: ""}
             // state.declaration = {heading: "Declaration", body: ""}
 
-            state[field][property] = value
+            console.log("Ismail", value, state[field])
+            // state[field][property] = value
        
         },
 
@@ -163,30 +165,63 @@ export const sampleSlice = createSlice({
         },
 
         updateResume: (state, action)=>{
-            if(action.payload?.resume){
-                const resume = action.payload.resume
-                // Heading
-                if (resume?.heading) {
-                    if (resume?.heading?.firstName) {
-                        state.heading.firstName = resume?.heading?.firstName
-                    }
-                    if (resume?.heading?.surName) {
-                        state.heading.surName = resume?.heading?.surName
-                    }
-                    if (resume?.heading?.email) {
-                        state.heading.email = resume?.heading?.email
-                    }
-                    if (resume?.heading?.phone) {
-                        state.heading.phone = resume?.heading?.phone
-                    }
-                    
-                }
-                // Summary
-                if (resume?.summary) {
-                    state.summary = resume.summary
-                }
+            const resume = action.payload
+
+            // Heading
+            if (resume?.heading) {
+                const headingFields = ["firstName", "surName", "email", "phone", "address", "linkedin" ]
+                headingFields.forEach(hf => {
+                    state.heading[hf] = resume.heading?.[hf] || ""
+                })   
             }
+
+            // Educations
+
+            if(resume?.educations){
+               state.educations = filterList(resume.educations, ["institutionName", "location", "qualification", "studyField", "graduationYear", "result","description"])
+            }
+            // Experiences
+
+            if(resume?.experiences){
+               state.experiences = filterList(resume.experiences, ["title", "employer", "location", "country", "duration", "description"])
+            }
+
+            //References 
+
+            if(resume?.references){
+               state.references = filterList(resume.references, ["name", "designation", "institute", "phone", "email"])
+            }
+
+            // Summary
+
+            if (resume?.summary) {
+                const summaryFields = ["heading", "body"]
+                summaryFields.forEach(sf => {
+                    state.summary[sf] = resume.summary?.[sf] || ""
+                }) 
+            }
+
+            // Objective
+
+            if (resume?.objective) {
+                const objectiveFields = ["heading", "body"]
+                objectiveFields.forEach(of => {
+                    state.objective[of] = resume.objective?.[of] || ""
+                }) 
+            }
+
+            // Declaration
+
+            if (resume?.declaration) {
+                const declarationFields = ["heading", "body"]
+                declarationFields.forEach(df => {
+                    state.declaration[df] = resume.declaration?.[df] || ""
+                }) 
+            }
+
+
         }
 
     }
 })
+

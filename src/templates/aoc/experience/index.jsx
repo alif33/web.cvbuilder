@@ -4,7 +4,12 @@ import Description from "../description"
 
 const styles = StyleSheet.create({
     item: {
-        paddingBottom: 4
+        position: 'relative',
+        marginBottom: 10,
+        paddingLeft: 10,
+        lineHeight: 1.4,
+        borderLeft: 1,
+        borderLeftColor: '#D9D9D9'
     },
     title: {
         fontSize: 10,
@@ -22,10 +27,12 @@ export default function Experience({data}){
     return(
         <View style={{marginTop: 10}}>
             <Heading title="Experience" height={10} width={10} img="/icons/aoc/experience.png"/>
-            <View style={{ paddingTop: 10, paddingLeft: 10, marginBottom: 20 }}>
+            <View style={{ paddingTop: 10, paddingLeft: 10, marginBottom: 10 }}>
             {
                 experiences && experiences.map((ex, index)=>(
-                    <View style={{paddingBottom: 4}} key={index}>
+                    <View style={styles.item} key={index}>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#FF7D00", height: 6, width: 6, borderRadius: 3}}></View>
+
                         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={{ color: '#FF7D00', fontWeight: 'bold' }}>{ex?.title}</Text>
                             <Text style={{ color: '#FF7D00', fontWeight: 'semibold'}}>{ex.duration}</Text>

@@ -7,8 +7,6 @@ import { findByEmail } from "../../../db/queries"
 import { GoSearch } from "react-icons/go";
 import Spinner from "./Spinner"
 
-// import { fetchResume } from "../../../store/sampl"
-
 export default function ImportFile(){
     const [data, setData] = useState()
     const [loading, setLoading] = useState(false)
@@ -36,7 +34,7 @@ export default function ImportFile(){
     }
 
     return(
-        <div className="relative">
+        <div id="import" className="relative pt-5 min-h-screen">
             <div className="absolute top-3 right-3">
                 <span onClick={()=>{
                     setText("")

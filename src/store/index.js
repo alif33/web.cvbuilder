@@ -8,8 +8,8 @@ import { Blog, Example, Information, Resume } from "./api"
 const persistConfig = {
     key: 'root',
     whitelist: [
-        // 'sample',
-        // 'resume'
+        'sample',
+        'resume'
     ],
     storage,
     stateReconciler: autoMergeLevel2

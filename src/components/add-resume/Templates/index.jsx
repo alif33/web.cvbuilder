@@ -9,25 +9,21 @@ export default function Templates(){
         dispatch(onChange("templateName", name))
     }
 
-    console.log(resume)
-
     return(
-        <div>
+        <div id="templates" className="mb-20 pt-5 min-h-screen">
             <h1 className="heading">Templates</h1>
-            <div className="grid grid-cols-4 gap-1 mt-7">
+            <div className="grid grid-cols-4 gap-x-3 gap-y-7 mt-7">
                 {
                     templates.map((template, index)=>(
                         <div key={index}>
                             <h1 className="font-medium">{template.code}{"("+template.name+")"}</h1>
                             <div onClick={()=>onTemplate(template.name)} className="max-h-[182px] max-w-[142px] cursor-pointer">
-                                {/* <span className="max-h-[182px] max-w-[142px] cursor-pointer"> */}
-                                    <img 
-                                        height={180}
-                                        width={140}
-                                        className="border border-black"
-                                        src={template.image}
-                                    />
-                                {/* </span>  */}
+                                <img 
+                                    height={180}
+                                    width={140}
+                                    className="border border-black"
+                                    src={template.image}
+                                />
                             </div>
                         </div>
                     ))

@@ -16,7 +16,7 @@ export default function Summary(){
                     cols={3}
                     className="textarea border-black"
                     placeholder="সামারি লিখুন"
-                    value={resume.summary.body}
+                    value={resume.summary?.body || ""}
                     onChange={e=>dispatch(onTextarea("summary", "body", e.target.value))}
                 >
                 </textarea>
