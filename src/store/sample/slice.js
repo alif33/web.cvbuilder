@@ -114,12 +114,7 @@ export const sampleSlice = createSlice({
             const field = action.payload.field
             const property = action.payload.property
             const value = action.payload.value
-            // state.summary = {heading: "Summary", body: ""}
-            // state.declaration = {heading: "Declaration", body: ""}
-
-            console.log("Ismail", value, state[field])
-            // state[field][property] = value
-       
+            state[field][property] = value       
         },
 
         // Image
