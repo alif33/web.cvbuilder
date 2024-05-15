@@ -10,6 +10,8 @@ export default function UpdateItem({isOpen, setIsOpen, index}){
         dispatch(updateItem("educations", index, e.target.name, e.target.value))
     } 
 
+    console.log(educations, "EDU");
+
     return(
         <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
             <div>

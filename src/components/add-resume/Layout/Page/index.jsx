@@ -40,17 +40,17 @@ export default function Page({ title, left, right }){
             <hr />
             { isShow && (
                 <div>
-                    <div className="flex justify-center mt-2 cursor-pointer">
+                    <div className="flex justify-center my-3 cursor-pointer">
                         <span onClick={()=>setIsShow(false)} className="bg-gray-100 p-2 rounded-full"><IoClose size={20}/></span>
                     </div>
-                    <ul className="grid grid-cols-2 gap-2">
+                    <ul className="grid grid-cols-2 gap-y-1 px-2">
                         {
                             sections.map((section, index)=>{
                                 const isExist = _.includes(_.flatten(_.values(layout)), section)
                                 if (!isExist) {
                                     return(
                                         <li key={index}>
-                                            <span onClick={()=>handleAdd(section)} className="py-1 bg-black text-white px-2 rounded-full cursor-pointer capitalize">{section}</span> 
+                                            <span onClick={()=>handleAdd(section)} className="py-[2px] bg-black text-sm text-white px-2 rounded-full cursor-pointer capitalize">{section}</span> 
                                         </li>
                                     )
                                 }

@@ -5,7 +5,7 @@ export default function SideMenu(){
     const currentLocation = location.hash.replace("#", "")
     const navigate = useNavigate()
 
-    const navItems = ["Heading", "Education", "Experience", "Skills", "Reference", "Training", "Personal", "Textarea", "Image", "Signature", "Passport"]
+    const navItems = ["Heading", "Education", "Experience", "Skills", "Language", "Reference", "Training", "Personal", "Textarea", "Image", "Signature", "Passport"]
 
     const handleMove = id=>{
         const location = document.getElementById(id)

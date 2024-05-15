@@ -9,6 +9,8 @@ import Summary from "./summary"
 import Objective from "./objective"
 import Declaration from "./declaration"
 import Skills from "./skills"
+import Language from "./language"
+import Training from "./training"
 import Reference from "./reference"
 import Header from "./header"
 import Contacts from "./contacts"
@@ -29,7 +31,9 @@ const sections = {
     experience: Experience,
     education: Education,
     skills: Skills,
+    language: Language,
     reference: Reference,
+    training: Training,
     personal: Personal,
     signature: Signature,
     passport: Passport,

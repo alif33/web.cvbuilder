@@ -41,5 +41,5 @@ doc.addSection({
 // Save the Document
 Packer.toBuffer(doc).then((buffer) => {
   fs.writeFileSync('resume.docx', buffer);
-  console.log('Resume created successfully!');
+
 });

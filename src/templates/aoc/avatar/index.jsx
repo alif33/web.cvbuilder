@@ -3,7 +3,7 @@ import { View, Image, StyleSheet } from "@react-pdf/renderer"
 
 const styles = StyleSheet.create({
     image: {
-        paddingTop: 20,
+        paddingTop: 6,
         height: 125,
         width: 125,
         borderRadius: 70,

@@ -44,7 +44,7 @@ export default function Experience({data}){
                         <Text>{edu?.institutionName},</Text>
                         <Text>{edu?.location}</Text>
                         {
-                            edu.result && edu.result.length>0 && (
+                            edu?.result && edu?.result?.length>0 && (
                                 <View style={{ flexDirection: 'row' }}>
                                     <Image
                                         src="/icons/aoc/result.png"

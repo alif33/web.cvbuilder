@@ -14,20 +14,20 @@ import {
     CiEdit 
 } from "../../../icons"
 import ReactQuill from "../../../ui/react-quill"
-import UpdateItem from "./UpdateItem"
+// import UpdateItem from "./UpdateItem"
 
-export default function Education(){
-    const { educations } = useSelector(state=>state.sample)
+export default function Training(){
+    const { trainings } = useSelector(state=>state.sample)
     const [updateItem, setUpdateItem] = useState(null)
     const [isOpen, setIsOpen] = useState(false)
 
-    const [education, setEducation] = useState({
+    const [training, setTraining] = useState({
+        name: "",
         institutionName: "",
         location: "",
-        qualification: "",
-        studyField: "",
-        graduationYear: "",
-        result: "",
+        timeline: "",
+        duration: "",
+        coordinator: "",
         description: ""
     })
     const dispatch = useDispatch()
@@ -36,29 +36,29 @@ export default function Education(){
     const draggedOverEducation = useRef(0)
 
     function handleSort() {
-        const edus = [...educations]
-        const temp = edus[dragEducation.current]
-        edus[dragEducation.current] = edus[draggedOverEducation.current]
-        edus[draggedOverEducation.current] = temp
-        dispatch(setList("educations", edus))
+        const trns = [...trainings]
+        const temp = trns[dragEducation.current]
+        trns[dragEducation.current] = trns[draggedOverEducation.current]
+        trns[draggedOverEducation.current] = temp
+        dispatch(setList("trainings", trns))
     }
 
-    const onEducation = ()=>{
-        dispatch(onListChange("educations", education))
-        setEducation({
+    const onTraining = ()=>{
+        dispatch(onListChange("trainings", training))
+        setTraining({
+            name: "",
             institutionName: "",
             location: "",
-            qualification: "",
-            studyField: "",
-            graduationYear: "",
-            result: "",
+            timeline: "",
+            duration: "",
+            coordinator: "",
             description: ""
         })
     }
 
     const changeDescription = e=>{
-        setEducation({
-            ...education, 
+        setTraining({
+            ...training, 
             description: e
         })
     }
@@ -68,19 +68,21 @@ export default function Education(){
         setIsOpen(true)
     }
 
+    console.log(trainings)
+
     return(
-        <div id="education" className="mt-3">
+        <div id="training" className="mt-3">
             <div className="flex justify-between items-center">
-                <h1 className="heading py-3">Education</h1>
+                <h1 className="heading py-3">Training</h1>
                 <div className="flex gap-3">
-                    <button role="button" onClick={onEducation} className="h-8 w-8 flex justify-center items-center bg-black text-white rounded-sm shadow-lg"><FaPlus size={20}/></button>
-                    <button onClick={()=>dispatch(setList("educations", []))} className="h-8 w-8 flex justify-center items-center font-bold"><IoReload size={20}/></button>
+                    <button role="button" onClick={onTraining} className="h-8 w-8 flex justify-center items-center bg-black text-white rounded-sm shadow-lg"><FaPlus size={20}/></button>
+                    <button onClick={()=>dispatch(setList("trainings", []))} className="h-8 w-8 flex justify-center items-center font-bold"><IoReload size={20}/></button>
                 </div>
             </div>
             <div className="border-2 border-black py-5 px-2">
                 <div> 
                     {
-                        educations.map((item, index)=>(
+                        trainings.map((item, index)=>(
                             <div 
                                 key={index}
                                 draggable
@@ -91,14 +93,15 @@ export default function Education(){
                                 onDragOver={(e) => e.preventDefault()}
                             >
                                 <div>
-                                    <h1 className="text-base font-medium">{item.qualification}-{item.graduationYear}</h1>
-                                    <h2 className="text-sm font-medium">{item.institutionName}, {item.location}</h2>
+                                    <h1 className="text-base font-medium">{item.name}{item?.timeline?.length > 0 && ", "+item.timeline}</h1>
+                                    <h2 className="text-sm font-medium">{item.institutionName}{item?.location?.length>0 && ", "+item.location}</h2>
+                                    <h3 className="text-sm">{item.duration}</h3>
                                 </div>
                                 <div className="flex gap-2">
                                     <span onClick={()=>handleUpdate(index)} className="cursor-pointer">
                                         <CiEdit size={20}/>
                                     </span>
-                                    <span onClick={()=>dispatch(removeItem("educations", index))} className="cursor-pointer">
+                                    <span onClick={()=>dispatch(removeItem("trainings", index))} className="cursor-pointer">
                                         <RiDeleteBin6Line size={20}/>
                                     </span>
                                 </div>
@@ -107,97 +110,97 @@ export default function Education(){
                     }
                 </div>
                 {/* Update Education */}
-                {isOpen && (
+                {/* {isOpen && (
                     <UpdateItem 
                         isOpen={isOpen}
                         setIsOpen={setIsOpen}
                         index={updateItem} 
                     />
-                )}
-                {educations.length>0 &&  <hr className="pb-3" />}
+                )} */}
+                {trainings.length>0 &&  <hr className="pb-3" />}
                 {/* Add Education */}
                 <div className="grid grid-cols-2 font-medium gap-x-3 gap-y-1 mb-3">
                     <div>
-                        <label className="label" htmlFor="qualification">Qualification</label>
+                        <label className="label" htmlFor="Name">Name</label>
                         <input 
-                            id="qualification"
+                            id="Name"
                             type="text" 
                             className="input"
-                            value={education.qualification}
-                            placeholder="Hsc"
-                            onChange={e=>setEducation({
-                                ...education, 
-                                qualification: e.target.value
+                            value={training.name}
+                            placeholder="Microsoft  Office"
+                            onChange={e=>setTraining({
+                                ...training, 
+                                name: e.target.value
                             })}
                         />
                     </div>
                     <div>
-                        <label className="label" htmlFor="institutionName">Institution Name</label>
+                        <label className="label" htmlFor="instituteName">Institute Name</label>
                         <input 
-                            id="institutionName"
+                            id="instituteName"
                             type="text" 
                             className="input"
-                            value={education.institutionName}
-                            placeholder="Cantonment public school and college"
-                            onChange={e=>setEducation({
-                                ...education, 
+                            value={training.institutionName}
+                            placeholder="Nova Computer Education"
+                            onChange={e=>setTraining({
+                                ...training, 
                                 institutionName: e.target.value
                             })}
                         />
                     </div>
                     <div>
-                        <label className="label" htmlFor="location">Location</label>
+                        <label className="label" htmlFor="TrLocation">Location</label>
                         <input 
-                            id="location"
+                            id="TrLocation"
                             type="text" 
                             className="input"
-                            value={education.location}
+                            value={training.location}
                             placeholder="Mymensingh"
-                            onChange={e=>setEducation({
-                                ...education, 
+                            onChange={e=>setTraining({
+                                ...training, 
                                 location: e.target.value
                             })}
                         />
                     </div>
                     <div>
-                        <label className="label" htmlFor="studyField">Field Of Study</label>
+                        <label className="label" htmlFor="studyField">Timeline</label>
                         <input 
                             id="studyField"
                             type="text"
                             className="input"
-                            value={education.studyField} 
-                            placeholder="Science, Marketing"
-                            onChange={e=>setEducation({
-                                ...education, 
-                                studyField: e.target.value
+                            value={training.timeline} 
+                            placeholder="JAN - 2022"
+                            onChange={e=>setTraining({
+                                ...training, 
+                                timeline: e.target.value
                             })}
                         />
                     </div>
                     <div>
-                        <label className="label" htmlFor="qualification">Year Of Graduation</label>
+                        <label className="label" htmlFor="qualification">Duration</label>
                         <input 
                             id="qualification"
                             type="text"
                             className="input"
-                            value={education.graduationYear} 
-                            placeholder="2024"
-                            onChange={e=>setEducation({
-                                ...education, 
-                                graduationYear: e.target.value
+                            value={training.duration} 
+                            placeholder="3 Months"
+                            onChange={e=>setTraining({
+                                ...training, 
+                                duration: e.target.value
                             })}
                         />
                     </div>
                     <div>
-                        <label className="label" htmlFor="qualification">GPA/CGPA</label>
+                        <label className="label" htmlFor="Coordinator">Coordinator</label>
                         <input 
-                            id="qualification"
+                            id="Coordinator"
                             type="text"
                             className="input"
-                            value={education.result} 
-                            placeholder="5.00 ( out of 5)"
-                            onChange={e=>setEducation({
-                                ...education, 
-                                result: e.target.value
+                            value={training.coordinator} 
+                            placeholder="Amitav Reza"
+                            onChange={e=>setTraining({
+                                ...training, 
+                                coordinator: e.target.value
                             })}
                         />
                     </div>
@@ -206,7 +209,7 @@ export default function Education(){
                 <div>
                     <label className="label" htmlFor="experienceDescription">Description</label>
                     <ReactQuill
-                        value={education.description}
+                        value={training.description}
                         handleChange={changeDescription}
                     />
                 </div>               

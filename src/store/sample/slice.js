@@ -23,7 +23,9 @@ export const sampleSlice = createSlice({
         educations: [],
         experiences: [],
         skills: [],
+        languages: [],
         references: [],
+        trainings: [],
         personal: {fatherName: "", motherName: "", permanentAddress: "", nationality: "", nid: "", religion: "", dob: "", sex: "", maritalStatus: "", bloodGroup: ""},
         passport: {
             number: "",

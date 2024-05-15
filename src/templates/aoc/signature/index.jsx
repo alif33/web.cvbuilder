@@ -17,8 +17,6 @@ export default function Signature({ data }){
        return img.slice(0, uploadIndex) + "/h_80,w_200" + img.slice(uploadIndex)
     }
 
-    console.log(data);
-
     return(
         <View style={{ flexDirection: 'col', justifyContent: 'center', marginBottom: 10, marginTop: 30 }}>
             <Image 

@@ -52,9 +52,6 @@ export default function Education(){
         }
     }
 
-    console.log(educations);
-
-
     return(
         <div id="education" className="mt-3 overflow-x-hidden">
             <h1 className="heading py-3 text-center">শিক্ষাগত যোগ্যতা</h1>

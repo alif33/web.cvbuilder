@@ -10,8 +10,6 @@ export default function Textarea(){
 
     const simples = ["Summary", "Objective", "Declaration"]
 
-    console.log(resume);
-   
     return(
         <div className="border-2 border-black my-3 p-3" id="textarea">
             <h1 className="heading">Simple</h1>

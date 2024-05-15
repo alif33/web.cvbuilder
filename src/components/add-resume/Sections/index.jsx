@@ -5,13 +5,14 @@ import Heading from "../Heading"
 import Education from "../Education"
 import Experience from "../Experience"
 import Skills from "../Skills"
+import Language from "../Language"
 import Reference from "../Reference"
+import Training from "../Training"
 import Personal from "../Personal"
 import Textarea from "../Textarea"
 import Image from "../Image"
 import Signature from "../Signature"
 import Passport from "../Passport"
-
 
 export default function Sections(){
     return(
@@ -23,7 +24,9 @@ export default function Sections(){
             <Education/>
             <Experience/>
             <Skills/>
+            <Language/>
             <Reference/>
+            <Training/>
             <Personal/>
             <Textarea/>
             <Image/>

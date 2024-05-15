@@ -116,7 +116,7 @@ export default function Experience(){
 
                 {experiences.length>0 && (<hr />)}
 
-                <div className="grid grid-cols-2 font-medium gap-5 mb-3">
+                <div className="grid grid-cols-2 font-medium gap-x-3 gap-y-1 mb-3">
                     <div>
                         <label className="label" htmlFor="jobTitle">Job Title</label>
                         <input 

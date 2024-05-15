@@ -10,7 +10,6 @@ export default function Personal(){
         dispatch(onValueChange("personal", e.target.name, e.target.value))
     }
 
-    console.log(personal);
     return(
         <div id="personal" className="mt-3 mb-7">
             <h1 className="heading">Personal</h1>
