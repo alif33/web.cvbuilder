@@ -34,7 +34,9 @@ export default function Experience({name, position, data}){
                             <Text>{e.duration}</Text>
                         </View>
                         <Text style={styles.employer}>{e?.employer}{e?.location && ", "+e?.location}</Text>
-                        <Description heading="" description={e.description}/>
+                        <View style={{marginTop: 6}}>
+                            <Description heading="" description={e.description}/>
+                        </View>
                     </View>
                 ))
             }

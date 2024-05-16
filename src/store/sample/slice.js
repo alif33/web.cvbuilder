@@ -158,9 +158,9 @@ export const sampleSlice = createSlice({
                 state.layout[position].push(section)
             }
         },
-
+        
         fetchResume: (state, action)=>{
-            const sections = ["heading", "summary", "objective", "declaration", "expertise", "educations", "experiences", "skills", "languages", "references", "trainings", "personal", "image", "signature", "passport", "layout", "templateName"]
+            const sections = ["heading", "summary", "objective", "declaration", "expertise", "triangle", "quadrilateral", "pentagon", "hexagon", "heptagon", "octagon", "educations", "experiences", "skills", "languages", "references", "trainings", "personal", "image", "signature", "passport", "layout", "templateName"]
             sections.forEach(section => {
                 if (action.payload[section]) {
                     state[section] = action.payload[section]
