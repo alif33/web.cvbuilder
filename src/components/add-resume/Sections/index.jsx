@@ -13,6 +13,7 @@ import Textarea from "../Textarea"
 import Image from "../Image"
 import Signature from "../Signature"
 import Passport from "../Passport"
+import Custom from "../Custom"
 
 export default function Sections(){
     return(
@@ -32,6 +33,7 @@ export default function Sections(){
             <Image/>
             <Signature/>
             <Passport/>
+            <Custom/>
         </div>
     )
 } 

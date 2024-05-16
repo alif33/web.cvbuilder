@@ -21,14 +21,14 @@ export default function Reference({ name, position, data }){
             <Heading name={name} position={position} title="Reference" height={10} width={14} img="/icons/aoc/reference.png"/>
             {
                 references.map((reference, index)=>(
-                    <View style={{ paddingLeft: 10, lineHeight: 1.4 }} key={index}>
+                    <View style={{ lineHeight: 1.4, marginBottom: 3 }} key={index}>
                         <Text style={styles.name}>{reference.name}</Text>
                         <Text style={styles.designation}>{reference.designation}</Text> 
                         <Text>{reference.institute}</Text>
                         {
                             reference.phone && reference.phone?.length>0 && (
                                 <View style={{ flexDirection: 'row', paddingTop: 2 }}>
-                                    <Image style={{ width: 13, height: 10 }} src="/icons/aoc/phone.png"/>
+                                    <Image style={{ width: 11, height: 9 }} src={`/icons/${position==="left"? "balck": "white"}/phone.png`}/>
                                     <Text> {reference.phone}</Text>
                                 </View>
                             )
@@ -37,7 +37,7 @@ export default function Reference({ name, position, data }){
                         {
                             reference.email && reference.email?.length>0 && (
                                 <View style={{ flexDirection: 'row', paddingTop: 2 }}>
-                                    <Image style={{ width: 12, height: 9 }} src="/icons/aoc/email.png"/>
+                                    <Image style={{ width: 12, height: 9 }} src={`/icons/${position==="left"? "balck": "white"}/email.png`}/>
                                     <Text> {reference.email}</Text>
                                 </View>
                             )

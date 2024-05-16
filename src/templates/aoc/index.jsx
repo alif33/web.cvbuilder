@@ -20,7 +20,7 @@ import Avatar from "./avatar"
 import Personal from "./personal"
 import Signature from "./signature"
 import Passport from "./passport"
-
+import Custom from "./custom"
 
 const sections = {
     summary: Summary,
@@ -37,7 +37,6 @@ const sections = {
     personal: Personal,
     signature: Signature,
     passport: Passport,
-
 }
 
 const styles = StyleSheet.create({
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
 })
 
 
-export default function Aoc({ data }){
+export default function Aoc({ customs, data }){
 
     return(
         <Document>
@@ -80,10 +79,15 @@ export default function Aoc({ data }){
                         <Avatar data={data}/>
                         {
                             data.layout.primaryLeft.map((component, index)=>{
-                                const Section = sections[component] 
-                                return(
-                                    <Section data={data} key={index}/>
-                                )
+                                if(!customs?.includes(component)){
+                                    const Section = sections[component] 
+                                    
+                                    return(
+                                        <Section data={data} key={index}/>
+                                    )
+                                }else{
+                                    return <Custom key={index} name={component} data={data}/>
+                                }
                             })
                         }
                     </View>
@@ -91,10 +95,14 @@ export default function Aoc({ data }){
                         <Header data={data} />
                         {
                             data.layout.primaryRight.map((component, index)=>{
-                                const Section = sections[component] 
-                                return(
-                                    <Section data={data} key={index}/>
-                                )
+                                if(!customs?.includes(component)){
+                                    const Section = sections[component] 
+                                    return(
+                                        <Section data={data} key={index}/>
+                                    )
+                                }else{
+                                    return <Custom key={index} name={component} data={data}/>
+                                }
                             })
                         }
                     </View>

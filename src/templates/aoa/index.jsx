@@ -20,6 +20,8 @@ import Avatar from "./avatar"
 import Personal from "./personal"
 import Signature from "./signature"
 import Passport from "./passport"
+import Custom from "./custom"
+
 import { getPosition } from "../lib/formatter"
 
 const sections = {
@@ -71,7 +73,7 @@ const styles = StyleSheet.create({
 })
 
 
-export default function Aoc({ data }){
+export default function Aoc({ customs, data }){
 
     return(
         <Document>
@@ -81,16 +83,21 @@ export default function Aoc({ data }){
                         <Header data={data} />
                         {
                             data.layout.primaryLeft.map((component, index)=>{
-                                const Section = sections[component] 
 
-                                return(
-                                    <Section 
-                                        key={index}
-                                        name={component} 
-                                        position={getPosition(component, data.layout)} 
-                                        data={data} 
-                                    />
-                                )
+                                if(!customs?.includes(component)){
+                                    const Section = sections[component] 
+
+                                    return(
+                                        <Section 
+                                            key={index}
+                                            name={component} 
+                                            position={getPosition(component, data.layout)} 
+                                            data={data} 
+                                        />
+                                    )
+                                }else{
+                                    return <Custom key={index} name={component} data={data} />
+                                }
                             })
                         }
                     </View>
@@ -100,15 +107,19 @@ export default function Aoc({ data }){
                         <Avatar data={data}/>
                         {
                             data.layout.primaryRight.map((component, index)=>{
-                                const Section = sections[component] 
-                                return(
-                                    <Section 
-                                        key={index}
-                                        name={component} 
-                                        position={getPosition(component, data.layout)} 
-                                        data={data} 
-                                    />
-                                )
+                                if(!customs?.includes(component)){
+                                    const Section = sections[component] 
+                                    return(
+                                        <Section 
+                                            key={index}
+                                            name={component} 
+                                            position={getPosition(component, data.layout)} 
+                                            data={data} 
+                                        />
+                                    )
+                                }else{
+                                    return <Custom key={index} name={component} data={data} /> 
+                                }
                             })
                         }
                         </View>
@@ -124,20 +135,29 @@ export default function Aoc({ data }){
                             <View style={styles.left}>
                                 {
                                     data.layout.secondaryLeft.map((component, index)=>{
-                                        const Section = sections[component] 
-                                        return(
-                                            <Section data={data} key={index}/>
-                                        )
+                                        if(!customs?.includes(component)){
+                                            const Section = sections[component] 
+                                            return(
+                                                <Section data={data} key={index}/>
+                                            )
+                                        }else{
+                                            return <Custom key={index} name={component} data={data} /> 
+                                        }
                                     })
                                 }
                             </View>
                             <View style={styles.right}>
                                 {
                                     data.layout.secondaryRight.map((component, index)=>{
-                                        const Section = sections[component] 
-                                        return(
-                                            <Section data={data} key={index}/>
-                                        )
+                                        if(!customs?.includes(component)){
+                                            const Section = sections[component] 
+                                            return(
+                                                <Section data={data} key={index}/>
+                                            )
+                                        }else{
+                                            return <Custom key={index} name={component} data={data} /> 
+                                        }
+                                        
                                     })
                                 }
                             </View>

@@ -20,7 +20,7 @@ import Avatar from "./avatar"
 import Personal from "./personal"
 import Signature from "./signature"
 import Passport from "./passport"
-
+import Custom from "./custom"
 
 const sections = {
     summary: Summary,
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
 })
 
 
-export default function Aoc({ data }){
+export default function Aoc({ customs, data }){
 
     return(
         <Document>
@@ -88,10 +88,14 @@ export default function Aoc({ data }){
                         <Header data={data} />
                         {
                             data.layout.primaryLeft.map((component, index)=>{
-                                const Section = sections[component] 
-                                return(
-                                    <Section data={data} key={index}/>
-                                )
+                                if(!customs?.includes(component)){
+                                    const Section = sections[component] 
+                                    return(
+                                        <Section key={index} name={component} data={data} />
+                                    )
+                                }else{
+                                    <Custom key={index} name={component} data={data}/>
+                                }
                             })
                         }
                     </View>
@@ -99,10 +103,14 @@ export default function Aoc({ data }){
                         
                         {
                             data.layout.primaryRight.map((component, index)=>{
-                                const Section = sections[component] 
-                                return(
-                                    <Section data={data} key={index}/>
-                                )
+                                if(!customs?.includes(component)){
+                                    const Section = sections[component] 
+                                    return(
+                                        <Section key={index} name={component} data={data} />
+                                    )
+                                }else{
+                                    <Custom key={index} name={component} data={data}/>
+                                }
                             })
                         }
                     </View>
@@ -116,20 +124,28 @@ export default function Aoc({ data }){
                             <View style={styles.left}>
                                 {
                                     data.layout.secondaryLeft.map((component, index)=>{
-                                        const Section = sections[component] 
-                                        return(
-                                            <Section data={data} key={index}/>
-                                        )
+                                        if(!customs?.includes(component)){
+                                            const Section = sections[component] 
+                                            return(
+                                                <Section key={index} name={component} data={data} />
+                                            )
+                                        }else{
+                                            <Custom key={index} name={component} data={data}/>
+                                        }
                                     })
                                 }
                             </View>
                             <View style={styles.right}>
                                 {
                                     data.layout.secondaryRight.map((component, index)=>{
-                                        const Section = sections[component] 
-                                        return(
-                                            <Section data={data} key={index}/>
-                                        )
+                                        if(!customs?.includes(component)){
+                                            const Section = sections[component] 
+                                            return(
+                                                <Section key={index} name={component} data={data} />
+                                            )
+                                        }else{
+                                            <Custom key={index} name={component} data={data}/>
+                                        }
                                     })
                                 }
                             </View>

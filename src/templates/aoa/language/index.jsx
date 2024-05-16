@@ -15,7 +15,7 @@ export default function Language({ data }){
             <View>
                 {
                     languages.map((lang, index)=>(
-                        <View style={{ flexDirection: 'row', alignItems: 'center', columnGap: 5, paddingLeft: 15, marginTop: 4 }} key={index}>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', columnGap: 5, marginTop: 4 }} key={index}>
                             <Text style={{fontSize: 10, fontWeight: 'semibold'}}>{lang.level}:</Text>
                             <Text style={{fontSize: 10, fontWeight: 'medium'}}>
                                 {lang.name}

@@ -21,7 +21,7 @@ export default function Avatar({ data }){
     }
 
     return(
-        <View style={{ flexDirection: 'row', marginBottom: 40}}>
+        <View style={{ flexDirection: 'row', marginBottom: 25}}>
             {data?.image && data?.image?.secure_url && (
                 <Image 
                     src={data.image.secure_url}

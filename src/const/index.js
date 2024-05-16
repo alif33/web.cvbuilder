@@ -1,5 +1,6 @@
 // sections of panel and pdf
-export const sections = ["contacts", "summary", "objective", "declaration", "education", "experience", "skills", "language", "reference", "training", "personal", "signature", "passport"]
+export const sections = ["contacts", "summary", "objective", "declaration", "education", "experience", "skills", "language", "reference", "training", "personal", "signature", "passport", "triangle", "quadrilateral", "pentagon", "hexagon", "heptagon", "octagon"]
+export const customSections = ["triangle", "quadrilateral", "pentagon", "hexagon", "heptagon", "octagon"]
 export const educationsSchema = [
     {   
         courseName: "JSC/JDC (সমমান)",

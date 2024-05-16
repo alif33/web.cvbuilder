@@ -20,6 +20,13 @@ export const sampleSlice = createSlice({
         objective: {heading: "Objectives", body: ""},
         declaration: {heading: "Declaration", body: ""},
         expertise: {heading: "Expertise", body: ""},
+        // Custom area
+        triangle: {heading: "Triangle", body: ""},
+        quadrilateral: {heading: "Quadrilateral", body: ""},
+        pentagon: {heading: "Pentagon", body: ""},
+        hexagon: {heading: "Hexagon", body: ""},
+        heptagon: {heading: "Heptagon", body: ""},
+        octagon: {heading: "Octagon", body: ""},
         educations: [],
         experiences: [],
         skills: [],

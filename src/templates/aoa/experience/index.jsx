@@ -29,9 +29,12 @@ export default function Experience({name, position, data}){
             {
                 experiences && experiences.map((e, index)=>(
                     <View style={styles.item} key={index}>
-                        <Text style={styles.title}>{e?.title}</Text>
-                        <Text style={styles.employer}>{e?.employer}, {e?.city}</Text>
-                        <Description heading="Duties" description={e.description}/>
+                        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                            <Text style={styles.title}>{e?.title}</Text>
+                            <Text>{e.duration}</Text>
+                        </View>
+                        <Text style={styles.employer}>{e?.employer}{e?.location && ", "+e?.location}</Text>
+                        <Description heading="" description={e.description}/>
                     </View>
                 ))
             }

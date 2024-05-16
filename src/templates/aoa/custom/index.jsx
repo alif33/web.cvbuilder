@@ -5,19 +5,19 @@ const styles = StyleSheet.create({
     body: {
         fontSize: 10, 
         lineHeight: 1.3, 
-        paddingTop: 5,        
+        paddingTop: 5        
     }
 })
 
-export default function Declaration({name, position, data}){
-    const { declaration } = data
+export default function Custom({name, data}){
+    const resume = data
 
     return(
         <View style={{ marginTop: 10 }}>
-            <Heading name={name} position={position} title="Declaration" height={10} width={11} img="/icons/aoc/declaration.png"/>
+            <Heading title={resume[name].heading} height={10} width={11} img="/icons/aoc/declaration.png"/>
             <View>
                 <Text style={styles.body}>
-                    {declaration.body}
+                    {resume[name].body}
                 </Text>
             </View>
         </View>

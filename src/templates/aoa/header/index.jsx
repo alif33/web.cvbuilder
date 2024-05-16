@@ -17,8 +17,7 @@ export default function Header({name, position, data}){
     return(
         <View style={styles.header}>
             <View style={{flexDirection: 'row', alignItems: 'center', marginTop: 5}}>
-                <Text style={styles.headerTitle}>{heading.firstName+" "}</Text>
-                
+                <Text style={styles.headerTitle}>{heading.firstName}</Text>
                 <Text style={{ fontSize: 22, fontWeight: 'bold' }}>{" "+heading.surName}</Text>
             </View>
         </View>

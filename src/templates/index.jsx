@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Font } from "@react-pdf/renderer"
+import { customSections } from "../const"
 import Aoa from "../templates/aoa"
 import Aob from "../templates/aob"
 import Aoc from "../templates/aoc"
@@ -92,7 +93,7 @@ export default function Templates({ data }){
     const Template = temps[`${data?.templateName}`] || Aod
 
     return(
-        <Template data={data}/>
+        <Template customs={customSections} data={data}/>
     )
 }
  
