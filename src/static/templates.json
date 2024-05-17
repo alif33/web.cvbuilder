@@ -23,5 +23,10 @@
         "name": "aoe",
         "image": "/templates/aoe.png",
         "code": "105"
+    },
+    {
+        "name": "aof",
+        "image": "/templates/aof.png",
+        "code": "106"
     }
 ]

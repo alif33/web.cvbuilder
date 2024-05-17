@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 10,
         fontWeight: 'bold',
-        color: '#00B2B6'
+        color: '#FF7D00'
     },
     employer: {
         fontSize: 10
@@ -34,7 +34,7 @@ export default function Training({data}){
             {
                 trainings && trainings.map((training, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: '#00B2B6', height: 6, width: 6, borderRadius: 3}}></View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#FF7D00", height: 6, width: 6, borderRadius: 3}}></View>
                         {index!==0 && (<View style={{ position: 'absolute',  height:1, width: 330, backgroundColor: '#D9D9D9', top: -8, left: 10}}></View>)}
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={styles.title}>{training?.name}</Text>

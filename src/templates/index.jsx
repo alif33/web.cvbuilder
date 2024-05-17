@@ -5,6 +5,7 @@ import Aoa from "../templates/aoa"
 import Aob from "../templates/aob"
 import Aoc from "../templates/aoc"
 import Aod from "../templates/aod"
+import Aof from "../templates/aof"
 
 Font.registerHyphenationCallback(word => [word])
 Font.register(
@@ -87,6 +88,7 @@ const temps = {
     aob: Aob,
     aoc: Aoc,
     aod: Aod,
+    aof: Aof
 }
 
 export default function Templates({ data }){
