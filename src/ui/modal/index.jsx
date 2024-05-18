@@ -1,4 +1,6 @@
 import ReactModal from "react-modal"
+import { RxCross2 } from "../../icons"
+
 const customStyles = {
     content: {
       top: '50%',
@@ -20,7 +22,12 @@ export default function Modal({isOpen, setIsOpen, children}){
             contentLabel="Update modal"
             ariaHideApp={false}
         >
-            {children}
+            <div className="relative w-[750px]">
+                <div className="absolute -top-1 right-0">
+                    <span onClick={()=>setIsOpen(false)} className="cursor-pointer"><RxCross2 size={20}/></span>
+                </div>
+                {children}
+            </div>
         </ReactModal>
     )
 }

@@ -14,7 +14,7 @@ import {
     CiEdit 
 } from "../../../icons"
 import ReactQuill from "../../../ui/react-quill"
-// import UpdateItem from "./UpdateItem"
+import UpdateItem from "./UpdateItem"
 
 export default function Training(){
     const { trainings } = useSelector(state=>state.sample)
@@ -68,8 +68,6 @@ export default function Training(){
         setIsOpen(true)
     }
 
-    console.log(trainings)
-
     return(
         <div id="training" className="mt-3">
             <div className="flex justify-between items-center">
@@ -109,16 +107,16 @@ export default function Training(){
                         ))
                     }
                 </div>
-                {/* Update Education */}
-                {/* {isOpen && (
+                {/* Update Training */}
+                {isOpen && (
                     <UpdateItem 
                         isOpen={isOpen}
                         setIsOpen={setIsOpen}
                         index={updateItem} 
                     />
-                )} */}
+                )}
                 {trainings.length>0 &&  <hr className="pb-3" />}
-                {/* Add Education */}
+                {/* Add Training */}
                 <div className="grid grid-cols-2 font-medium gap-x-3 gap-y-1 mb-3">
                     <div>
                         <label className="label" htmlFor="Name">Name</label>

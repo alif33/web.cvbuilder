@@ -14,7 +14,7 @@ export default function Summary({name, position, data}){
     const { summary } = data
 
     return(
-        <View>
+        <View style={{ marginTop: 10 }}>
             <Heading name={name} position={position} title="Summary" img="/icons/man.png"/>
             <View>
                 <Text style={styles.summary}>

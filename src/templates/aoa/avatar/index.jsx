@@ -17,14 +17,14 @@ export default function Avatar({ data }){
 
     const handleResize= img =>{
        const uploadIndex = img.indexOf("upload") + "upload".length
-       return img.slice(0, uploadIndex) + "/g_face,c_thumb,h_200,w_200" + img.slice(uploadIndex)
+       return img.slice(0, uploadIndex) + "/g_face,c_thumb,h_400,w_400" + img.slice(uploadIndex)
     }
 
     return(
         <View style={{ flexDirection: 'row', marginBottom: 25}}>
             {data?.image && data?.image?.secure_url && (
                 <Image 
-                    src={data.image.secure_url}
+                    src={handleResize(data.image.secure_url)}
                     style={styles.image}
                 />
             )}
