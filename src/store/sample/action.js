@@ -88,11 +88,6 @@ export const onTextarea = (field, property, value) => (dispatch) => {
     dispatch(slice.onTextarea({ field, property, value }))
 }
 
-// Image
-export const changeImage = (image) => (dispatch) => {
-    dispatch(slice.changeImage(image))
-}
-
 // Signature
 export const changeSignature = (signature) => (dispatch) => {
     dispatch(slice.changeSignature(signature))

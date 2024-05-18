@@ -47,7 +47,7 @@ export const sampleSlice = createSlice({
             tertiaryLeft: [],
             tertiaryRight: []
         },
-        image: {},
+        image: { secure_url: null, height: 200, width: 200 },
         signature: {},
         templateName: "aoc"
     },
@@ -124,11 +124,6 @@ export const sampleSlice = createSlice({
             const property = action.payload.property
             const value = action.payload.value
             state[field][property] = value       
-        },
-
-        // Image
-        changeImage: (state, action) => {
-            state.image = action.payload
         },
 
         // Signature

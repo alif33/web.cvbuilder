@@ -16,8 +16,9 @@ const styles = StyleSheet.create({
 export default function Avatar({ data }){
 
     const handleResize= img =>{
+    
        const uploadIndex = img.indexOf("upload") + "upload".length
-       return img.slice(0, uploadIndex) + "/g_face,c_thumb,h_400,w_400" + img.slice(uploadIndex)
+       return img.slice(0, uploadIndex) + `/g_face,c_thumb,h_${data?.image.width || 200},w_${data?.image.width || 200}` + img.slice(uploadIndex)
     }
 
     return(

@@ -1,6 +1,7 @@
 import Modal from "../../../../ui/modal"
 import { useDispatch, useSelector } from "react-redux"
 import { updateItem } from "../../../../store/sample/action"
+import ReactQuill from "../../../../ui/react-quill"
 
 export default function UpdateItem({isOpen, setIsOpen, index}){
     const { educations } = useSelector(state=>state.sample)
@@ -10,7 +11,9 @@ export default function UpdateItem({isOpen, setIsOpen, index}){
         dispatch(updateItem("educations", index, e.target.name, e.target.value))
     } 
 
-    console.log(educations, "EDU");
+    const changeDescription = e=>{
+        dispatch(updateItem("educations", index, "description", e))
+    }
 
     return(
         <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
@@ -89,7 +92,13 @@ export default function UpdateItem({isOpen, setIsOpen, index}){
                         />
                     </div>
                 </div>
-
+                <div>
+                    <label className="label" htmlFor="experienceDescription">Description</label>
+                    <ReactQuill
+                       value={educations[index].description}
+                        handleChange={changeDescription}
+                    />
+                </div> 
             </div>
         </Modal>
     )

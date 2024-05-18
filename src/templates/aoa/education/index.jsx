@@ -51,7 +51,7 @@ export default function Experience({name, position, data}){
                         }
                         
                         {edu.description && edu.description.length> 0 && (
-                            <Description heading="Duties" description={edu.description}/>
+                            <Description heading="" description={edu.description}/>
                         )}
                     </View>
                 ))
