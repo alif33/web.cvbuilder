@@ -6,11 +6,12 @@ const styles = StyleSheet.create({
     item: {
         position: 'relative',
         marginBottom: 15,
-        paddingLeft: 10,
         lineHeight: 1.4,
         borderLeft: 1,
         borderLeftColor: '#D9D9D9',
-        paddingRight: 20
+        paddingRight: 20,
+        paddingLeft: 10,
+        marginLeft: 10
     },
     title: {
         fontSize: 10,
@@ -35,7 +36,7 @@ export default function Experience({data}){
             {
                 educations && educations.map((edu, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#D9D9D9", height: 6, width: 6, borderRadius: 3}}></View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
                         {index!==0 && (<View style={{ position: 'absolute',  height:1, width: 330, backgroundColor: '#D9D9D9', top: -8, left: 10}}></View>)}
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={styles.title}>{edu?.qualification}</Text>

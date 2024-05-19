@@ -9,7 +9,9 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         lineHeight: 1.4,
         borderLeft: 1,
-        borderLeftColor: '#D9D9D9'
+        borderLeftColor: '#D9D9D9',
+        paddingRight: 20,
+        marginLeft: 10
     },
     title: {
         fontSize: 10,
@@ -31,7 +33,7 @@ export default function Experience({data}){
             {
                 experiences && experiences.map((ex, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#FF7D00", height: 6, width: 6, borderRadius: 3}}></View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
 
                         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={{ fontWeight: 'bold' }}>{ex?.title}</Text>

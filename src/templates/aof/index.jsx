@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
     },
     right: {
         width: 420,
+        marginTop: 20
     },
 })
 
@@ -74,7 +75,9 @@ export default function Aoc({ customs, data }){
             <Page size="A4" style={styles.page}>
                 <View style={styles.body}>
                     <View style={styles.left}>
-                        <Avatar data={data}/>
+                        <View style={{ backgroundColor: '#57021B', paddingTop: 40, borderBottomLeftRadius: 160, borderBottomRightRadius: 160}}>
+                            <Avatar data={data}/>
+                        </View>
                         <Header data={data} />
                         {
                             data.layout.primaryLeft.map((component, index)=>{
@@ -114,20 +117,30 @@ export default function Aoc({ customs, data }){
                             <View style={styles.left}>
                                 {
                                     data.layout.secondaryLeft.map((component, index)=>{
-                                        const Section = sections[component] 
-                                        return(
-                                            <Section data={data} key={index}/>
-                                        )
+                                        if(!customs?.includes(component)){
+                                            const Section = sections[component] 
+                                            return(
+                                                <Section data={data} key={index}/>
+                                            )
+                                        }else{
+                                            return <Custom key={index} name={component} data={data}/>
+                                        }
+                                        
                                     })
                                 }
                             </View>
                             <View style={styles.right}>
                                 {
                                     data.layout.secondaryRight.map((component, index)=>{
-                                        const Section = sections[component] 
-                                        return(
-                                            <Section data={data} key={index}/>
-                                        )
+                                        if(!customs?.includes(component)){
+                                            const Section = sections[component] 
+                                            return(
+                                                <Section data={data} key={index}/>
+                                            )
+                                        }else{
+                                            return <Custom key={index} name={component} data={data}/>
+                                        }
+                                        
                                     })
                                 }
                             </View>

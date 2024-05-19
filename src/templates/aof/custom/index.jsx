@@ -15,7 +15,7 @@ export default function Custom({name, data}){
     const resume = data
 
     return(
-        <View style={{ marginTop: 10 }}>
+        <View style={{ marginTop: 10, paddingLeft: 5 }}>
             <Heading title={resume[name].heading} height={10} width={11} img="/icons/aoc/declaration.png"/>
             <View>
                 <Text style={styles.body}>

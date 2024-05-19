@@ -123,7 +123,12 @@ export default function Aoc({ customs, data }){
                                         />
                                     )
                                 }else{
-                                    return <Custom key={index} name={component} data={data} /> 
+                                    return <Custom 
+                                        key={index} 
+                                        name={component} 
+                                        position={getPosition(component, data.layout)} 
+                                        data={data} 
+                                    /> 
                                 }
                             })
                         }
@@ -151,7 +156,12 @@ export default function Aoc({ customs, data }){
                                                 />
                                             )
                                         }else{
-                                            return <Custom key={index} name={component} data={data} /> 
+                                            return <Custom 
+                                            key={index} 
+                                            name={component} 
+                                            position={getPosition(component, data.layout)} 
+                                            data={data} 
+                                        /> 
                                         }
                                     })
                                 }

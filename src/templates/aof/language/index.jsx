@@ -10,7 +10,7 @@ export default function Language({ data }){
     const { languages } = data
 
     return(
-        <View style={{ marginTop: 10, lineHeight: 1.3, marginBottom: 5 }}>
+        <View style={{ marginTop: 10, lineHeight: 1.3, marginBottom: 5, paddingLeft: 5 }}>
             <Heading title="Languages" height={10} width={10} img="/icons/aoc/language.png"/>
             <View>
                 {

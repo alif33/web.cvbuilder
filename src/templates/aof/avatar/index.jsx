@@ -4,21 +4,21 @@ import { View, Image, StyleSheet } from "@react-pdf/renderer"
 const styles = StyleSheet.create({
    
     imageContainer: {
-        height: 130,
-        width: 130,
+        height: 150,
+        width: 150,
         flexDirection: 'row', 
         justifyContent: 'center', 
         backgroundColor: "#54001C",
         marginBottom: 25,
-        borderRadius: 70,
+        borderRadius: 75,
         border: 3,
         borderColor: '#FFFFFF',
         marginHorizontal: 'auto'
     },
     image: {
         paddingTop: 4,
-        height: 125,
-        width: 125,
+        height: 144,
+        width: 144,
         borderRadius: 70,
     }
 })

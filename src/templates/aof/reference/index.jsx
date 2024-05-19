@@ -21,7 +21,7 @@ export default function Reference({ data }){
             <Heading title="Reference" height={10} width={14} img="/icons/aoc/reference.png"/>
             {
                 references.map((reference, index)=>(
-                    <View style={{ paddingLeft: 10, lineHeight: 1.4 }} key={index}>
+                    <View style={{ paddingLeft: 10, lineHeight: 1.4, paddingRight: 20, marginLeft: 10 }} key={index}>
                         <Text style={styles.name}>{reference.name}</Text>
                         <Text style={styles.designation}>{reference.designation}</Text> 
                         <Text>{reference.institute}</Text>

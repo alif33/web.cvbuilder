@@ -28,6 +28,9 @@ export default function Personal({ name, position, data }){
                 { personal?.nationality && personal?.nationality.length>0 && (
                     <Text>{'Nationality: '}{personal.nationality}</Text>
                 )}
+                { personal?.nid && personal?.nid.length>0 && (
+                    <Text>{'National ID No: '}{personal.nid}</Text>
+                )}
                 { personal?.religion && personal?.religion.length>0 && (
                      <Text>{'Religion: '}{personal.religion}</Text>
                 )}

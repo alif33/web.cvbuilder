@@ -17,7 +17,7 @@ export default function Summary({data}){
     return(
         <View>
             <Heading title="Summary" img="/icons/man.png"/>
-            <View>
+            <View style={{ paddingRight: 20, marginLeft: 10 }}>
                 <Text style={styles.summary}>
                     {summary.body}
                 </Text>
