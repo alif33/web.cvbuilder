@@ -1,5 +1,5 @@
 // sections of panel and pdf
-export const sections = ["contacts", "summary", "objective", "declaration", "education", "experience", "skills", "language", "reference", "training", "personal", "signature", "passport", "triangle", "quadrilateral", "pentagon", "hexagon", "heptagon", "octagon"]
+export const sections = ["contacts", "summary", "objective", "declaration", "education", "experience", "xperience", "skills", "language", "reference", "training", "personal", "signature", "passport", "triangle", "quadrilateral", "pentagon", "hexagon", "heptagon", "octagon"]
 export const customSections = ["triangle", "quadrilateral", "pentagon", "hexagon", "heptagon", "octagon"]
 export const educationsSchema = [
     {   

@@ -14,6 +14,7 @@ import Image from "../Image"
 import Signature from "../Signature"
 import Passport from "../Passport"
 import Custom from "../Custom"
+import Extra from "../Extra"
 
 export default function Sections(){
     return(
@@ -34,6 +35,7 @@ export default function Sections(){
             <Signature/>
             <Passport/>
             <Custom/>
+            <Extra/>
         </div>
     )
 } 

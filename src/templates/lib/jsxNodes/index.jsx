@@ -12,14 +12,15 @@ export default function jsxNodes(nodes){
         )
       } else if (node.type === 'li') {
         return (
-          <View key={index}>
+          <View style={{ position: 'relative'}} key={index}>
             <View style={{ marginRight: 3 }}>
               <Image style={{ width: 4, height: 4 }} src="/icons/aoc/dots.png"/>
             </View>
             <View><Text style={{ fontSize: 4, color: '#FFFFFF'}}>g</Text></View>
-            <View style={{ marginTop: 20, paddingTop: 20}}>
+            <View style={{ marginTop: 20, paddingTop: 20, paddingLeft: 20}}>
               <Text style={{ marginLeft: 5 }}>{jsxNodes(node.data)}</Text>
               <Text>{'\n'}</Text>
+              <Text style={{ lineHeight: 0.2 }}>{'\n'}</Text>
             </View>
           </View>
         )

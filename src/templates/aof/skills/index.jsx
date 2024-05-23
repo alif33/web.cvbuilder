@@ -11,7 +11,7 @@ export default function Skills({ data }){
     const { skills } = data
 
     return(
-        <View style={{ marginTop: 10, lineHeight: 1.3, marginBottom: 5, paddingLeft: 5 }}>
+        <View style={{ marginTop: 10, lineHeight: 1.3, marginBottom: 5, paddingLeft: 10 }}>
             <Heading title="Skills" height={10} width={10} img="/icons/aoc/skills.png"/>
             <View style={{ paddingRight: 15 }}>
                 {

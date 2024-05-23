@@ -6,12 +6,14 @@ import Aob from "../templates/aob"
 import Aoc from "../templates/aoc"
 import Aod from "../templates/aod"
 import Aof from "../templates/aof"
+import Aog from "../templates/aog"
+import Aoh from "../templates/aoh"
 
 Font.registerHyphenationCallback(word => [word])
 Font.register(
     /* 
-    Montserrat 
-*/
+        Montserrat 
+    */
     { 
         family: 'Montserrat', 
         fonts: [
@@ -88,7 +90,9 @@ const temps = {
     aob: Aob,
     aoc: Aoc,
     aod: Aod,
-    aof: Aof
+    aof: Aof,
+    aog: Aog,
+    aoh: Aoh,
 }
 
 export default function Templates({ data }){

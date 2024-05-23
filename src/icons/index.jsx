@@ -18,7 +18,10 @@ import {
 } from "react-icons/io5"
 import { SiPagekit } from "react-icons/si"
 import { LuPlusCircle, LuLayoutPanelLeft } from "react-icons/lu"
-import { MdDynamicForm } from "react-icons/md"
+import { 
+    MdDynamicForm,
+    MdOutlineAirlineSeatReclineExtra 
+} from "react-icons/md"
 import { 
     CiImageOn,
     CiImport,
@@ -26,6 +29,9 @@ import {
 } from "react-icons/ci"
 import { IoIosAlbums } from "react-icons/io"
 import { VscSaveAll } from "react-icons/vsc"
+import { BiSolidMicrophone } from "react-icons/bi"
+import { MdMoveDown } from "react-icons/md"
+
 
 export { 
     GoDownload,
@@ -44,9 +50,12 @@ export {
     LuPlusCircle,
     LuLayoutPanelLeft,
     MdDynamicForm,
+    MdOutlineAirlineSeatReclineExtra,
     CiImageOn,
     CiImport,
     CiEdit,
     IoIosAlbums,
-    VscSaveAll
+    VscSaveAll,
+    BiSolidMicrophone,
+    MdMoveDown
 }

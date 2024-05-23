@@ -29,6 +29,7 @@ export const sampleSlice = createSlice({
         octagon: {heading: "Octagon", body: ""},
         educations: [],
         experiences: [],
+        xperiences: [],
         skills: [],
         languages: [],
         references: [],
@@ -118,6 +119,7 @@ export const sampleSlice = createSlice({
         removeReference: (state, action) => {
             state.references.splice(action.payload, 1);
         },
+
         // Textarea 
         onTextarea: (state, action) => {
             const field = action.payload.field
@@ -184,6 +186,22 @@ export const sampleSlice = createSlice({
             if(resume?.experiences){
                state.experiences = filterList(resume.experiences, ["title", "employer", "location", "country", "duration", "description"])
             }
+            // Skills
+
+            if(resume?.skills){
+               state.skills = filterList(resume.skills, ["name", "percentage"])
+            }
+
+            // Personal
+
+            if (resume?.personal) {
+                const personalFields = ["fatherName", "motherName", "permanentAddress", "nationality", "nid", "religion", "dob", "sex", "maritalStatus", "bloodGroup"]
+                personalFields.forEach(pr => {
+                    state.personal[pr] = resume.personal?.[pr] || ""
+                })
+            }
+
+
 
             //References 
 
@@ -217,6 +235,8 @@ export const sampleSlice = createSlice({
                     state.declaration[df] = resume.declaration?.[df] || ""
                 }) 
             }
+
+
 
 
         }

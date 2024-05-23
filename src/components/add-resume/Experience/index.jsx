@@ -9,7 +9,8 @@ import {
     FaPlus,
     IoReload, 
     RiDeleteBin6Line,
-    CiEdit 
+    CiEdit,
+    MdMoveDown 
 } from "../../../icons"
 import ReactQuill from "../../../ui/react-quill"
 import UpdateItem from "./UpdateItem"
@@ -60,6 +61,12 @@ export default function Experience(){
         })
     }
 
+    const handleMoveToDown = index =>{
+        const item = experiences[index]
+        dispatch(onListChange("xperiences", item))
+        removeItem("experiences", index)
+    }
+
     const handleUpdate = index =>{
         setUpdateItem(index)
         setIsOpen(true)
@@ -92,6 +99,9 @@ export default function Experience(){
                                     <h2 className="text-sm">{item.employer}, {item.city}</h2>
                                 </div>
                                 <div className="flex gap-2">
+                                    <span onClick={()=>handleMoveToDown(index)} className="cursor-pointer">
+                                        <MdMoveDown size={20}/>
+                                    </span>
                                     <span onClick={()=>handleUpdate(index)} className="cursor-pointer">
                                         <CiEdit size={20}/>
                                     </span>

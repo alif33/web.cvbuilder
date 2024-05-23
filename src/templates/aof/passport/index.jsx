@@ -13,9 +13,9 @@ export default function Passport({ data }){
     const { passport } = data
 
     return(
-        <View style={{ paddingTop: 10, lineHeight: 1.3 }}>
+        <View style={{ paddingTop: 10, lineHeight: 1.3, paddingLeft: 10 }}>
             <Heading title="Passport Details" height={10} width={12} img="/icons/aoc/personal.png"/>
-            <View style={{ paddingLeft: 10, paddingTop: 7, lineHeight: 1.4 }}>
+            <View style={{ paddingLeft: 5, paddingTop: 7, lineHeight: 1.4 }}>
                 <Text>{'Passport No: '}{passport.number}</Text>
                 <Text>{'Issue Date: '}{passport.issueDate}</Text>
                 <Text>{'Expiry Date: '}{passport.expiryDate}</Text>

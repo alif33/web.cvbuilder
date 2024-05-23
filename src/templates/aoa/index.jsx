@@ -5,6 +5,7 @@ import {
     View,  
     StyleSheet 
 } from "@react-pdf/renderer"
+import Header from "./header"
 import Summary from "./summary"
 import Objective from "./objective"
 import Declaration from "./declaration"
@@ -12,7 +13,6 @@ import Skills from "./skills"
 import Language from "./language"
 import Reference from "./reference"
 import Training from "./training"
-import Header from "./header"
 import Contacts from "./contacts"
 import Experience from "./experience"
 import Education from "./education"
@@ -21,6 +21,7 @@ import Personal from "./personal"
 import Signature from "./signature"
 import Passport from "./passport"
 import Custom from "./custom"
+import Xperience from "./xperience"
 
 import { getPosition } from "../lib/formatter"
 
@@ -39,6 +40,7 @@ const sections = {
     personal: Personal,
     signature: Signature,
     passport: Passport,
+    xperience: Xperience
 
 }
 
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
     },
     right: {
         width: 220,
-        paddingTop: 30,
+        paddingTop: 20,
         paddingLeft: 30,
         paddingRight: 20,
         backgroundColor: '#006666',

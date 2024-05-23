@@ -21,6 +21,7 @@ import Personal from "./personal"
 import Signature from "./signature"
 import Passport from "./passport"
 import Custom from "./custom"
+import { getPosition } from "../lib/formatter"
 
 const sections = {
     summary: Summary,
@@ -85,10 +86,22 @@ export default function Aoc({ customs, data }){
                                     const Section = sections[component] 
                                     
                                     return(
-                                        <Section data={data} key={index}/>
+                                        <Section 
+                                            key={index}
+                                            name={component} 
+                                            position={getPosition(component, data.layout)}
+                                            data={data} 
+                                        />
                                     )
                                 }else{
-                                    return <Custom key={index} name={component} data={data}/>
+                                    return(
+                                        <Custom 
+                                            key={index} 
+                                            name={component} 
+                                            position={getPosition(component, data.layout)}
+                                            data={data}
+                                        />
+                                    ) 
                                 }
                             })
                         }
@@ -99,10 +112,22 @@ export default function Aoc({ customs, data }){
                                 if(!customs?.includes(component)){
                                     const Section = sections[component] 
                                     return(
-                                        <Section data={data} key={index}/>
+                                        <Section 
+                                            key={index}
+                                            name={component} 
+                                            position={getPosition(component, data.layout)}
+                                            data={data} 
+                                        />
                                     )
                                 }else{
-                                    return <Custom key={index} name={component} data={data}/>
+                                    return(
+                                        <Custom 
+                                            key={index} 
+                                            name={component} 
+                                            position={getPosition(component, data.layout)}
+                                            data={data}
+                                        />
+                                    )
                                 }
                             })
                         }
@@ -120,10 +145,22 @@ export default function Aoc({ customs, data }){
                                         if(!customs?.includes(component)){
                                             const Section = sections[component] 
                                             return(
-                                                <Section data={data} key={index}/>
+                                                <Section 
+                                                    key={index}
+                                                    name={component}
+                                                    position={getPosition(component, data.layout)}
+                                                    data={data} 
+                                                />
                                             )
                                         }else{
-                                            return <Custom key={index} name={component} data={data}/>
+                                            return(
+                                                <Custom 
+                                                    key={index} 
+                                                    name={component} 
+                                                    position={getPosition(component, data.layout)}
+                                                    data={data}
+                                                />
+                                            ) 
                                         }
                                         
                                     })
@@ -135,10 +172,22 @@ export default function Aoc({ customs, data }){
                                         if(!customs?.includes(component)){
                                             const Section = sections[component] 
                                             return(
-                                                <Section data={data} key={index}/>
+                                                <Section 
+                                                    key={index}
+                                                    name={component} 
+                                                    position={getPosition(component, data.layout)}
+                                                    data={data} 
+                                                />
                                             )
                                         }else{
-                                            return <Custom key={index} name={component} data={data}/>
+                                            return(
+                                                <Custom 
+                                                    key={index} 
+                                                    name={component} 
+                                                    position={getPosition(component, data.layout)}
+                                                    data={data}
+                                                />
+                                            )
                                         }
                                         
                                     })

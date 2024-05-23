@@ -92,7 +92,14 @@ export default function Aoc({ customs, data }){
                                         />
                                     )
                                 }else{
-                                    return <Custom key={index} name={component} data={data}/>
+                                    return(
+                                        <Custom 
+                                            key={index} 
+                                            name={component} 
+                                            position={getPosition(component, data.layout)} 
+                                            data={data}
+                                        />
+                                    ) 
                                 }
                             })
                         }
@@ -113,7 +120,14 @@ export default function Aoc({ customs, data }){
                                         />
                                     )
                                 }else{
-                                    return <Custom key={index} name={component} data={data}/>
+                                    return(
+                                        <Custom 
+                                            key={index} 
+                                            name={component} 
+                                            position={getPosition(component, data.layout)} 
+                                            data={data}
+                                        />
+                                    ) 
                                 }
                             })
                         }
@@ -133,10 +147,22 @@ export default function Aoc({ customs, data }){
                                         if(!customs?.includes(component)){
                                             const Section = sections[component] 
                                             return(
-                                                <Section key={index} data={data}/>
+                                                <Section 
+                                                    key={index} 
+                                                    name={component} 
+                                                    position={getPosition(component, data.layout)} 
+                                                    data={data}
+                                                />
                                             )
                                         }else{
-                                            return <Custom key={index} name={component} data={data}/>
+                                            return(
+                                                <Custom 
+                                                    key={index} 
+                                                    name={component} 
+                                                    position={getPosition(component, data.layout)} 
+                                                    data={data}
+                                                />
+                                            )
                                         } 
                                     })
                                 }
@@ -147,10 +173,22 @@ export default function Aoc({ customs, data }){
                                         if(!customs?.includes(component)){
                                             const Section = sections[component] 
                                             return(
-                                                <Section data={data} key={index}/>
+                                                <Section 
+                                                    key={index}
+                                                    name={component} 
+                                                    position={getPosition(component, data.layout)} 
+                                                    data={data} 
+                                                />
                                             )
                                         }else{
-                                            return <Custom key={index} name={component} data={data}/>
+                                            return(
+                                                <Custom 
+                                                    key={index} 
+                                                    name={component} 
+                                                    position={getPosition(component, data.layout)} 
+                                                    data={data}
+                                                />
+                                            )
                                         } 
                                     })
                                 }

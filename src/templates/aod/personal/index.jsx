@@ -15,7 +15,7 @@ export default function Personal({ name, position, data }){
     return(
         <View style={{ marginTop: 10, lineHeight: 1.3 }}>
             <Heading name={name} position={position} title="Personal Information" height={10} width={12} img="/icons/aoc/personal.png"/>
-            <View style={{ paddingLeft: 10, paddingTop: 10 }}>
+            <View style={{ paddingTop: 10 }}>
                 <Text>{'Father\'s Name: '}{personal.fatherName}</Text>
                 <Text>{'Mother\'s Name: '}{personal.motherName}</Text>
                 <Text>{'Permanent Address: '}{personal.permanentAddress}</Text>

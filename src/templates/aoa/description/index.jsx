@@ -4,7 +4,7 @@ import jsxNodes from "../../lib/jsxNodes"
 
 const styles = StyleSheet.create({
     description: {
-        fontSize: 10
+        fontSize: 10,
     },
     heading: {
         fontSize: 10,

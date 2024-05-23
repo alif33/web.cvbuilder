@@ -5,7 +5,7 @@ import Description from "../description"
 const styles = StyleSheet.create({
     item: {
         position: 'relative',
-        marginBottom: 15,
+        marginBottom: 5,
         paddingLeft: 10,
         lineHeight: 1.4,
         borderLeft: 1,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function Training({data}){
+export default function Training({data, position}){
     const { trainings } = data
 
     return(
@@ -35,13 +35,12 @@ export default function Training({data}){
                 trainings && trainings.map((training, index)=>(
                     <View style={styles.item} key={index}>
                         <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: '#00B2B6', height: 6, width: 6, borderRadius: 3}}></View>
-                        {index!==0 && (<View style={{ position: 'absolute',  height:1, width: 330, backgroundColor: '#D9D9D9', top: -8, left: 10}}></View>)}
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
+                        {index!==0 && (<View style={{ position: 'absolute',  height:1, width: 140, backgroundColor: '#D9D9D9', top: -8, left: 10}}></View>)}
+                        <View style={{ flexDirection: 'column', justifyContent: 'space-between'}}>
                             <Text style={styles.title}>{training?.name}</Text>
                             <Text style={{ color: '#00B2B6', fontWeight: 'medium' }}>{training.timeline}</Text>
                         </View>
-                        <Text>{training?.institutionName},</Text>
-                        <Text>{training?.location}</Text>
+                        <Text>{training?.institutionName}, {training?.location}</Text>
                         {
                             training?.duration && training?.duration?.length>0 && (
                                 <View style={{flexDirection: 'row', columnGap: 3}}>
