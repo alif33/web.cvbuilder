@@ -46,8 +46,6 @@ const styles = StyleSheet.create({
     page: {
         backgroundColor: '#fff',
         fontFamily: 'Montserrat',
-        // paddingTop: 30,
-        // paddingHorizontal: 30
     },
     body: {
         justifyContent: 'flex',
@@ -57,16 +55,15 @@ const styles = StyleSheet.create({
         fontSize: 10
     },
     left: {
-        width: 220,
-        // paddingRight: 20,
-        // paddingLeft: 10,
+        position: 'relative',
+        width: 240,
+        marginLeft: 20,
         minHeight: '100%',
-        backgroundColor: '#5D2A3B',
-        color: '#FFFFFF'
     },
     right: {
-        width: 420,
-        marginTop: 20
+        width: 400,
+        marginTop: 20,
+        paddingLeft: 10
     },
 })
 
@@ -78,10 +75,10 @@ export default function Aoc({ customs, data }){
             <Page size="A4" style={styles.page}>
                 <View style={styles.body}>
                     <View style={styles.left}>
-                        <View style={{ backgroundColor: '#57021B', paddingTop: 40, borderBottomLeftRadius: 160, borderBottomRightRadius: 160}}>
+                        <View style={{ paddingTop: 20 }}>
                             <Avatar data={data}/>
                         </View>
-                        <Header data={data} />
+                        
                         {
                             data.layout.primaryLeft.map((component, index)=>{
                                 if(!customs?.includes(component)){
@@ -109,6 +106,7 @@ export default function Aoc({ customs, data }){
                         }
                     </View>
                     <View style={styles.right}>
+                        <Header data={data} />
                         {
                             data.layout.primaryRight.map((component, index)=>{
                                 if(!customs?.includes(component)){

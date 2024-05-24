@@ -57,16 +57,20 @@ const styles = StyleSheet.create({
         fontSize: 10
     },
     left: {
-        width: 220,
+        position: 'relative',
+        width: 240,
+        marginLeft: 20,
+        paddingTop: 100,
         // paddingRight: 20,
         // paddingLeft: 10,
         minHeight: '100%',
-        backgroundColor: '#5D2A3B',
+        backgroundColor: '#1960BA',
         color: '#FFFFFF'
     },
     right: {
-        width: 420,
-        marginTop: 20
+        width: 400,
+        marginTop: 20,
+        paddingLeft: 10
     },
 })
 
@@ -76,12 +80,16 @@ export default function Aoc({ customs, data }){
     return(
         <Document>
             <Page size="A4" style={styles.page}>
+                <View style={{height: 120, width: '100%',backgroundColor: '#000000', color: '#FFFFFF'}}>
+                    <Header data={data} />
+                </View>
                 <View style={styles.body}>
+                   
                     <View style={styles.left}>
-                        <View style={{ backgroundColor: '#57021B', paddingTop: 40, borderBottomLeftRadius: 160, borderBottomRightRadius: 160}}>
+                        <View style={{ width: 215, position: 'absolute', top: -100, left: 0, backgroundColor: '#1960BA', paddingTop: 20, borderTopLeftRadius: 280, borderTopRightRadius: 280}}>
                             <Avatar data={data}/>
                         </View>
-                        <Header data={data} />
+                        
                         {
                             data.layout.primaryLeft.map((component, index)=>{
                                 if(!customs?.includes(component)){
