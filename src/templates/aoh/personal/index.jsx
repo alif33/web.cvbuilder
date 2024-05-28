@@ -13,9 +13,9 @@ export default function Personal({ data }){
     const { personal } = data
 
     return(
-        <View style={{ marginTop: 10, lineHeight: 1.3 }}>
-            <Heading title="Personal Information" height={10} width={12} img="/icons/aoc/personal.png"/>
-            <View style={{ paddingLeft: 10, paddingTop: 10, marginLeft: 10 }}>
+        <View style={{ lineHeight: 1.3, paddingHorizontal: 20 }}>
+            <Heading name="Personal Information" height={10} width={12} img="/icons/aoc/personal.png"/>
+            <View style={{ paddingTop: 6 }}>
                 {
                     personal?.fatherName && personal?.fatherName?.length>0 && (
                         <Text>{'Father\'s Name: '}{personal.fatherName}</Text>

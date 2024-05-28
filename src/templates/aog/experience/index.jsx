@@ -39,8 +39,12 @@ export default function Experience({position, data}){
                             <Text style={{ fontWeight: 'bold' }}>{ex?.title}</Text>
                             <Text style={{ fontWeight: 'semibold'}}>{ex.duration}</Text>
                         </View>
-                        <Text style={{fontSize: 10, marginBottom: 5, fontWeight: 'semibold'}}>{ex?.employer}, {ex?.location}</Text>
-                        <Description heading="" description={ex.description}/>
+                        <Text style={{fontSize: 10, marginBottom: 5, fontWeight: 'semibold'}}>{ex?.employer}</Text>
+                        {
+                            ex?.description && ex.description?.length && (
+                                <Description heading="" description={ex.description}/>
+                            )
+                        }
                     </View>
                 ))
             }

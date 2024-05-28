@@ -35,21 +35,24 @@ export default function Training({data}){
             {
                 trainings && trainings.map((training, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#D9D9D9", height: 6, width: 6, borderRadius: 3}}></View>
                         {index!==0 && (<View style={{ position: 'absolute',  height:1, width: 330, backgroundColor: '#D9D9D9', top: -8, left: 10}}></View>)}
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={styles.title}>{training?.name}</Text>
                             <Text style={{ fontWeight: 'medium' }}>{training.timeline}</Text>
                         </View>
-                        <Text>{training?.institutionName},</Text>
-                        <Text>{training?.location}</Text>
-                        <View style={{flexDirection: 'row', columnGap: 3}}>
-                            <Image
-                                style={{height: 10, width: 10}}
-                                src="/icons/aoc/duration.png"
-                            />
-                            <Text>{training.duration}</Text>
-                        </View>
+                        <Text>{training?.institutionName}</Text>
+                        {
+                            training?.duration && training.duration?.length && (
+                                <View style={{flexDirection: 'row', columnGap: 3}}>
+                                    <Image
+                                        style={{height: 10, width: 10}}
+                                        src="/icons/aoc/duration.png"
+                                    />
+                                    <Text>{training.duration}</Text>
+                                </View>
+                            )
+                        }
                         
                         {/* {training.description && training.description.length> 0 && (
                             <Description heading="" description={training.description}/>

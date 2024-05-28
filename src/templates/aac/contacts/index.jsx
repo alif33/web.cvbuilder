@@ -15,18 +15,15 @@ export default function Contacts({name, position, data}){
 
     return(
         <View>
-            <Heading name={name} position={position} title="Contact Me" img="/icons/man.png"/>
-            <View style={{fontSize: 10, lineHeight: 1.5, paddingTop: 8}}>
-                <View style={{ flexDirection: 'row', marginBottom: 3, alignItems: 'center'}}>
-                    <Image style={{ width: 12, height: 9 }} src={`/icons/${position==="left"?"black": "white"}/email.png`}/>
+            <View style={{flexDirection: 'row', fontSize: 10, lineHeight: 1.5, paddingTop: 8}}>
+                <View style={{ width: 25, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', rowGap: 8, marginBottom: 3, border: 2, borderColor: '#FFC936', borderRadius: 16, paddingVertical: 10 }}>
+                    <Image style={{ width: 12, height: 9 }} src="/icons/aac/email.png"/>
+                    <Image style={{ width: 13, height: 10 }} src="/icons/aac/phone.png"/>
+                    <Image style={{ width: 14, height: 11 }} src="/icons/aac/address.png"/>
+                </View>
+                <View style={{ flexDirection: 'column', justifyContent: 'center', marginBottom: 3, rowGap: 8, paddingVertical: 10 }}>
                     <Text> {heading.email}</Text>
-                </View>
-                <View style={{ flexDirection: 'row', marginBottom: 3}}>
-                    <Image style={{ width: 13, height: 10 }} src={`/icons/${position==="left"?"black": "white"}/phone.png`}/>
                     <Text> {heading.phone}</Text>
-                </View>
-                <View style={{ flexDirection: 'row'}}>
-                    <Image style={{ width: 14, height: 11 }} src={`/icons/${position==="left"?"black": "white"}/address.png`}/>
                     <Text> {heading.address}</Text>
                 </View>
             </View>

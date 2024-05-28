@@ -80,7 +80,7 @@ export default function Aoc({ customs, data }){
     return(
         <Document>
             <Page size="A4" style={styles.page}>
-                <View style={{height: 120, width: '100%',backgroundColor: '#000000', color: '#FFFFFF'}}>
+                <View style={{height: 120, width: '100%',backgroundColor: '#000000', color: '#FFFFFF', paddingLeft: 170}}>
                     <Header data={data} />
                 </View>
                 <View style={styles.body}>

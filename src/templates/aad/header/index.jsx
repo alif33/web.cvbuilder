@@ -20,9 +20,9 @@ export default function Header({data}){
                 <Text style={styles.firstName}>{heading.firstName+" "}</Text>
                 <Text style={{fontSize: 22, fontWeight: 'medium'}}>{heading.surName}</Text>
             </View>
-            <View style={{ flexDirection: 'row', justifyContent: 'center', fontSize: 14, fontWeight: 'medium'}}>
+            {/* <View style={{ flexDirection: 'row', justifyContent: 'center', fontSize: 14, fontWeight: 'medium'}}>
                 <Text>Advocate</Text>
-            </View>
+            </View> */}
         </View>
     )
 }

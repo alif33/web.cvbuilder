@@ -33,7 +33,7 @@ export default function Experience({data}){
             {
                 experiences && experiences.map((ex, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#D4E8E7", height: 6, width: 6, borderRadius: 3}}></View>
 
                         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={{ fontWeight: 'bold' }}>{ex?.title}</Text>

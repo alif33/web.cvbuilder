@@ -35,15 +35,20 @@ export default function Experience({name, position, data}){
                             <Text style={{ fontWeight: 'medium' }}>{edu.graduationYear}</Text>
                         </View>
                         <Text style={{ fontWeight: 'semibold' }}>{edu?.studyField}</Text>
-                        <Text>{edu?.institutionName},</Text>
-                        <Text>{edu?.location}</Text>
-                        <View style={{ flexDirection: 'row' }}>
-                            <Image
-                                src="/icons/aoc/result.png"
-                                style={{ height: 12, width: 12, marginRight: 5}}
-                            />
-                            <Text>3.95( out of 5)</Text>
-                        </View>
+                        <Text>{edu?.institutionName}</Text>
+                        
+                        {
+                            edu?.result && edu.result?.length >0 && (
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Image
+                                        src="/icons/aoc/result.png"
+                                        style={{ height: 12, width: 12, marginRight: 5}}
+                                    />
+                                    <Text>{edu.result}</Text>
+                                </View>
+                            )
+                        }
+                        
                         {edu.description && edu.description.length> 0 && (
                             <Description heading="Duties" description={edu.description}/>
                         )}

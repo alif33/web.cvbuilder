@@ -20,10 +20,8 @@ export default function Skills({ position, data }){
                             <Text style={{fontSize: 10, lineHeight: 1.3, marginTop: 5, fontWeight: 'medium'}}>
                                 {skill.name}
                             </Text>
-                            <View style={{backgroundColor: '#D9D9D9', padding: 1, borderRadius: 6}}>
-                                <View style={{minWidth: '100%', backgroundColor: '#D9D9D9', border: '2px solid #FFFFFF', borderRadius: 4}}>
-                                    <View style={{ maxWidth: `'${skill.percentage}%'`, padding: 2, backgroundColor: '#54001C', minHeight: 5, borderRadius: 4 }}></View>
-                                </View>
+                            <View style={{minWidth: '100%', backgroundColor: '#4382C5'}}>
+                                <View style={{ maxWidth: `'${skill.percentage}%'`, backgroundColor: '#FFFFFF', minHeight: 5 }}></View>
                             </View>
                             {/* Line */}
                             <View style={{position: 'absolute', height: '70%', top: 8, left: 3}}>

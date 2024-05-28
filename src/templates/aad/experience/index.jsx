@@ -34,12 +34,11 @@ export default function Experience({position, data}){
                 experiences && experiences.map((ex, index)=>(
                     <View style={styles.item} key={index}>
                         <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
-
                         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={{ fontWeight: 'bold' }}>{ex?.title}</Text>
                             <Text style={{ fontWeight: 'semibold'}}>{ex.duration}</Text>
                         </View>
-                        <Text style={{fontSize: 10, marginBottom: 5, fontWeight: 'semibold'}}>{ex?.employer}, {ex?.location}</Text>
+                        <Text style={{fontSize: 10, marginBottom: 5, fontWeight: 'semibold'}}>{ex?.employer}</Text>
                         <Description heading="" description={ex.description}/>
                     </View>
                 ))

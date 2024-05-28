@@ -27,13 +27,13 @@ export default function Experience({position, data}){
     const {experiences} = data
 
     return(
-        <View style={{marginTop: 10}}>
+        <View style={{marginBottom: 10, paddingHorizontal: 20}}>
             <Heading name="Experience" position={position} height={10} width={10} img={`/icons/${position==='left'? 'white': 'black'}/experience.png`}/>
-            <View style={{ paddingTop: 10, marginBottom: 10 }}>
+            <View style={{ paddingTop: 6 }}>
             {
                 experiences && experiences.map((ex, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#D9D9D9", height: 6, width: 6, borderRadius: 3}}></View>
 
                         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={{ fontWeight: 'bold' }}>{ex?.title}</Text>

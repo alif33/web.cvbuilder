@@ -11,12 +11,12 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function Declaration({data}){
+export default function Declaration({position, data}){
     const { declaration } = data
 
     return(
         <View style={{ marginTop: 10, }}>
-            <Heading title="Declaration" height={10} width={11} img="/icons/aoc/declaration.png"/>
+            <Heading name="Declaration" position={position} height={10} width={11} img="/icons/aoc/declaration.png"/>
             <View style={{ paddingRight: 20  }}>
                 <Text style={styles.body}>
                     {declaration.body}

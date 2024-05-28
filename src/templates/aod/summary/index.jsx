@@ -5,9 +5,7 @@ const styles = StyleSheet.create({
     summary: {
         fontSize: 10, 
         lineHeight: 1.3, 
-        paddingTop: 5,
-        paddingLeft: 10
-        
+        paddingTop: 5        
     }
 })
 

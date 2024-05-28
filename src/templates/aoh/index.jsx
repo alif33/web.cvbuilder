@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     },
     right: {
         width: 320,
-        paddingLeft: 10,
         paddingTop: 20
         // marginTop: 20
     },
@@ -83,39 +82,18 @@ export default function Aoc({ customs, data }){
     return(
         <Document>
             <Page size="A4" style={styles.page}>
-                {/* Header */}
+                {/* Header Container */}
                 <View style={{ height: 150, flexDirection: 'row', alignItems: 'center', zIndex: 7}}>
-                    
-                    <View style={{ color: 'red', fontSize: 14, zIndex: 5 }}> 
-                        <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, debitis!</Text>
-                    </View>
-                    
-                    
-                    {/* <View style={{ zIndex: 999}}> */}
-                        {/* <Svg style={{ zIndex: 999}} width="700" height="229" viewBox="0 0 700 329" fill="none">
-                            <Ellipse cx="229.265" cy="59.2484" rx="583.773" ry="187.5" transform="rotate(-1.97548 229.265 59.2484)" fill="#3F7F77" />
-                            <Ellipse cx="228.591" cy="39.8362" rx="346.291" ry="178.5" transform="rotate(-20.4387 228.591 39.8362)" fill="#27554F" />
-                        </Svg> */}
-                    {/* </View> */}
-                    
-                    {/* <View style={{position: 'absolute', top: -60, right: -60, width: 120, height: 120, border: 4, borderColor: '#FFFFFF', borderRadius: 60}}>
-                        
-                    </View>
-                    <View style={{ width: 220, paddingVertical: 25 }}>
-                        <Avatar data={data}/>
-                    </View>
-                    <View style={{color: '#FFFFFF'}}>
-                        <Header data={data} />
-                    </View> */}
+                
                 </View>
                 {/* Body */}
                 <View style={styles.body}>
                     <View style={{ position: 'absolute', width: '100%', top: -100, left: 0, color: 'red', fontSize: 14, zIndex: 5 }}> 
                         <View style={{ flexDirection: 'row', color: '#FFFFFF'}}>
-                            <View style={{ width: 220}}>
-                                <Text>1.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, debitis!</Text>
+                            <View style={{ width: 270}}>
+                                <Header data={data}/>
                             </View>
-                            <View style={{ width: 220, marginTop: 20, marginLeft: 80}}>
+                            <View style={{ width: 220, marginTop: 20, marginLeft: 20}}>
                                 <Avatar data={data}/>
                             </View>
                         </View>

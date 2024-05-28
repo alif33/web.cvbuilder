@@ -28,7 +28,7 @@ export default function Reference({position, data}){
                         {
                             reference.phone && reference.phone?.length>0 && (
                                 <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 2 }}>
-                                    <Image style={{ width: 13, height: 10 }} src={`/icons/${position==='left'? 'white': 'black'}/phone.png`}/>
+                                    <Image style={{ width: 13, height: 10 }} src="/icons/black/phone.png"/>
                                     <Text> {reference.phone}</Text>
                                 </View>
                             )
@@ -37,12 +37,11 @@ export default function Reference({position, data}){
                         {
                             reference.email && reference.email?.length>0 && (
                                 <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 2 }}>
-                                    <Image style={{ width: 12, height: 9 }} src={`/icons/${position==='left'? 'white': 'black'}/email.png`}/>
+                                    <Image style={{ width: 12, height: 9 }} src="/icons/black/email.png"/>
                                     <Text> {reference.email}</Text>
                                 </View>
                             )
-                        }
-                        
+                        } 
                     </View>
                 ))
             }

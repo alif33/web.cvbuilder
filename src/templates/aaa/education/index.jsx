@@ -36,15 +36,14 @@ export default function Experience({position, data}){
             {
                 educations && educations.map((edu, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#D9D9D9", height: 6, width: 6, borderRadius: 3}}></View>
                         {index!==0 && (<View style={{ position: 'absolute',  height:1, width: 330, backgroundColor: '#D9D9D9', top: -8, left: 10}}></View>)}
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
                             <Text style={styles.title}>{edu?.qualification}</Text>
                             <Text style={{ fontWeight: 'medium' }}>{edu.graduationYear}</Text>
                         </View>
                         <Text style={{ fontWeight: 'semibold' }}>{edu?.studyField}</Text>
-                        <Text>{edu?.institutionName},</Text>
-                        <Text>{edu?.location}</Text>
+                        <Text>{edu?.institutionName}</Text>
                         {
                             edu?.result && edu?.result?.length>0 && (
                                 <View style={{ flexDirection: 'row' }}>
@@ -57,9 +56,9 @@ export default function Experience({position, data}){
                             )
                         }
                         
-                        {edu.description && edu.description.length> 0 && (
+                        {/* {edu.description && edu.description.length> 0 && (
                             <Description heading="Duties" description={edu.description}/>
-                        )}
+                        )} */}
                     </View>
                 ))
             }

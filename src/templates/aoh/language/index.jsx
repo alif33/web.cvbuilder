@@ -10,9 +10,9 @@ export default function Language({ position, data }){
     const { languages } = data
 
     return(
-        <View style={{ marginTop: 10, lineHeight: 1.3, marginBottom: 5, paddingLeft: 10 }}>
+        <View style={{ marginBottom: 15, lineHeight: 1.3, paddingHorizontal: 20 }}>
             <Heading name="Languages" position={position} height={10} width={10} img="/icons/aoc/language.png"/>
-            <View style={{ paddingLeft: 10 }}>
+            <View style={{ paddingTop: 6 }}>
                 {
                     languages.map((lang, index)=>(
                         <View style={{ flexDirection: 'row', alignItems: 'center', columnGap: 5, marginTop: 4 }} key={index}>

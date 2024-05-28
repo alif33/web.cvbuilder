@@ -11,7 +11,7 @@ export default function Language({ position, data }){
 
     return(
         <View style={{ marginTop: 10, lineHeight: 1.3, marginBottom: 5, paddingLeft: position==='left'? 10: 0 }}>
-            <Heading title="Languages" height={10} width={10} img="/icons/aoc/language.png"/>
+            <Heading title="Languages" height={10} width={10} img="/icons/white/language.png"/>
             <View>
                 {
                     languages.map((lang, index)=>(

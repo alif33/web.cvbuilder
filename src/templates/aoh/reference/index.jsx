@@ -17,18 +17,18 @@ export default function Reference({ position, data }){
     const { references } = data
 
     return(
-        <View style={{ marginTop: 10, lineHeight: 1.3, paddingLeft: 10 }}>
-            <Heading name="Reference" position={position} height={10} width={14} img={`/icons/${position==='left'? 'white': 'black'}/reference.png`}/>
+        <View style={{ marginBottom: 10, lineHeight: 1.3, paddingHorizontal: 20 }}>
+            <Heading name="Reference" position={position} height={10} width={14} img="/icons/black/reference.png"/>
             {
                 references.map((reference, index)=>(
-                    <View style={{ paddingLeft: 10, lineHeight: 1.4, paddingRight: 20 }} key={index}>
+                    <View style={{ lineHeight: 1.4  }} key={index}>
                         <Text style={styles.name}>{reference.name}</Text>
                         <Text style={styles.designation}>{reference.designation}</Text> 
                         <Text>{reference.institute}</Text>
                         {
                             reference.phone && reference.phone?.length>0 && (
                                 <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 2 }}>
-                                    <Image style={{ width: 13, height: 10 }} src={`/icons/${position==='left'? "white": "black"}/phone.png`}/>
+                                    <Image style={{ width: 13, height: 10 }} src="/icons/black/phone.png"/>
                                     <Text> {reference.phone}</Text>
                                 </View>
                             )
@@ -37,7 +37,7 @@ export default function Reference({ position, data }){
                         {
                             reference.email && reference.email?.length>0 && (
                                 <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 2 }}>
-                                    <Image style={{ width: 12, height: 9 }} src={`/icons/${position==='left'? "white": "black"}/email.png`}/>
+                                    <Image style={{ width: 12, height: 9 }} src="/icons/black/email.png"/>
                                     <Text> {reference.email}</Text>
                                 </View>
                             )

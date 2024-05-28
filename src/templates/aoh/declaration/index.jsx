@@ -4,10 +4,7 @@ import Heading from "../heading"
 const styles = StyleSheet.create({
     body: {
         fontSize: 10, 
-        lineHeight: 1.3, 
-        paddingTop: 5,
-        paddingLeft: 10
-        
+        lineHeight: 1.3  
     }
 })
 
@@ -15,9 +12,9 @@ export default function Declaration({data}){
     const { declaration } = data
 
     return(
-        <View style={{ marginTop: 10, }}>
-            <Heading title="Declaration" height={10} width={11} img="/icons/aoc/declaration.png"/>
-            <View style={{ paddingRight: 20  }}>
+        <View style={{paddingHorizontal: 20 }}>
+            <Heading name="Declaration" height={10} width={11} img="/icons/aoc/declaration.png"/>
+            <View style={{ paddingTop: 6 }}>
                 <Text style={styles.body}>
                     {declaration.body}
                 </Text>

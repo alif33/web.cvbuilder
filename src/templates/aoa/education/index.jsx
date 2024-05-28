@@ -36,8 +36,7 @@ export default function Experience({name, position, data}){
                             <Text style={{ fontWeight: 'medium' }}>{edu.graduationYear}</Text>
                         </View>
                         <Text style={{ fontWeight: 'semibold' }}>{edu?.studyField}</Text>
-                        <Text>{edu?.institutionName},</Text>
-                        <Text>{edu?.location}</Text>
+                        <Text>{edu?.institutionName}</Text>
                         {
                             edu?.result && (
                                 <View style={{ flexDirection: 'row' }}>

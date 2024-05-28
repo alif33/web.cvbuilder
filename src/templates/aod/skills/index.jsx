@@ -21,6 +21,9 @@ export default function Skills({ name, position, data }){
                         <Text style={styles.summary}>
                             {skill.name}
                         </Text>
+                        <View style={{backgroundColor: '#FFFFFF', padding: 1}}>
+                            <View style={{ maxWidth: `'${skill.percentage}%'`, padding: 2, backgroundColor: '#bec7d5', minHeight: 5 }}></View>
+                        </View>
                     </View>
                 ))
             }

@@ -11,12 +11,12 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function Custom({name, data}){
+export default function Custom({name, position, data}){
     const resume = data
 
     return(
         <View style={{ marginTop: 10, paddingLeft: 5, paddingRight: 15 }}>
-            <Heading title={resume[name].heading} height={10} width={11} img="/icons/aoc/declaration.png"/>
+            <Heading title={resume[name].heading} position={position} height={10} width={11} img="/icons/aoc/declaration.png"/>
             <View>
                 <Text style={styles.body}>
                     {resume[name].body}

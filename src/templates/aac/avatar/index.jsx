@@ -3,13 +3,15 @@ import { View, Image, StyleSheet } from "@react-pdf/renderer"
 
 const styles = StyleSheet.create({
     image: {
-        height: 90,
-        width: 90,
-        borderRadius: 10,
-        backgroundColor: "#CBCACB",
+        height: 120,
+        width: 120,
+        borderRadius: 60,
+        backgroundColor: "#FFC936",
         marginLeft: 30,
-        border: 1,
-        borderColor: '#000000'
+        border: 15,
+        
+        borderColor: '#FFFFFF',
+
     }
 })
 

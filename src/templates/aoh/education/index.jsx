@@ -30,18 +30,15 @@ export default function Experience({position, data}){
     const {educations} = data
 
     return(
-        <View style={{marginTop: 10 }}>
-            <Heading position={position} name="Education" height={10} width={12} img={`/icons/${position==='left'? 'white': 'black'}/education.png`}/>
-            <View style={{ paddingTop: 10 }}>
+        <View style={{marginBottom: 10, paddingHorizontal: 20 }}>
+            <Heading name="Education" position={position} height={10} width={12} img={`/icons/${position==='left'? 'white': 'black'}/education.png`}/>
+            <View style={{ paddingTop: 6 }}>
             {
                 educations && educations.map((edu, index)=>(
                     <View style={styles.item} key={index}>
-                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#54001C", height: 6, width: 6, borderRadius: 3}}></View>
-                        {index!==0 && (<View style={{ position: 'absolute',  height:1, width: 330, backgroundColor: '#D9D9D9', top: -8, left: 10}}></View>)}
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between'}}>
-                            <Text style={styles.title}>{edu?.qualification}</Text>
-                            <Text style={{ fontWeight: 'medium' }}>{edu.graduationYear}</Text>
-                        </View>
+                        <View style={{ position: 'absolute', top: 0, left: -4, backgroundColor: "#D9D9D9", height: 6, width: 6, borderRadius: 3}}></View>
+                        <Text style={styles.title}>{edu?.qualification}</Text>
+                        <Text style={{ fontWeight: 'medium' }}>{edu.graduationYear}</Text>
                         <Text style={{ fontWeight: 'semibold' }}>{edu?.studyField}</Text>
                         <Text>{edu?.institutionName},</Text>
                         <Text>{edu?.location}</Text>

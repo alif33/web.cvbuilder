@@ -10,8 +10,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 10,
-        fontWeight: 'bold',
-        color: '#00B2B6'
+        fontWeight: 'bold'
     },
     employer: {
         fontSize: 10

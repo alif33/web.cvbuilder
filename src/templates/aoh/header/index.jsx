@@ -21,7 +21,7 @@ export default function Header({data}){
                 <Text style={styles.firstName}>{heading.firstName+" "}</Text>
                 <Text style={{fontSize: 22, fontWeight: 'medium'}}>{heading.surName}</Text>
             </View>
-            <View style={{ fontSize: 10, marginTop: 15 }}>
+            <View style={{ fontSize: 10, marginTop: 15, marginLeft: 20 }}>
                 {
                     navs.map((item, index)=>{
                         return(

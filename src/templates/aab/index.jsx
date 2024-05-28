@@ -59,8 +59,6 @@ const styles = StyleSheet.create({
     left: {
         width: 240,
         marginLeft: 20,
-        // paddingRight: 20,
-        // paddingLeft: 10,
         minHeight: '100%',
         backgroundColor: '#D4E8E7',
         color: '#000000'
