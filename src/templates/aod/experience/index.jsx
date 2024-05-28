@@ -35,7 +35,7 @@ export default function Experience({name, position, data}){
                         <Text style={styles.employer}>{e?.employer}</Text>
                         {
                             e?.description && e.description?.length> 0 && (
-                                <Description heading="Duties" description={e.description}/>
+                                <Description heading="Responsibilities" description={e.description}/>
                             )
                         }
                        

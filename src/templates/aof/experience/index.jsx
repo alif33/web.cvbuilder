@@ -29,7 +29,7 @@ export default function Experience({data}){
     return(
         <View style={{marginTop: 10}}>
             <Heading title="Experience" height={10} width={10} img="/icons/aoc/experience.png"/>
-            <View style={{ paddingTop: 10, paddingLeft: 10, marginBottom: 10 }}>
+            <View style={{ paddingTop: 10, paddingLeft: 10 }}>
             {
                 experiences && experiences.map((ex, index)=>(
                     <View style={styles.item} key={index}>
@@ -39,8 +39,11 @@ export default function Experience({data}){
                             <Text style={{ fontWeight: 'bold' }}>{ex?.title}</Text>
                             <Text style={{ fontWeight: 'semibold'}}>{ex.duration}</Text>
                         </View>
-                        <Text style={{fontSize: 10, marginBottom: 5, fontWeight: 'semibold'}}>{ex?.employer}, {ex?.location}</Text>
-                        <Description heading="" description={ex.description}/>
+                        <Text style={{fontSize: 10, marginBottom: 5, fontWeight: 'semibold'}}>{ex?.employer}</Text>
+                        {ex?.description && ex.description?.length>0 && (
+                             <Description heading="" description={ex.description}/>
+                        )}
+                       
                     </View>
                 ))
             }
