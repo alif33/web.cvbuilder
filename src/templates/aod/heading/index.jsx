@@ -32,15 +32,16 @@ const styles = StyleSheet.create({
 
 
 export default function Heading({ name, position, title, height, width, img }){
+    console.log(name, position);
     // section name
     return(
         <View style={styles.heading}>
             {
                 position==='left' ?(
-                    <Text style={{borderBottomWidth: 1, borderBottomColor: '#FFFFFF', paddingBottom: 2, }}>{title}</Text>
+                    <Text style={{borderBottomWidth: 1, borderBottomColor: '#FFFFFF', paddingBottom: 2, }}>{name}</Text>
                 ): (
                     <View style={{width:'100%'}}>
-                        <Text style={{borderBottomWidth: 1, borderBottomColor: '#000000', paddingBottom: 2, }}>{title}</Text>
+                        <Text style={{borderBottomWidth: 1, borderBottomColor: '#000000', paddingBottom: 2, color: '#000000'}}>{name}</Text>
                     </View>
                 )
             }

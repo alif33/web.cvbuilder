@@ -5,7 +5,7 @@ import Description from "../description"
 const styles = StyleSheet.create({
     item: {
         position: 'relative',
-        marginBottom: 15,
+        marginBottom: 5,
         paddingLeft: 10,
         lineHeight: 1.4,
         borderLeft: 1,
@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
     }
 })
 
-export default function Training({data}){
+export default function Training({position, data}){
     const { trainings } = data
 
     return(
         <View style={{marginTop: 10}}>
-            <Heading title="Course Summary" height={10} width={12} img="/icons/aoc/training.png"/>
+            <Heading name="Course Summary" position={position} height={10} width={12} img="/icons/aoc/training.png"/>
             <View style={{ paddingTop: 10, paddingLeft: 10 }}>
             {
                 trainings && trainings.map((training, index)=>(

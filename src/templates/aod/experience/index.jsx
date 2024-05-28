@@ -34,7 +34,7 @@ export default function Experience({name, position, data}){
                         </View>
                         <Text style={styles.employer}>{e?.employer}</Text>
                         {
-                            e?.description && e.description?.length> 0 && (
+                            e?.description && e.description?.length> 5 && (
                                 <Description heading="Responsibilities" description={e.description}/>
                             )
                         }
