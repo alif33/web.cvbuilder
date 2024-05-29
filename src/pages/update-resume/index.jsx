@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { PDFViewer } from "@react-pdf/renderer"
 import Template from "../../templates"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { useParams } from "react-router-dom"
+import { getResume } from "../../db/queries"
+import { fetchResume } from "../../store/sample/action"
 import Sections from "../../components/add-resume/Sections"
 import SideMenu from "../../components/add-resume/SideMenu"
 import Panel from "../../components/add-resume/Panel"
@@ -13,6 +16,20 @@ const containerStyle = { width: '100%', height: '100vh' }
 export default function AddResume(){
     const [mode, setMode] = useState("editor")
     const resume = useSelector(state=>state.sample)
+    const params = useParams()
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        if(params?.id){
+            getResume(params.id)
+                .then(resume=>{
+                    if (resume) {
+                        dispatch(fetchResume(resume))
+                    }
+                })
+                .catch(err=>console.log(err))
+        }
+    }, [])
 
     return(
         <div className="flex max-h-screen ml-2 overflow-y-hidden">

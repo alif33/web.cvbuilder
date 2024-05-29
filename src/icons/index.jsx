@@ -27,11 +27,10 @@ import {
     CiImport,
     CiEdit
 } from "react-icons/ci"
-import { IoIosAlbums } from "react-icons/io"
+import { IoIosAlbums, IoMdHome } from "react-icons/io"
 import { VscSaveAll } from "react-icons/vsc"
 import { BiSolidMicrophone } from "react-icons/bi"
 import { MdMoveDown } from "react-icons/md"
-
 
 export { 
     GoDownload,
@@ -55,6 +54,7 @@ export {
     CiImport,
     CiEdit,
     IoIosAlbums,
+    IoMdHome,
     VscSaveAll,
     BiSolidMicrophone,
     MdMoveDown

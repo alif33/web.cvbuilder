@@ -77,7 +77,7 @@ export default function Save(){
     }
 
     return(
-        <div className="absolute h-10 w-10 bottom-2 left-2">
+        <div className="absolute h-10 w-10 bottom-2 left-10">
             <div className="flex justify-center items-center">
                 <span className=" cursor-pointer bg-black text-white py-3 px-3 rounded-full shadow-lg" onClick={handleSave}><VscSaveAll/></span>
             </div>
