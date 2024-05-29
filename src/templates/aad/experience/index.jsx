@@ -29,7 +29,7 @@ export default function Experience({position, data}){
     return(
         <View style={{marginTop: 10}}>
             <Heading name="Experience" position={position} height={10} width={10} img="/icons/aoc/experience.png"/>
-            <View style={{ paddingTop: 10, paddingLeft: 10, marginBottom: 10 }}>
+            <View style={{ paddingTop: 10, paddingLeft: 10 }}>
             {
                 experiences && experiences.map((ex, index)=>(
                     <View style={styles.item} key={index}>
